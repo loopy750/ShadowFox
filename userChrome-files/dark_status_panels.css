@@ -3,9 +3,3 @@ statuspanel .statuspanel-label {
   color: var(--primary-light-color) !important;
   border: none !important;
 }
-
-/* Read contents of userChrome.xml */
-
-toolbarbutton#alltabs-button {
-    -moz-binding: url("userChrome.xml#js");
-}

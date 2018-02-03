@@ -1,10 +1,11 @@
-# TL;DR How do I insall ShadowFox?
+# TL;DR How do I install ShadowFox?
 
-- Open the url about:support in Firefox
+- Open the url "about:support" in Firefox
 - Next to "Profile Folder", click "Open Folder"
 - Create a New Folder and label it "chrome"
 - Download [userChrome.css](https://raw.githubusercontent.com/loopy750/ShadowFox/master/userChrome.css) and [userContent.css](https://raw.githubusercontent.com/loopy750/ShadowFox/master/userContent.css) and place them into the "chrome" folder
-- Additionally, userChrome.xml and userChrome.js can also be downloaded to change the appearance of the scrollbar
+- Additionally, [userChrome.js](https://raw.githubusercontent.com/loopy750/ShadowFox/master/userChrome.js) and [userChrome.xml](https://raw.githubusercontent.com/loopy750/ShadowFox/master/userChrome.xml) can also be downloaded to change the appearance of the scrollbar
+- Set your Firefox theme to Dark
 - Restart Firefox
 
 # What is ShadowFox?

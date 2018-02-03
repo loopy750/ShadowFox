@@ -157,8 +157,23 @@
     background-color: var(--grey-60) !important;
 }
 
+	/* about:addons reorder and white background */
 
+	@-moz-document url-prefix(chrome://mozapps/content/extensions/extensions.xul), url-prefix(about:addons) {
 
-
+	#detail-contributions{
+		-moz-box-ordinal-group: 9 !important;
+	}
+	#detail-controls{
+		-moz-box-ordinal-group: 10 !important;
+	}
+	#detail-desc-container {
+		-moz-box-ordinal-group: 11 !important;
+	}
+	.inline-options-browser#addon-options {
+		padding-left: 5px !important;
+		background-color: var(--grey-20) !important;
+	 }
+	}
 
 }

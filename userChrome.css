@@ -270,6 +270,27 @@ panel[type="autocomplete-richlistbox"],
 .searchbar-treebody::-moz-tree-row(selected) {
   background-color: var(--primary-accent-color) !important;
 }
+
+/* URL bar effects */
+
+@keyframes effect_blur {
+  0% {
+    filter: blur(3px);
+  }
+
+  100% {
+    filter: blur(0px);
+  }
+}
+
+#nav-bar textbox {
+  background-color: rgba(63, 63, 63, 1) !important;
+  animation: effect_blur 0.5s !important;
+}
+
+#nav-bar textbox:hover {
+  background-color: rgba(75, 75, 75, 0.75) !important;
+}
 /* Main context menu */
 
 menupopup,
@@ -342,14 +363,14 @@ menuitem:hover {
   background-color: var(--grey-80) !important;
 }
 
-/* Sidebar Header Context Menue */
+/* Sidebar Header Context Menu */
 
 .panel-arrowcontent {
   color: var(--grey-10) !important;
   background: var(--grey-60) !important;
 }
 
-/* The following snippets are designed to fix promblems
+/* The following snippets are designed to fix problems
  * only noticed on Windows computers */
 
 @media screen and (-moz-windows-theme),
@@ -443,6 +464,29 @@ menuitem:hover {
     border-width: 1px !important;
     border-style: solid !important;
   }
+}
+
+/* --- OPTIONAL TWEAKS --- */
+
+/* Context menus, align icons with text to match macOS style */
+
+menupopup#contentAreaContextMenu > .menu-iconic .menu-iconic-icon,
+menupopup#tabContextMenu > .menu-iconic .menu-iconic-icon,
+menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-icon,
+menupopup#tabContextMenu > .menuitem-iconic .menu-iconic-icon {
+  margin-left: 29px !important;
+}
+
+menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-text,
+menupopup#tabContextMenu > .menu-iconic .menu-iconic-text {
+  margin-left: -2px !important;
+}
+
+/* Context menu, align checkbox */
+
+menupopup#toolbar-context-menu menuitem[checked="true"] > .menu-iconic-left {
+  margin-left: 2px !important;
+  margin-right: -2px !important;
 }
 #customization-done-button {
   color: var(--primary-light-color);
@@ -715,20 +759,34 @@ toolbar[brighttext] {
 }
 
 /* Siderbar slider - thank you u/_Dimitri_
- *  Add this section if on Windows
-scrollbar > slider {
-  max-width: 4px !important;
-}
+ *  Add this section if on Windows */
 
-scrollbar > slider > thumb, scrollbar > scrollbarbutton {
-  -moz-appearance: none !important;
-  background-color: var(--grey-80) !important;;
+@media screen and (-moz-windows-theme),
+       screen and (-moz-windows-classic),
+       screen and (-moz-windows-default-theme),
+       screen and (-moz-os-version: windows-win7),
+       screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+  scrollbar > slider {
+    max-width: 4px !important;
+  }
+
+  scrollbar > slider > thumb,
+  scrollbar > scrollbarbutton {
+    -moz-appearance: none !important;
+    background-color: var(--grey-80) !important;
+  }
 }
-*/
 statuspanel .statuspanel-label {
   background-color: var(--grey-80) !important;
   color: var(--primary-light-color) !important;
   border: none !important;
+}
+
+/* Read contents of userChrome.xml */
+
+toolbarbutton#alltabs-button {
+  -moz-binding: url("userChrome-files/userChrome.xml#js");
 }
 /* Top Border */
 
@@ -956,7 +1014,12 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
 
   /* [WINDOWS ONLY] fixes */
 
-@media screen and (-moz-windows-theme) {
+@media screen and (-moz-windows-theme),
+       screen and (-moz-windows-classic),
+       screen and (-moz-windows-default-theme),
+       screen and (-moz-os-version: windows-win7),
+       screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
     #topBar {
       -moz-appearance: none !important;
       background-color: var(--grey-80) !important;
@@ -965,9 +1028,7 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
       padding-bottom: 5px !important;
       color: var(--grey-20) !important;
     }
-}
 
-@media screen and (-moz-windows-theme) {
     #metaTagsCaption,
     #security-identity,
     #security-privacy,
@@ -980,9 +1041,7 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
       border: none !important;
       color: var(--grey-10) !important;
     }
-}
 
-@media screen and (-moz-windows-theme) {
     #security-identity-groupbox,
     #security-privacy-groupbox,
     #security-technical-groupbox {
@@ -1021,4 +1080,31 @@ browser[type="content"] > html {
 
 .tab-line[selected="true"] {
   background-color: var(--primary-accent-color) !important;
+}
+
+/* Remove tab placeholder */
+
+@media screen and (-moz-windows-theme),
+       screen and (-moz-windows-classic),
+       screen and (-moz-windows-default-theme),
+       screen and (-moz-os-version: windows-win7),
+       screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+  .titlebar-placeholder[type="pre-tabs"] {
+    display: none !important;
+  }
+}
+
+/* Tabs, different colour if unread */
+
+.tabbrowser-tab[unread] {
+  color: var(--grey-40) !important;
+}
+
+.tabbrowser-tab[busy] {
+  color: var(--grey-40) !important;
+}
+
+.tabbrowser-tab[pending] {
+  color: var(--grey-40) !important;
 }

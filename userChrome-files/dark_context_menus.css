@@ -63,14 +63,14 @@ menuitem:hover {
       background-color: var(--grey-80) !important;
 }
 
-/* Sidebar Header Context Menue */
+/* Sidebar Header Context Menu */
 .panel-arrowcontent {
   color: var(--grey-10) !important;
   background: var(--grey-60) !important;
 }
 
 
-/* The following snippets are designed to fix promblems
+/* The following snippets are designed to fix problems
  * only noticed on Windows computers */
 
  @media screen and (-moz-windows-theme),
@@ -157,3 +157,26 @@ menuitem:hover {
            border-style: solid !important;
          }
        }
+
+	/* --- OPTIONAL TWEAKS --- */
+
+	/* Context menus, align icons with text to match macOS style */
+
+	menupopup#contentAreaContextMenu > .menu-iconic .menu-iconic-icon,
+			menupopup#tabContextMenu > .menu-iconic .menu-iconic-icon,
+	menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-icon,
+			menupopup#tabContextMenu > .menuitem-iconic .menu-iconic-icon {
+	  margin-left: 29px !important;
+	}
+
+	menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-text,
+	menupopup#tabContextMenu > .menu-iconic .menu-iconic-text {
+	  margin-left: -2px !important;
+	}
+
+	/* Context menu, align checkbox */
+
+	menupopup#toolbar-context-menu menuitem[checked="true"] > .menu-iconic-left {
+	  margin-left: 2px !important;
+	  margin-right: -2px !important;
+	}

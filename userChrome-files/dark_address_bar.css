@@ -113,5 +113,18 @@ panel[type="autocomplete"], panel[type="autocomplete-richlistbox"], .autocomplet
     background-color: var(--primary-accent-color) !important;
 }
 
+/* URL bar effects */
 
+@keyframes effect_blur {
+    0% { filter: blur(3px);}
+    100% { filter: blur(0px);}
+}
 
+#nav-bar textbox {
+    background-color: rgba(63, 63, 63, 1) !important;
+    animation: effect_blur 0.5s !important;
+}
+
+#nav-bar textbox:hover {
+    background-color: rgba(75, 75, 75, 0.75) !important;
+}

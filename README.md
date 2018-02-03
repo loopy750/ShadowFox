@@ -1,3 +1,12 @@
+# TL;DR How do I insall ShadowFox?
+
+- Open the url about:support in Firefox
+- Next to "Profile Folder", click "Open Folder"
+- Create a New Folder and label it "chrome"
+- Download [userChrome.css](https://raw.githubusercontent.com/loopy750/ShadowFox/master/userChrome.css) and [userContent.css](https://raw.githubusercontent.com/loopy750/ShadowFox/master/userContent.css) and place them into the "chrome" folder
+- Additionally, userChrome.xml and userChrome.js can also be downloaded to change the appearance of the scrollbar
+- Restart Firefox
+
 # What is ShadowFox?
 
 ShadowFox is a collection of `userChrome.css` and `userContent.css` tweaks to supplement and expand the dark theme provided by Mozilla.

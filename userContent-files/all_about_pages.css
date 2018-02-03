@@ -63,10 +63,20 @@
       border: 0px !important;
     }
 
-  	@media screen and (-moz-windows-theme) {
+	@media screen and (-moz-windows-theme),
+       screen and (-moz-windows-classic),
+       screen and (-moz-windows-default-theme),
+       screen and (-moz-os-version: windows-win7),
+       screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+
+		/* Menuitem margin */
+
   		menupopup menu, menuitem {
-  			margin: 1px 6px 1px 6px !important;
+  			margin: 2px 6px 2px 6px !important;
   		}
+
+		/* Border added, because Windows has a different drop shadow effect than macOS */
 
   		menupopup,
   		popup,

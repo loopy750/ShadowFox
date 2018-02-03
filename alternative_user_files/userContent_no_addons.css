@@ -145,11 +145,20 @@
     border: 0px !important;
   }
 
-@media screen and (-moz-windows-theme) {
+@media screen and (-moz-windows-theme),
+       screen and (-moz-windows-classic),
+       screen and (-moz-windows-default-theme),
+       screen and (-moz-os-version: windows-win7),
+       screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+    /* Menuitem margin */
+
     menupopup menu,
     menuitem {
-      margin: 1px 6px 1px 6px !important;
+      margin: 2px 6px 2px 6px !important;
     }
+
+    /* Border added, because Windows has a different drop shadow effect than macOS */
 
     menupopup,
     popup,
@@ -248,11 +257,7 @@
   .Addon-author,
   .Addon-author a,
   .Addon-author a:link
-	.Button--action,
-  .Button--action:link,
-  .Button--action.Button--small:link,
-  .Button--action,
-  .Addon-title,
+	.Addon-title,
   .ReportAbuseButton-show-more,
   .SearchResult-summary,
   .SearchContextCard-header,
@@ -261,6 +266,13 @@
   .ExpandableCard-ToggleLink:link,
   .Paginate .Paginate-item {
     color: var(--primary-light-color) !important;
+  }
+
+  .Button--action,
+  .Button--action:link,
+  .Button--action.Button--small:link,
+  .Button--action {
+    color: var(--grey-20) !important;
   }
 
   .Paginate-previous::before,
@@ -633,6 +645,27 @@
   .service-worker-multi-process {
     background-color: var(--grey-60) !important;
   }
+
+  /* about:addons reorder and white background */
+
+@-moz-document url-prefix(chrome://mozapps/content/extensions/extensions.xul), url-prefix(about:addons)  {
+    #detail-contributions {
+      -moz-box-ordinal-group: 9 !important;
+    }
+
+    #detail-controls {
+      -moz-box-ordinal-group: 10 !important;
+    }
+
+    #detail-desc-container {
+      -moz-box-ordinal-group: 11 !important;
+    }
+
+    .inline-options-browser#addon-options {
+      padding-left: 5px !important;
+      background-color: var(--grey-20) !important;
+    }
+}
 }
 @-moz-document url(about:config)  {
   /* Warning Message */

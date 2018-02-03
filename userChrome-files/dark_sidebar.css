@@ -71,13 +71,20 @@
 }
 
 /* Siderbar slider - thank you u/_Dimitri_
- *  Add this section if on Windows
-scrollbar > slider {
-  max-width: 4px !important;
-}
+ *  Add this section if on Windows */
 
-scrollbar > slider > thumb, scrollbar > scrollbarbutton {
-  -moz-appearance: none !important;
-  background-color: var(--grey-80) !important;;
+@media screen and (-moz-windows-theme),
+       screen and (-moz-windows-classic),
+       screen and (-moz-windows-default-theme),
+       screen and (-moz-os-version: windows-win7),
+       screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+	scrollbar > slider {
+	  max-width: 4px !important;
+	}
+
+	scrollbar > slider > thumb, scrollbar > scrollbarbutton {
+	  -moz-appearance: none !important;
+	background-color: var(--grey-80) !important;;
+	}
 }
-*/

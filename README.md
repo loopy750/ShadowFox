@@ -86,11 +86,11 @@ Here are just a few examples:
 
 Context Menus and Sidebar                   | `about:` pages
 :------------------------------------------:| :------------------------------------------:                                         
-![dark_menus](Screenshots/contextmenus.png) | ![dark_menus](Screenshots/preferences.png)
+![dark_menus](Screenshots/contextmenus_windows.png) | ![dark_menus](Screenshots/preferences_windows.png)
 
 `view-source:` pages                        | Mozilla Addon Store
 :------------------------------------------:| :------------------------------------------:                                         
-![dark_menus](Screenshots/viewsource.png)   | ![dark_menus](Screenshots/addons.png)
+![dark_menus](Screenshots/viewsource_windows.png)   | ![dark_menus](Screenshots/addons_windows.png)
 
 
 # How do I install/modify ShadowFox

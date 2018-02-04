@@ -209,4 +209,11 @@ vbox#sidebar-box.chromeclass-extrachrome {
     padding-top: 1px !important;
     padding-bottom: 1px !important;
   }
+
+  /* Menu items, TOP/BOTTOM padding fixes */
+  menupopup#tabContextMenu menuitem,
+  menupopup#tabContextMenu menupopup menuitem {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+  }
 }

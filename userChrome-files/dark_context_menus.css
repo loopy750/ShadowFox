@@ -179,7 +179,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
 
   /* Context menu, TOP/BOTTOM padding fixes */
 	menupopup#contentAreaContextMenu menuitem,
-	menupopup#contentAreaContextMenu menu {
+	menupopup#contentAreaContextMenu menu,
+	#personal-bookmarks menupopup menuitem {
 	  padding-top: 1px !important;
 	  padding-bottom: 1px !important;
 	}

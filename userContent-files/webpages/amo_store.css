@@ -45,7 +45,8 @@
 	.AddonDescription-more-addons--theme .Card-contents .AddonsCard-list,
 	.Search .SearchResults .SearchResult,
 	.SearchForm-suggestions-item.SearchForm-suggestions-item,
-	.Card-contents li
+	.Card-contents li,
+	.Card-footer-text
 	{
 	    background: var(--grey-60) !important;
 	}
@@ -121,6 +122,7 @@
 	.Button--action,
 	.Button--action.Button--small,
 	.Paginate .Paginate-item,
+	.Card-footer-text,
 	.SearchForm-suggestions-item.SearchForm-suggestions-item--highlighted,
 	.Addon .InstallButton-button {
 	    background: var(--blue-50) !important;

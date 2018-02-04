@@ -100,111 +100,113 @@ vbox#sidebar-box.chromeclass-extrachrome {
 	  padding: 0px !important;
 	}
 
-	/* Bookmarks Toolbar, Toolbar Context menu, spacing tweaks */
-	#personal-bookmarks menupopup .bookmark-item,
-	#bookmarksMenuPopup,
-	menupopup#toolbar-context-menu,
-	menupopup#menu_ToolsPopup,
-	menupopup#goPopup {
-	  padding-left: 4px !important;
-	  padding-right: 4px !important;
-	}
-
-	/* Tab menu */
-
-	menupopup > menu > menupopup > .popup-internal-box,
-	menupopup#toolbar-context-menu > menuitem {
-	  padding-left: 1px !important;
-	  padding-right: 1px !important;
-	}
-
-	/* All menus padding tweaks */
-	menupopup,
-	menupopup > menu > menupopup,
-	#bookmarksMenuPopup menupopup > hbox {
-	  padding: 4px 0px 4px 0px  !important;
-	}
-
-	#bookmarksMenuPopup menupopup {
-	  padding: 0px 0px 0px 0px !important;
-	}
-
+  /* Bookmark Toolbar, fix border */
 	#BMB_bookmarksPopup menupopup {
 	  padding: 4px 0px 0px 0px  !important;
 	}
 
-	menupopup menuitem,
-	menupopup menu {
-	  font-size: 1.167em !important;
-	  padding-top: 1px !important;
-	  padding-bottom: 1px !important;
-	}
-
-	menupopup menu menuitem,
-	menupopup menu menu {
-	  font-size: 1em !important;
-	  padding-top: 1px !important;
-	  padding-bottom: 1px !important;
-	}
-
-	menupopup#contentAreaContextMenu menuitem,
-	menupopup#contentAreaContextMenu menu {
-	  padding-top: 2px !important;
-	  padding-bottom: 2px !important;
-	}
-	
-	/* Menus, slightly adjust arrow */
-	menupopup .menu-right {
-	  margin-right: 0px !important;
-	}
-
-	/* Menus, slightly increase separator margin */
-	menupopup menuseparator {
-	  margin: 2px !important;
-	}
-
-	/* Context menus, border added because Windows has a different drop shadow effect than macOS */
-
+  /* Context menus, border added because Windows has a different drop shadow effect than macOS */
 	#personal-bookmarks menupopup,
 	.panel-arrowcontent,
 	.box-inherit scrollbox-innerbox,
 	#BMB_bookmarksPopup menupopup[placespopup="true"] > hbox,
-	#bookmarksMenuPopup menupopup[placespopup="true"] > hbox,
 	menupopup#BMB_bookmarksPopup > menu > menupopup > hbox,
-	menupopup#bookmarksMenuPopup > menu > menupopup > hbox,
+  menupopup#bookmarksMenuPopup > menu > menupopup,
+  menupopup#bookmarksMenuPopup menupopup[placespopup="true"],
 	menupopup#contentAreaContextMenu,
+	menupopup#contentAreaContextMenu menupopup,
 	menupopup#placesContext,
 	menupopup#bookmarksMenuPopup,
 	menupopup#PlacesChevronPopup,
 	menupopup#toolbar-context-menu,
 	menupopup#downloadsContextMenu,
 	menupopup#tabContextMenu,
-	menupopup > menu > menupopup {
+  menupopup#tabContextMenu menupopup {
 	  border-color: var(--grey-70) !important;
 	  border-width: 1px !important;
 	  border-style: solid !important;
 	}
 
-	/* --- OPTIONAL TWEAKS --- */
+	/* Bookmarks Toolbar, Toolbar Context menu, LEFT/RIGHT padding fixes */
+	#personal-bookmarks menupopup .bookmark-item,
+	#bookmarksMenuPopup,
+	menupopup#menu_ToolsPopup,
+	menupopup#goPopup {
+	  padding-left: 4px !important;
+	  padding-right: 4px !important;
+	}
+
+	/* Tab menu, LEFT/RIGHT padding fixes */
+	menupopup#tabContextMenu > menu > menupopup > .popup-internal-box,
+	menupopup#toolbar-context-menu {
+	  padding-left: 2px !important;
+	  padding-right: 2px !important;
+	}
+
+	/* Context menus, TOP/BOTTOM padding fixes */
+	menupopup,
+	menupopup > menu > menupopup {
+	  padding: 4px 0px 4px 0px  !important;
+	}
+
+  /* Menus, text size to match macOS */
+	menupopup#contentAreaContextMenu > menuitem,
+	menupopup#contentAreaContextMenu > menu,
+	#PlacesToolbar menupopup > menuitem,
+	#PlacesToolbar menupopup > menu,
+	menupopup#tabContextMenu > menuitem,
+	menupopup#tabContextMenu > menu,
+	menupopup#tabContextMenu menupopup > menuitem,
+	menupopup#tabContextMenu menupopup > menu,
+	menupopup#toolbar-context-menu > menuitem,
+	menupopup.textbox-contextmenu > menuitem
+	{
+	  font-size: 1.167em !important;
+	  padding-top: 0px !important;
+	  padding-bottom: 0px !important;
+	}
+
+	menupopup#contentAreaContextMenu menupopup > menuitem,
+	menupopup#contentAreaContextMenu menupopup > menu,
+	#PlacesToolbar menupopup menupopup > menuitem,
+	#PlacesToolbar menupopup menupopup > menu,
+	menupopup#tabContextMenu menupopup > menuitem,
+	menupopup#tabContextMenu menupopup > menu,
+	menupopup#toolbar-context-menu > menuitemmenuitem
+	{
+	  font-size: 1em !important;
+	}
+
+  /* Context menu, TOP/BOTTOM padding fixes */
+	menupopup#contentAreaContextMenu menuitem,
+	menupopup#contentAreaContextMenu menu {
+	  padding-top: 1px !important;
+	  padding-bottom: 1px !important;
+	}
+
+	/* Menus, slightly adjust arrow */
+	menupopup .menu-right {
+	  margin-right: 0px !important;
+	}
+
+  /* --- OPTIONAL TWEAKS --- */
 
 	/* Context menus, align icons with text to match macOS style */
 
-	menupopup#contentAreaContextMenu > .menu-iconic .menu-iconic-icon,
-			menupopup#tabContextMenu > .menu-iconic .menu-iconic-icon,
-	menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-icon,
-			menupopup#tabContextMenu > .menuitem-iconic .menu-iconic-icon {
+  menupopup#contentAreaContextMenu > .menu-iconic .menu-iconic-icon,
+  menupopup#tabContextMenu > .menu-iconic .menu-iconic-icon,
+  menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-icon,
+  menupopup#tabContextMenu > .menuitem-iconic .menu-iconic-icon {
 	  margin-left: 29px !important;
 	}
 
-	menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-text,
-	menupopup#tabContextMenu > .menu-iconic .menu-iconic-text {
+	menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-text {
 	  margin-left: -2px !important;
 	}
 
-	/* Context menu, align checkbox */
-
-	menupopup#toolbar-context-menu menuitem[checked="true"] > .menu-iconic-left {
-	  margin-left: 2px !important;
-	  margin-right: -2px !important;
-	}
+  /* Menu items, TOP/BOTTOM padding fixes */
+  menupopup menu, menuitem {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+  }
 }

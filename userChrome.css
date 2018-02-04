@@ -524,9 +524,10 @@ vbox#sidebar-box.chromeclass-extrachrome {
   /* Menu items, TOP/BOTTOM padding fixes */
 
   menupopup#tabContextMenu menuitem,
-  menupopup#tabContextMenu menupopup menuitem {
-    padding-top: 1px !important;
-    padding-bottom: 1px !important;
+  menupopup#tabContextMenu menupopup menuitem,
+  menupopup#placesContext menuitem {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
   }
 }
 #customization-done-button {

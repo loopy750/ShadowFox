@@ -102,50 +102,50 @@
 	}
 
 	*|button:hover {
-		color: var(--primary-light-color) !important;
-		background: var(--grey-80) !important;
+	  color: var(--primary-light-color) !important;
+	  background: var(--grey-80) !important;
 	}
 
 	#category-discover {
-		display: none !important;
+	  display: none !important;
 	}
 
 	.addon-view[notification="warning"] {
-		--view-highlight-color: transparent !important;
+	  --view-highlight-color: transparent !important;
 	}
 
 
 	.text-link {
-    	color: var(--primary-accent-color) !important;
+	  color: var(--primary-accent-color) !important;
   	}
 
 	textbox[type="search"] {
-    	color: var(--primary-light-color) !important;
-		  background: var(--grey-60) !important;
-		  border: 1px solid var(--grey-50) !important;
+	  color: var(--primary-light-color) !important;
+	  background: var(--grey-60) !important;
+	  border: 1px solid var(--grey-50) !important;
   	}
 
 	textbox[focused] {
-    	border-color: var(--primary-accent-color) !important;
+	  border-color: var(--primary-accent-color) !important;
   	}
 
-	 /* about:debugging#addons */
-	 .addon-target-container {
-      background: var(--grey-80) !important;;
-  }
+	/* about:debugging#addons */
+	.addon-target-container {
+	  background: var(--grey-80) !important;;
+	}
 
 	/* icon */
 	.addon-target-container .target-icon[src="chrome://mozapps/skin/extensions/extensionGeneric.svg"] {
-		filter: invert(65%) !important;
+	  filter: invert(65%) !important;
 	}
 
 	.addon-target-name {
-		color: var(--primary-light-color) !important;
+	  color: var(--primary-light-color) !important;
 	}
 
 	.addon-target-actions {
-    border-top: 1px solid var(--primary-light-color) !important;
-  }
+	  border-top: 1px solid var(--primary-light-color) !important;
+	}
 
 	input[type="checkbox"] {
 		background: var(--grey-50) !important;
@@ -154,26 +154,26 @@
 	}
 
 	.service-worker-multi-process {
-    background-color: var(--grey-60) !important;
-}
+	  background-color: var(--grey-60) !important;
+	}
 
 	/* about:addons reorder and white background */
 
 	@-moz-document url-prefix(chrome://mozapps/content/extensions/extensions.xul), url-prefix(about:addons) {
 
-	#detail-contributions{
-		-moz-box-ordinal-group: 9 !important;
-	}
-	#detail-controls{
-		-moz-box-ordinal-group: 10 !important;
-	}
-	#detail-desc-container {
-		-moz-box-ordinal-group: 11 !important;
-	}
-	.inline-options-browser#addon-options {
-		padding-left: 5px !important;
-		background-color: var(--grey-20) !important;
-	 }
+		#detail-contributions {
+		  -moz-box-ordinal-group: 9 !important;
+		}
+		#detail-controls {
+		  -moz-box-ordinal-group: 10 !important;
+		}
+		#detail-desc-container {
+		  -moz-box-ordinal-group: 11 !important;
+		}
+		.inline-options-browser#addon-options {
+		  padding-left: 5px !important;
+		  background-color: var(--grey-20) !important;
+		}
 	}
 
 }

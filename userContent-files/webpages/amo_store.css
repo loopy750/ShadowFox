@@ -123,7 +123,7 @@
 	.Paginate .Paginate-item,
 	.SearchForm-suggestions-item.SearchForm-suggestions-item--highlighted,
 	.Addon .InstallButton-button {
-	    background: var(--primary-accent-color) !important;
+	    background: var(--blue-50) !important;
 	}
 
 	.Button--action.Button--outline-only:hover,

@@ -69,7 +69,7 @@
 
     var p = document.getElementById('devToolsSeparator');
     var m = document.createElement('menuitem');
-    m.setAttribute('label', "Custom Scrollbar");
+    m.setAttribute('label', "Floating Scrollbar");
     m.setAttribute('type', 'checkbox');
     m.setAttribute('autocheck', 'false');
     m.setAttribute('checked', enabled);

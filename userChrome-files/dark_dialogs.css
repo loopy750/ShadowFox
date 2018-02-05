@@ -1,0 +1,24 @@
+dialog, dialog > *
+{
+      color: var(--primary-light-color) !important;
+      background: var(--grey-80) !important;
+}
+
+dialog button > * {
+      background: var(--grey-70) !important;
+}
+
+dialog button:hover > * {
+      background: var(--grey-80) !important;
+}
+
+dialog button:active > * {
+      background: var(--grey-60) !important;
+}
+
+dialog description, dialog label {
+	      color: var(--primary-light-color) !important;
+}
+dialog textbox {
+	      color: var(--grey-20) !important;
+}

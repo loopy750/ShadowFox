@@ -6,4 +6,4 @@ userChrome-files/page_info.css
 userChrome-files/tab_line_color.css
 userContent-files/all_about_pages.css
 
-Because @media is broken in Firefox 58, these tweaks will be forces onto all Operating Systems until the release of Firefox 59.
+Because @media is broken in Firefox 58, these tweaks will be forced onto all Operating Systems until the release of Firefox 59.

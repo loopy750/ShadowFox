@@ -22,12 +22,13 @@
 
 .tabbrowser-tab[unread] {
   color: var(--grey-40) !important;
+  font-style: italic;
 }
 .tabbrowser-tab[busy] {
-  color: var(--grey-40) !important;
+  color: var(--primary-accent-color) !important;
 }
 .tabbrowser-tab[pending] {
-  color: var(--grey-40) !important;
+  color: var(--primary-accent-color) !important;
 }
 
 /* Read contents of userChrome.xml */

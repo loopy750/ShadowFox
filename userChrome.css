@@ -544,6 +544,32 @@ vbox#sidebar-box.chromeclass-extrachrome {
 #customization-done-button:-moz-any(:focus, :active, :hover):not([disabled]) {
   background-color: var(--primary-accent-color-dark) !important;
 }
+dialog,
+dialog > * {
+  color: var(--primary-light-color) !important;
+  background: var(--grey-80) !important;
+}
+
+dialog button > * {
+  background: var(--grey-70) !important;
+}
+
+dialog button:hover > * {
+  background: var(--grey-80) !important;
+}
+
+dialog button:active > * {
+  background: var(--grey-60) !important;
+}
+
+dialog description,
+dialog label {
+  color: var(--primary-light-color) !important;
+}
+
+dialog textbox {
+  color: var(--grey-20) !important;
+}
 /* Color of tab throbber animation */
 
 :root {
@@ -1142,14 +1168,15 @@ browser[type="content"] > html {
 
 .tabbrowser-tab[unread] {
   color: var(--grey-40) !important;
+  font-style: italic;
 }
 
 .tabbrowser-tab[busy] {
-  color: var(--grey-40) !important;
+  color: var(--primary-accent-color) !important;
 }
 
 .tabbrowser-tab[pending] {
-  color: var(--grey-40) !important;
+  color: var(--primary-accent-color) !important;
 }
 
 /* Read contents of userChrome.xml */

@@ -184,6 +184,13 @@
     color: var(--primary-accent-color) !important;
   }
 }
+
+vbox#category-box richlistbox,
+vbox#category-box richlistbox .category,
+vbox.navigation,
+vbox.navigation richlistbox#categories {
+  background: var(--grey-80) !important;
+}
 @-moz-document url-prefix("https://addons.mozilla.org")  {
   /* Header & Footer */
 

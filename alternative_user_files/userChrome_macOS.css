@@ -358,7 +358,9 @@ menuitem:hover[disabled="true"] {
 }
 
 menupopup menu:hover,
-menuitem:hover {
+menuitem:hover,
+menu[_moz-menuactive="true"],
+menuitem[_moz-menuactive="true"] {
   color: var(--grey-10) !important;
   background-color: var(--grey-80) !important;
 }
@@ -370,11 +372,18 @@ menuitem:hover {
   background: var(--grey-60) !important;
 }
 
+/* Sidebar border */
+
+vbox#sidebar-box.chromeclass-extrachrome {
+  border-color: var(--grey-80) !important;
+  border-right: 1px !important;
+  border-style: solid !important;
+}
+
 /* The following snippets are designed to fix problems
  * only noticed on Windows computers */
 
-@media 
-       screen and (-moz-windows-theme),
+@media screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),
@@ -395,55 +404,10 @@ menuitem:hover {
     padding: 0px !important;
   }
 
-  /* Bookmarks Toolbar, Toolbar Context menu, spacing tweaks */
-
-  #personal-bookmarks menupopup .bookmark-item,
-  #bookmarksMenuPopup,
-  menupopup#toolbar-context-menu,
-  menupopup#menu_ToolsPopup,
-  menupopup#goPopup,
-  menupopup#tabContextMenu {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-  }
-
-  /* All menus padding tweaks */
-
-  menupopup,
-  menupopup > menu > menupopup,
-  #bookmarksMenuPopup menupopup > hbox {
-    padding: 4px 0px 4px 0px  !important;
-  }
-
-  #bookmarksMenuPopup menupopup {
-    padding: 0px 0px 0px 0px !important;
-  }
+  /* Bookmark Toolbar, fix border */
 
   #BMB_bookmarksPopup menupopup {
     padding: 4px 0px 0px 0px  !important;
-  }
-
-  /* Context menu, spacing and font size similar to macOS */
-
-  menupopup#contentAreaContextMenu menuitem,
-  menupopup#contentAreaContextMenu menu {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-    font-size: 1.08em !important;
-  }
-
-  /* Menus, slightly increase menu items spacing */
-
-  menupopup menu,
-  menuitem {
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
-  }
-
-  /* Menus, slightly increase separator margin */
-
-  menupopup menuseparator {
-    margin: 2px !important;
   }
 
   /* Context menus, border added because Windows has a different drop shadow effect than macOS */
@@ -452,18 +416,89 @@ menuitem:hover {
   .panel-arrowcontent,
   .box-inherit scrollbox-innerbox,
   #BMB_bookmarksPopup menupopup[placespopup="true"] > hbox,
-  #bookmarksMenuPopup menupopup[placespopup="true"] > hbox,
   menupopup#BMB_bookmarksPopup > menu > menupopup > hbox,
-  menupopup#bookmarksMenuPopup > menu > menupopup > hbox,
+  menupopup#bookmarksMenuPopup > menu > menupopup,
+  menupopup#bookmarksMenuPopup menupopup[placespopup="true"],
   menupopup#contentAreaContextMenu,
+  menupopup#contentAreaContextMenu menupopup,
   menupopup#placesContext,
   menupopup#bookmarksMenuPopup,
   menupopup#PlacesChevronPopup,
   menupopup#toolbar-context-menu,
-  menupopup#downloadsContextMenu {
+  menupopup#downloadsContextMenu,
+  menupopup#tabContextMenu,
+  menupopup#tabContextMenu menupopup {
     border-color: var(--grey-70) !important;
     border-width: 1px !important;
     border-style: solid !important;
+  }
+
+  /* Bookmarks Toolbar, Toolbar Context menu, LEFT/RIGHT padding fixes */
+
+  #personal-bookmarks menupopup .bookmark-item,
+  #bookmarksMenuPopup,
+  menupopup#menu_ToolsPopup,
+  menupopup#goPopup {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  /* Tab menu, LEFT/RIGHT padding fixes */
+
+  menupopup#tabContextMenu > menu > menupopup > .popup-internal-box,
+  menupopup#toolbar-context-menu,
+  menupopup#contentAreaContextMenu menupopup > menuitem {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  /* Context menus, TOP/BOTTOM padding fixes */
+
+  menupopup,
+  menupopup > menu > menupopup {
+    padding: 4px 0px 4px 0px  !important;
+  }
+
+  /* Menus, text size to match macOS */
+
+  menupopup#contentAreaContextMenu > menuitem,
+  menupopup#contentAreaContextMenu > menu,
+  #PlacesToolbar menupopup > menuitem,
+  #PlacesToolbar menupopup > menu,
+  menupopup#tabContextMenu > menuitem,
+  menupopup#tabContextMenu > menu,
+  menupopup#tabContextMenu menupopup > menuitem,
+  menupopup#tabContextMenu menupopup > menu,
+  menupopup#toolbar-context-menu > menuitem,
+  menupopup.textbox-contextmenu > menuitem {
+    font-size: 1.167em !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  menupopup#contentAreaContextMenu menupopup > menuitem,
+  menupopup#contentAreaContextMenu menupopup > menu,
+  #PlacesToolbar menupopup menupopup > menuitem,
+  #PlacesToolbar menupopup menupopup > menu,
+  menupopup#tabContextMenu menupopup > menuitem,
+  menupopup#tabContextMenu menupopup > menu,
+  menupopup#toolbar-context-menu > menuitemmenuitem {
+    font-size: 1em !important;
+  }
+
+  /* Context menu, TOP/BOTTOM padding fixes */
+
+  menupopup#contentAreaContextMenu menuitem,
+  menupopup#contentAreaContextMenu menu,
+  #personal-bookmarks menupopup menuitem {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+  }
+
+  /* Menus, slightly adjust arrow */
+
+  menupopup .menu-right {
+    margin-right: 0px !important;
   }
 
   /* --- OPTIONAL TWEAKS --- */
@@ -477,16 +512,25 @@ menuitem:hover {
     margin-left: 29px !important;
   }
 
-  menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-text,
-  menupopup#tabContextMenu > .menu-iconic .menu-iconic-text {
+  menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-text {
     margin-left: -2px !important;
   }
 
-  /* Context menu, align checkbox */
+  /* Menu items, TOP/BOTTOM padding fixes */
 
-  menupopup#toolbar-context-menu menuitem[checked="true"] > .menu-iconic-left {
-    margin-left: 2px !important;
-    margin-right: -2px !important;
+  menupopup menu,
+  menuitem {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+  }
+
+  /* Menu items, TOP/BOTTOM padding fixes */
+
+  menupopup#tabContextMenu menuitem,
+  menupopup#tabContextMenu menupopup menuitem,
+  menupopup#placesContext menuitem {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
   }
 }
 #customization-done-button {
@@ -498,6 +542,32 @@ menuitem:hover {
 
 #customization-done-button:-moz-any(:focus, :active, :hover):not([disabled]) {
   background-color: var(--primary-accent-color-dark) !important;
+}
+dialog,
+dialog > * {
+  color: var(--primary-light-color) !important;
+  background: var(--grey-80) !important;
+}
+
+dialog button > * {
+  background: var(--grey-70) !important;
+}
+
+dialog button:hover > * {
+  background: var(--grey-80) !important;
+}
+
+dialog button:active > * {
+  background: var(--grey-60) !important;
+}
+
+dialog description,
+dialog label {
+  color: var(--primary-light-color) !important;
+}
+
+dialog textbox {
+  color: var(--grey-20) !important;
 }
 /* Color of tab throbber animation */
 
@@ -762,8 +832,7 @@ toolbar[brighttext] {
 /* Siderbar slider - thank you u/_Dimitri_
  *  Add this section if on Windows */
 
-@media 
-       screen and (-moz-windows-theme),
+@media screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),
@@ -1010,8 +1079,7 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
 
   /* [WINDOWS ONLY] fixes */
 
-@media 
-       screen and (-moz-windows-theme),
+@media screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),
@@ -1081,8 +1149,7 @@ browser[type="content"] > html {
 
 /* Remove tab placeholder */
 
-@media 
-       screen and (-moz-windows-theme),
+@media screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),
@@ -1097,12 +1164,19 @@ browser[type="content"] > html {
 
 .tabbrowser-tab[unread] {
   color: var(--grey-40) !important;
+  font-style: italic;
 }
 
 .tabbrowser-tab[busy] {
-  color: var(--grey-40) !important;
+  color: var(--primary-accent-color) !important;
 }
 
 .tabbrowser-tab[pending] {
-  color: var(--grey-40) !important;
+  color: var(--primary-accent-color) !important;
+}
+
+/* Read contents of userChrome.xml */
+
+toolbarbutton#alltabs-button {
+  -moz-binding: url("userChrome.xml#js");
 }

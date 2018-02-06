@@ -20,12 +20,18 @@
 
 /* Tabs, different colour if unread */
 
+@keyframes effect_color {
+    0% { filter: saturate(100%) invert(0%);}
+    100% { filter: saturate(300%) invert(3%);}
+}
+
 .tabbrowser-tab[unread] {
   color: var(--grey-40) !important;
   font-style: italic;
 }
 .tabbrowser-tab[busy] {
   color: var(--primary-accent-color) !important;
+  animation: effect_color 1s infinite alternate !important;
 }
 .tabbrowser-tab[pending] {
   color: var(--primary-accent-color) !important;

@@ -1,24 +1,123 @@
-dialog, dialog > *
+/* Popup dialog */
+
+dialog#bookmarkproperties,
+dialog#commonDialog,
+dialog#unknownContentType
 {
+      -moz-appearance: none !important;
+      color: var(--primary-light-color) !important;
+      background: var(--grey-70) !important;
+}
+
+dialog#bookmarkproperties button,
+dialog#commonDialog button,
+dialog#unknownContentType button {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      border: 1px solid var(--grey-50) !important;
+      background: var(--grey-60) !important;
+}
+
+dialog#bookmarkproperties button > *,
+dialog#commonDialog button > *,
+dialog#unknownContentType button > * {
+      background: var(--grey-60) !important;
+}
+
+dialog#bookmarkproperties button:hover > *,
+dialog#commonDialog button:hover > *,
+dialog#unknownContentType button:hover > * {
+      background: var(--grey-70) !important;
+}
+
+dialog#bookmarkproperties button:active > *,
+dialog#commonDialog button:active > *,
+dialog#unknownContentType button:active > * {
+      background: var(--grey-50) !important;
+}
+
+dialog#bookmarkproperties textbox,
+dialog#commonDialog textbox,
+dialog#unknownContentType textbox {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+}
+
+dialog#bookmarkproperties caption,
+dialog#commonDialog caption,
+dialog#unknownContentType caption {
+      -moz-appearance: none !important;
+      color: var(--primary-light-color) !important;
+      background: var(--grey-70) !important;
+}
+
+dialog#bookmarkproperties description,
+dialog#commonDialog description,
+dialog#unknownContentType description {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-70) !important;
+}
+
+dialog#bookmarkproperties menulist,
+dialog#commonDialog menulist,
+dialog#unknownContentType menulist {
+      -moz-appearance: none !important;
+      padding: 3px !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-60) !important;
+}
+
+dialog#bookmarkproperties menulist:hover,
+dialog#commonDialog menulist:hover,
+dialog#unknownContentType menulist:hover {
+      -moz-appearance: none !important;
+      padding: 3px !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-80) !important;
+}
+
+dialog#bookmarkproperties menulist:active,
+dialog#commonDialog menulist:active,
+dialog#unknownContentType menulist:active {
+      -moz-appearance: none !important;
+      padding: 3px !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-60) !important;
+}
+
+dialog#commonDialog textbox {
+      background: var(--grey-80) !important;
+      color: var(--grey-20) !important;
+}
+
+/* Leave page confirm dialog */
+
+vbox.mainContainer {
+      color: var(--primary-light-color) !important;
+      background: var(--grey-70) !important;
+}
+
+vbox.mainContainer grid.topContainer {
       color: var(--primary-light-color) !important;
       background: var(--grey-80) !important;
 }
 
-dialog button > * {
-      background: var(--grey-70) !important;
-}
-
-dialog button:hover > * {
-      background: var(--grey-80) !important;
-}
-
-dialog button:active > * {
+vbox.mainContainer button {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      border: 1px solid var(--grey-50) !important;
       background: var(--grey-60) !important;
 }
 
-dialog description, dialog label {
-	      color: var(--primary-light-color) !important;
+vbox.mainContainer button > * {
+      background: var(--grey-60) !important;
 }
-dialog textbox {
-	      color: var(--grey-20) !important;
+
+vbox.mainContainer button:hover > * {
+      background: var(--grey-70) !important;
+}
+
+vbox.mainContainer button:active > * {
+      background: var(--grey-50) !important;
 }

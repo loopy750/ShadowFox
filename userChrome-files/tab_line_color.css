@@ -22,7 +22,7 @@
 
 @keyframes effect_color {
     0% { filter: saturate(100%) invert(0%);}
-    100% { filter: saturate(300%) invert(3%);}
+    100% { filter: saturate(350%) invert(5%);}
 }
 
 .tabbrowser-tab[unread] {

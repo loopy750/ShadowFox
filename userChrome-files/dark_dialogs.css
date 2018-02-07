@@ -91,6 +91,11 @@ dialog#commonDialog textbox {
       color: var(--grey-20) !important;
 }
 
+dialog#commonDialog textbox:active {
+      background: var(--grey-90) !important;
+      color: var(--grey-10) !important;
+}
+
 /* Leave page confirm dialog */
 
 vbox.mainContainer {

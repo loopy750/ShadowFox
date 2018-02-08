@@ -134,23 +134,20 @@ menulist#openHandler:hover  {
 
 /* Buttons, Grey (60) */
 
-button#customization-reset-button,
-button#editBMPanel_newFolderButton {
+button#customization-reset-button {
       -moz-appearance: none !important;
       color: var(--grey-20) !important;
       background: var(--grey-60) !important;
       border: 2px solid var(--grey-60) !important;
 }
 
-button#customization-reset-button:hover,
-button#editBMPanel_newFolderButton:hover {
+button#customization-reset-button:hover {
       -moz-appearance: none !important;
       background: var(--grey-60) !important;
       border: 2px solid var(--grey-50) !important;
 }
 
-button#customization-reset-button:active,
-button#editBMPanel_newFolderButton:active {
+button#customization-reset-button:active {
       -moz-appearance: none !important;
       background: var(--grey-50) !important;
       border: 2px solid var(--grey-50) !important;
@@ -182,20 +179,23 @@ button#editBookmarkPanelDoneButton:active {
 
 /* Buttons, Grey 50 */
 
-button#editBookmarkPanelRemoveButton {
+button#editBookmarkPanelRemoveButton,
+button#editBMPanel_newFolderButton {
       -moz-appearance: none !important;
       color: var(--grey-20) !important;
       background: var(--grey-50) !important;
       border: 2px solid var(--grey-50) !important;
 }
 
-button#editBookmarkPanelRemoveButton:hover {
+button#editBookmarkPanelRemoveButton:hover,
+button#editBMPanel_newFolderButton:hover {
       -moz-appearance: none !important;
       background: var(--grey-50) !important;
       border: 2px solid var(--grey-40) !important;
 }
 
-button#editBookmarkPanelRemoveButton:active {
+button#editBookmarkPanelRemoveButton:active,
+button#editBMPanel_newFolderButton:active {
       -moz-appearance: none !important;
       background: var(--grey-40) !important;
       border: 2px solid var(--grey-40) !important;

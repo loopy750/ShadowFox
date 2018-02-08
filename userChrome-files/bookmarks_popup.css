@@ -73,10 +73,8 @@ listitem[selected="true"] {
     border-bottom: none !important;
 }
 
-
-
 #editBMPanel_newFolderBox {
-    background: var(--grey-70) !important;
-    border: 1px solid var(--grey-50) !important;
+    background: var(--grey-60) !important;
+    border: 0px solid var(--grey-50) !important;
     box-shadow: none !important;
 }

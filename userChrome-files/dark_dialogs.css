@@ -1,106 +1,72 @@
 /* Popup dialog */
 
-dialog#bookmarkproperties,
-dialog#commonDialog,
-dialog#unknownContentType
-{
-      -moz-appearance: none !important;
-      color: var(--primary-light-color) !important;
-      background: var(--grey-70) !important;
-}
+@-moz-document url("chrome://global/content/commonDialog.xul"),
+url("chrome://browser/content/places/bookmarkProperties2.xul"),
+url("chrome://mozapps/content/downloads/unknownContentType.xul") {
 
-dialog#bookmarkproperties button,
-dialog#commonDialog button,
-dialog#unknownContentType button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      border: 1px solid var(--grey-50) !important;
-      background: var(--grey-60) !important;
-}
+      dialog#bookmarkproperties,
+      dialog#commonDialog,
+      dialog#unknownContentType {
+            -moz-appearance: none !important;
+            background: var(--primary-dark-color) !important;
+            color: var(--primary-light-color) !important;
+      }
 
-dialog#bookmarkproperties button > *,
-dialog#commonDialog button > *,
-dialog#unknownContentType button > * {
-      background: var(--grey-60) !important;
-}
+      textbox {
+            -moz-appearance: none !important;
+            color: var(--grey-20) !important;
+      }
 
-dialog#bookmarkproperties button:hover > *,
-dialog#commonDialog button:hover > *,
-dialog#unknownContentType button:hover > * {
-      background: var(--grey-70) !important;
-}
+      caption {
+            -moz-appearance: none !important;
+            color: var(--primary-light-color) !important;
+            background: var(--grey-70) !important;
+      }
 
-dialog#bookmarkproperties button:active > *,
-dialog#commonDialog button:active > *,
-dialog#unknownContentType button:active > * {
-      background: var(--grey-50) !important;
-}
+      description {
+            -moz-appearance: none !important;
+            color: var(--grey-30) !important;
+            background: var(--grey-70) !important;
+     }
 
-dialog#bookmarkproperties textbox,
-dialog#commonDialog textbox,
-dialog#unknownContentType textbox {
-      -moz-appearance: none !important;
-      color: var(--grey-20) !important;
-}
+      button {
+            -moz-appearance: none !important;
+            color: var(--grey-20) !important;
+            background: var(--grey-50) !important;
+            border: 2px solid var(--grey-50) !important;
+      }
 
-dialog#bookmarkproperties caption,
-dialog#commonDialog caption,
-dialog#unknownContentType caption {
-      -moz-appearance: none !important;
-      color: var(--primary-light-color) !important;
-      background: var(--grey-70) !important;
-}
+      button:hover {
+            -moz-appearance: none !important;
+            border: 2px solid var(--grey-40) !important;
+            background: var(--grey-50) !important;
+      }
 
-dialog#bookmarkproperties description,
-dialog#commonDialog description,
-dialog#unknownContentType description {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-70) !important;
-}
+      button:active {
+            -moz-appearance: none !important;
+            background: var(--grey-40) !important;
+            border: 2px solid var(--grey-40) !important;
+      }
 
-dialog#bookmarkproperties menulist,
-dialog#commonDialog menulist,
-dialog#unknownContentType menulist {
-      -moz-appearance: none !important;
-      padding: 3px !important;
-      color: var(--grey-20) !important;
-      background: var(--grey-60) !important;
-}
+      dialog#commonDialog textbox {
+            background: var(--grey-80) !important;
+            color: var(--grey-20) !important;
+            padding: 2px !important;
+            
+      }
 
-dialog#bookmarkproperties menulist:hover,
-dialog#commonDialog menulist:hover,
-dialog#unknownContentType menulist:hover {
-      -moz-appearance: none !important;
-      padding: 3px !important;
-      color: var(--grey-20) !important;
-      background: var(--grey-80) !important;
-}
-
-dialog#bookmarkproperties menulist:active,
-dialog#commonDialog menulist:active,
-dialog#unknownContentType menulist:active {
-      -moz-appearance: none !important;
-      padding: 3px !important;
-      color: var(--grey-20) !important;
-      background: var(--grey-60) !important;
-}
-
-dialog#commonDialog textbox {
-      background: var(--grey-80) !important;
-      color: var(--grey-20) !important;
-}
-
-dialog#commonDialog textbox:active {
-      background: var(--grey-90) !important;
-      color: var(--grey-10) !important;
+      dialog#commonDialog textbox:active, dialog#commonDialog textbox[focused=true] {
+            background: var(--grey-90) !important;
+            color: var(--grey-10) !important;
+            box-shadow: 0 0 1px 1px var(--primary-accent-color) !important;
+      }
 }
 
 /* Leave page confirm dialog */
 
 vbox.mainContainer {
       color: var(--primary-light-color) !important;
-      background: var(--grey-70) !important;
+      background: var(--primary-dark-color) !important;
 }
 
 vbox.mainContainer grid.topContainer {
@@ -111,18 +77,129 @@ vbox.mainContainer grid.topContainer {
 vbox.mainContainer button {
       -moz-appearance: none !important;
       color: var(--grey-30) !important;
-      border: 1px solid var(--grey-50) !important;
+      background: var(--grey-60) !important;
+      border: 2px solid var(--grey-60) !important;
+}
+
+vbox.mainContainer button:hover {
+      border: 2px solid var(--grey-50) !important;
       background: var(--grey-60) !important;
 }
 
-vbox.mainContainer button > * {
-      background: var(--grey-60) !important;
-}
-
-vbox.mainContainer button:hover > * {
-      background: var(--grey-70) !important;
-}
-
-vbox.mainContainer button:active > * {
+vbox.mainContainer button:active {
+      border: 2px solid var(--grey-50) !important;
       background: var(--grey-50) !important;
+}
+
+/* Checkbox, Radio, Menulist, global invert */
+
+.checkbox-check {
+      -moz-appearance: checkbox !important;
+      filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+}
+
+.radio-check {
+      -moz-appearance: radio !important;
+      filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+}
+
+menulist#openHandler  {
+      -moz-appearance: menulist !important;
+      filter: invert(90%) brightness(140%) saturate(140%) hue-rotate(-178deg) !important;
+}
+
+/* Buttons, Gray */
+
+button#customization-reset-button,
+button#editBMPanel_newFolderButton {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-60) !important;
+      border: 2px solid var(--grey-60) !important;
+}
+
+button#customization-reset-button:hover,
+button#editBMPanel_newFolderButton:hover {
+      -moz-appearance: none !important;
+      background: var(--grey-60) !important;
+      border: 2px solid var(--grey-50) !important;
+}
+
+button#customization-reset-button:active,
+button#editBMPanel_newFolderButton:active {
+      -moz-appearance: none !important;
+      background: var(--grey-50) !important;
+      border: 2px solid var(--grey-50) !important;
+}
+
+/* Buttons, Blue */
+
+button#customization-done-button,
+button#editBookmarkPanelDoneButton {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+      background: var(--blue-50) !important;
+      border: 2px solid var(--blue-50) !important;
+}
+
+button#customization-done-button:hover,
+button#editBookmarkPanelDoneButton:hover {
+      -moz-appearance: none !important;
+      background: var(--blue-50) !important;
+      border: 2px solid var(--blue-40) !important;
+}
+
+button#customization-done-button:active,
+button#editBookmarkPanelDoneButton:active {
+      -moz-appearance: none !important;
+      background: var(--blue-40) !important;
+      border: 2px solid var(--blue-40) !important;
+}
+
+/* Buttons, Gray 50 */
+
+button#editBookmarkPanelRemoveButton {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-50) !important;
+      border: 2px solid var(--grey-50) !important;
+}
+
+button#editBookmarkPanelRemoveButton:hover {
+      -moz-appearance: none !important;
+      background: var(--grey-50) !important;
+      border: 2px solid var(--grey-40) !important;
+}
+
+button#editBookmarkPanelRemoveButton:active {
+      -moz-appearance: none !important;
+      background: var(--grey-40) !important;
+      border: 2px solid var(--grey-40) !important;
+}
+
+/* Buttons, Gray 80 */
+
+button#customization-toolbar-visibility-button,
+button#customization-lwtheme-button,
+button#customization-uidensity-button {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-80) !important;
+      border: 2px solid var(--grey-50) !important;
+}
+
+button#customization-toolbar-visibility-button:hover,
+button#customization-lwtheme-button:hover,
+button#customization-uidensity-button:hover {
+      -moz-appearance: none !important;
+      background: var(--grey-60) !important;
+      border: 2px solid var(--grey-50) !important;
+}
+
+button#customization-toolbar-visibility-button:active,
+button#customization-lwtheme-button:active,
+button#customization-uidensity-button:active {
+      -moz-appearance: none !important;
+      background: var(--grey-50) !important;
+      border: 2px solid var(--grey-50) !important;
 }

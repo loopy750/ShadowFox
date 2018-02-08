@@ -24,7 +24,7 @@
 	
 	/* Hover Color */
 	#configTreeBody::-moz-tree-row(hover) {
-		background: var(--grey-70) !important;
+		background: var(--grey-80) !important;
 	}
 	
 	#configTreeBody::-moz-tree-row(header) {

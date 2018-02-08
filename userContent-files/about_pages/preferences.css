@@ -72,4 +72,10 @@
     background: var(--primary-dark-color) !important;
   }
 
+	image.fxaSyncIllustration, image.fxaProfileImage  {
+	  filter: contrast(85%) saturate(10000%) !important;
+	}
+	image.searchBarImage.searchBarHiddenImage, image.searchBarImage.searchBarShownImage {
+	  filter: invert(80%) grayscale(90%) !important;
+	}
 }

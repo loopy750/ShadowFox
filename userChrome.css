@@ -307,7 +307,7 @@ menupopup scrollbox {
 /* More options right arrow */
 
 .menu-right {
-  filter: invert(95%)!important;
+  filter: invert(95%) !important;
 }
 
 /* Top Row of Navigation Options */
@@ -428,7 +428,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
   menupopup#toolbar-context-menu,
   menupopup#downloadsContextMenu,
   menupopup#tabContextMenu,
-  menupopup#tabContextMenu menupopup {
+  menupopup#tabContextMenu menupopup,
+  toolbaritem#menubar-items menupopup {
     border-color: var(--grey-70) !important;
     border-width: 1px !important;
     border-style: solid !important;
@@ -436,9 +437,10 @@ vbox#sidebar-box.chromeclass-extrachrome {
 
   /* Bookmarks Toolbar, Toolbar Context menu, LEFT/RIGHT padding fixes */
 
+  /*	menupopup#menu_ToolsPopup,*/
+
   #personal-bookmarks menupopup .bookmark-item,
   #bookmarksMenuPopup,
-  menupopup#menu_ToolsPopup,
   menupopup#goPopup {
     padding-left: 4px !important;
     padding-right: 4px !important;
@@ -448,7 +450,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 
   menupopup#tabContextMenu > menu > menupopup > .popup-internal-box,
   menupopup#toolbar-context-menu,
-  menupopup#contentAreaContextMenu menupopup > menuitem {
+  menupopup#contentAreaContextMenu menupopup {
     padding-left: 2px !important;
     padding-right: 2px !important;
   }
@@ -470,10 +472,11 @@ vbox#sidebar-box.chromeclass-extrachrome {
   menupopup#tabContextMenu > menu,
   menupopup#tabContextMenu menupopup > menuitem,
   menupopup#tabContextMenu menupopup > menu,
-  menupopup#toolbar-context-menu > menuitem {
+  menupopup#toolbar-context-menu > menuitem,
+  menupopup#placesContext menuitem {
     font-size: 1.167em !important;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
   }
 
   menupopup#contentAreaContextMenu menupopup > menuitem,
@@ -482,16 +485,44 @@ vbox#sidebar-box.chromeclass-extrachrome {
   #PlacesToolbar menupopup menupopup > menu,
   menupopup#tabContextMenu menupopup > menuitem,
   menupopup#tabContextMenu menupopup > menu,
-  menupopup#toolbar-context-menu > menuitem,
   menupopup.textbox-contextmenu > menuitem {
     font-size: 1em !important;
   }
 
+  /* Menu Bar menus, text size to match macOS */
+
+  toolbaritem#menubar-items menupopup > menuitem,
+  toolbaritem#menubar-items menupopup > menu {
+    font-size: 1.167em !important;
+  }
+
+  toolbaritem#menubar-items menupopup menupopup > menuitem,
+  toolbaritem#menubar-items menupopup menupopup > menu {
+    font-size: 1em !important;
+  }
+
+  /* Toolbar menu, LEFT/RIGHT padding fixes */
+
+  #customization-toolbar-menu,
+  toolbaritem#menubar-items menupopup,
+  toolbaritem#menubar-items menupopup > menu > menupopup {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  menubar#main-menubar {
+    color: var(--grey-40) !important;
+  }
+
   /* Context menu, TOP/BOTTOM padding fixes */
 
-  menupopup#contentAreaContextMenu menuitem,
-  menupopup#contentAreaContextMenu menu,
   #personal-bookmarks menupopup menuitem {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+  }
+
+  menupopup#contentAreaContextMenu menuitem,
+  menupopup#contentAreaContextMenu menu {
     padding-top: 1px !important;
     padding-bottom: 1px !important;
   }
@@ -535,8 +566,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
   menupopup#tabContextMenu menuitem,
   menupopup#tabContextMenu menupopup menuitem,
   menupopup#placesContext menuitem {
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
   }
 }
 #customization-done-button {
@@ -551,106 +582,72 @@ vbox#sidebar-box.chromeclass-extrachrome {
 }
 /* Popup dialog */
 
-dialog#bookmarkproperties,
-dialog#commonDialog,
-dialog#unknownContentType {
-  -moz-appearance: none !important;
-  color: var(--primary-light-color) !important;
-  background: var(--grey-70) !important;
-}
+@-moz-document url("chrome://global/content/commonDialog.xul"),
+url("chrome://browser/content/places/bookmarkProperties2.xul"),
+url("chrome://mozapps/content/downloads/unknownContentType.xul")  {
+  dialog#bookmarkproperties,
+  dialog#commonDialog,
+  dialog#unknownContentType {
+    -moz-appearance: none !important;
+    background: var(--primary-dark-color) !important;
+    color: var(--primary-light-color) !important;
+  }
 
-dialog#bookmarkproperties button,
-dialog#commonDialog button,
-dialog#unknownContentType button {
-  -moz-appearance: none !important;
-  color: var(--grey-30) !important;
-  border: 1px solid var(--grey-50) !important;
-  background: var(--grey-60) !important;
-}
+  textbox {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+  }
 
-dialog#bookmarkproperties button > *,
-dialog#commonDialog button > *,
-dialog#unknownContentType button > * {
-  background: var(--grey-60) !important;
-}
+  caption {
+    -moz-appearance: none !important;
+    color: var(--primary-light-color) !important;
+    background: var(--grey-70) !important;
+  }
 
-dialog#bookmarkproperties button:hover > *,
-dialog#commonDialog button:hover > *,
-dialog#unknownContentType button:hover > * {
-  background: var(--grey-70) !important;
-}
+  description {
+    -moz-appearance: none !important;
+    color: var(--grey-30) !important;
+    background: var(--grey-70) !important;
+  }
 
-dialog#bookmarkproperties button:active > *,
-dialog#commonDialog button:active > *,
-dialog#unknownContentType button:active > * {
-  background: var(--grey-50) !important;
-}
+  button {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+    background: var(--grey-50) !important;
+    border: 2px solid var(--grey-50) !important;
+  }
 
-dialog#bookmarkproperties textbox,
-dialog#commonDialog textbox,
-dialog#unknownContentType textbox {
-  -moz-appearance: none !important;
-  color: var(--grey-20) !important;
-}
+  button:hover {
+    -moz-appearance: none !important;
+    border: 2px solid var(--grey-40) !important;
+    background: var(--grey-50) !important;
+  }
 
-dialog#bookmarkproperties caption,
-dialog#commonDialog caption,
-dialog#unknownContentType caption {
-  -moz-appearance: none !important;
-  color: var(--primary-light-color) !important;
-  background: var(--grey-70) !important;
-}
+  button:active {
+    -moz-appearance: none !important;
+    background: var(--grey-40) !important;
+    border: 2px solid var(--grey-40) !important;
+  }
 
-dialog#bookmarkproperties description,
-dialog#commonDialog description,
-dialog#unknownContentType description {
-  -moz-appearance: none !important;
-  color: var(--grey-30) !important;
-  background: var(--grey-70) !important;
-}
+  dialog#commonDialog textbox {
+    background: var(--grey-80) !important;
+    color: var(--grey-20) !important;
+    padding: 2px !important;
+  }
 
-dialog#bookmarkproperties menulist,
-dialog#commonDialog menulist,
-dialog#unknownContentType menulist {
-  -moz-appearance: none !important;
-  padding: 3px !important;
-  color: var(--grey-20) !important;
-  background: var(--grey-60) !important;
-}
-
-dialog#bookmarkproperties menulist:hover,
-dialog#commonDialog menulist:hover,
-dialog#unknownContentType menulist:hover {
-  -moz-appearance: none !important;
-  padding: 3px !important;
-  color: var(--grey-20) !important;
-  background: var(--grey-80) !important;
-}
-
-dialog#bookmarkproperties menulist:active,
-dialog#commonDialog menulist:active,
-dialog#unknownContentType menulist:active {
-  -moz-appearance: none !important;
-  padding: 3px !important;
-  color: var(--grey-20) !important;
-  background: var(--grey-60) !important;
-}
-
-dialog#commonDialog textbox {
-  background: var(--grey-80) !important;
-  color: var(--grey-20) !important;
-}
-
-dialog#commonDialog textbox:active {
-  background: var(--grey-90) !important;
-  color: var(--grey-10) !important;
+  dialog#commonDialog textbox:active,
+  dialog#commonDialog textbox[focused=true] {
+    background: var(--grey-90) !important;
+    color: var(--grey-10) !important;
+    box-shadow: 0 0 1px 1px var(--primary-accent-color) !important;
+  }
 }
 
 /* Leave page confirm dialog */
 
 vbox.mainContainer {
   color: var(--primary-light-color) !important;
-  background: var(--grey-70) !important;
+  background: var(--primary-dark-color) !important;
 }
 
 vbox.mainContainer grid.topContainer {
@@ -661,20 +658,131 @@ vbox.mainContainer grid.topContainer {
 vbox.mainContainer button {
   -moz-appearance: none !important;
   color: var(--grey-30) !important;
-  border: 1px solid var(--grey-50) !important;
+  background: var(--grey-60) !important;
+  border: 2px solid var(--grey-60) !important;
+}
+
+vbox.mainContainer button:hover {
+  border: 2px solid var(--grey-50) !important;
   background: var(--grey-60) !important;
 }
 
-vbox.mainContainer button > * {
-  background: var(--grey-60) !important;
-}
-
-vbox.mainContainer button:hover > * {
-  background: var(--grey-70) !important;
-}
-
-vbox.mainContainer button:active > * {
+vbox.mainContainer button:active {
+  border: 2px solid var(--grey-50) !important;
   background: var(--grey-50) !important;
+}
+
+/* Checkbox, Radio, Menulist, global invert */
+
+.checkbox-check {
+  -moz-appearance: checkbox !important;
+  filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+}
+
+.radio-check {
+  -moz-appearance: radio !important;
+  filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+}
+
+menulist#openHandler {
+  -moz-appearance: menulist !important;
+  filter: invert(90%) brightness(140%) saturate(140%) hue-rotate(-178deg) !important;
+}
+
+/* Buttons, Gray */
+
+button#customization-reset-button,
+button#editBMPanel_newFolderButton {
+  -moz-appearance: none !important;
+  color: var(--grey-20) !important;
+  background: var(--grey-60) !important;
+  border: 2px solid var(--grey-60) !important;
+}
+
+button#customization-reset-button:hover,
+button#editBMPanel_newFolderButton:hover {
+  -moz-appearance: none !important;
+  background: var(--grey-60) !important;
+  border: 2px solid var(--grey-50) !important;
+}
+
+button#customization-reset-button:active,
+button#editBMPanel_newFolderButton:active {
+  -moz-appearance: none !important;
+  background: var(--grey-50) !important;
+  border: 2px solid var(--grey-50) !important;
+}
+
+/* Buttons, Blue */
+
+button#customization-done-button,
+button#editBookmarkPanelDoneButton {
+  -moz-appearance: none !important;
+  color: var(--grey-20) !important;
+  background: var(--blue-50) !important;
+  border: 2px solid var(--blue-50) !important;
+}
+
+button#customization-done-button:hover,
+button#editBookmarkPanelDoneButton:hover {
+  -moz-appearance: none !important;
+  background: var(--blue-50) !important;
+  border: 2px solid var(--blue-40) !important;
+}
+
+button#customization-done-button:active,
+button#editBookmarkPanelDoneButton:active {
+  -moz-appearance: none !important;
+  background: var(--blue-40) !important;
+  border: 2px solid var(--blue-40) !important;
+}
+
+/* Buttons, Gray 50 */
+
+button#editBookmarkPanelRemoveButton {
+  -moz-appearance: none !important;
+  color: var(--grey-20) !important;
+  background: var(--grey-50) !important;
+  border: 2px solid var(--grey-50) !important;
+}
+
+button#editBookmarkPanelRemoveButton:hover {
+  -moz-appearance: none !important;
+  background: var(--grey-50) !important;
+  border: 2px solid var(--grey-40) !important;
+}
+
+button#editBookmarkPanelRemoveButton:active {
+  -moz-appearance: none !important;
+  background: var(--grey-40) !important;
+  border: 2px solid var(--grey-40) !important;
+}
+
+/* Buttons, Gray 80 */
+
+button#customization-toolbar-visibility-button,
+button#customization-lwtheme-button,
+button#customization-uidensity-button {
+  -moz-appearance: none !important;
+  color: var(--grey-20) !important;
+  background: var(--grey-80) !important;
+  border: 2px solid var(--grey-50) !important;
+}
+
+button#customization-toolbar-visibility-button:hover,
+button#customization-lwtheme-button:hover,
+button#customization-uidensity-button:hover {
+  -moz-appearance: none !important;
+  background: var(--grey-60) !important;
+  border: 2px solid var(--grey-50) !important;
+}
+
+button#customization-toolbar-visibility-button:active,
+button#customization-lwtheme-button:active,
+button#customization-uidensity-button:active {
+  -moz-appearance: none !important;
+  background: var(--grey-50) !important;
+  border: 2px solid var(--grey-50) !important;
 }
 /* Color of tab throbber animation */
 
@@ -1090,6 +1198,10 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
 
   /* Selected, not in focus */
 
+  #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd) {
+    background: rgba(12, 12, 13, .1) !important;
+  }
+
   #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current) {
     background: var(--blue-40) !important;
   }
@@ -1099,10 +1211,6 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
     -moz-border-right-colors: var(--grey-80) !important;
     -moz-border-left-colors: var(--grey-80) !important;
     -moz-border-bottom-colors: var(--grey-80) !important;
-  }
-
-  #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd) {
-    background: rgba(12, 12, 13, .1) !important;
   }
 
   /* Selected, in focus */

@@ -91,6 +91,11 @@ url(chrome://browser/content/places/bookmarkProperties.xul) {
 	}
 
 	/* Selected, not in focus */
+
+	#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd) {
+	    background: rgba(12, 12, 13, .1) !important;
+	}
+
 	#places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current) {
 	  background: var(--blue-40) !important;
 	}
@@ -102,9 +107,6 @@ url(chrome://browser/content/places/bookmarkProperties.xul) {
     -moz-border-bottom-colors: var(--grey-80) !important;
   }
 
-	#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd) {
-	    background: rgba(12, 12, 13, .1) !important;
-	}
 
 	/* Selected, in focus */
 	#places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {

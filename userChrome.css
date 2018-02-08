@@ -633,14 +633,14 @@ url("chrome://mozapps/content/downloads/unknownContentType.xul")  {
     background: var(--grey-80) !important;
     color: var(--grey-20) !important;
     padding: 2px !important;
-    border: 1px solid var(--grey-60) !important;
+    border: 1px solid var(--grey-50) !important;
   }
 
   dialog#commonDialog textbox:hover {
     background: var(--grey-80) !important;
     color: var(--grey-10) !important;
     padding: 2px !important;
-    border: 1px solid var(--grey-50) !important;
+    border: 1px solid var(--grey-40) !important;
   }
 
   dialog#commonDialog textbox:active,
@@ -648,7 +648,7 @@ url("chrome://mozapps/content/downloads/unknownContentType.xul")  {
     background: var(--grey-90) !important;
     color: var(--grey-10) !important;
     box-shadow: 0 0 1px 1px var(--primary-accent-color) !important;
-    border: 1px solid var(--grey-60) !important;
+    border: 1px solid var(--grey-50) !important;
   }
 }
 
@@ -701,8 +701,6 @@ menulist#openHandler {
 menulist#openHandler:hover {
   -moz-appearance: menulist !important;
   filter: invert(90%) brightness(150%) saturate(150%) hue-rotate(-178deg) !important;
-  background: #ffffff !important;
-  color: #000 !important;
 }
 
 /* Buttons, Grey (60) */

@@ -612,26 +612,34 @@ url("chrome://mozapps/content/downloads/unknownContentType.xul")  {
   button {
     -moz-appearance: none !important;
     color: var(--grey-20) !important;
-    background: var(--grey-50) !important;
-    border: 2px solid var(--grey-50) !important;
+    background: var(--grey-60) !important;
+    border: 2px solid var(--grey-60) !important;
   }
 
   button:hover {
     -moz-appearance: none !important;
-    border: 2px solid var(--grey-40) !important;
-    background: var(--grey-50) !important;
+    border: 2px solid var(--grey-50) !important;
+    background: var(--grey-60) !important;
   }
 
   button:active {
     -moz-appearance: none !important;
-    background: var(--grey-40) !important;
-    border: 2px solid var(--grey-40) !important;
+    background: var(--grey-50) !important;
+    border: 2px solid var(--grey-50) !important;
   }
 
   dialog#commonDialog textbox {
     background: var(--grey-80) !important;
     color: var(--grey-20) !important;
     padding: 2px !important;
+    border: 1px solid var(--grey-50) !important;
+  }
+
+  dialog#commonDialog textbox:hover {
+    background: var(--grey-80) !important;
+    color: var(--grey-10) !important;
+    padding: 2px !important;
+    border: 1px solid var(--grey-40) !important;
   }
 
   dialog#commonDialog textbox:active,
@@ -639,6 +647,7 @@ url("chrome://mozapps/content/downloads/unknownContentType.xul")  {
     background: var(--grey-90) !important;
     color: var(--grey-10) !important;
     box-shadow: 0 0 1px 1px var(--primary-accent-color) !important;
+    border: 1px solid var(--grey-50) !important;
   }
 }
 
@@ -685,10 +694,15 @@ vbox.mainContainer button:active {
 
 menulist#openHandler {
   -moz-appearance: menulist !important;
-  filter: invert(90%) brightness(140%) saturate(140%) hue-rotate(-178deg) !important;
+  filter: invert(90%) brightness(150%) saturate(150%) hue-rotate(-178deg) !important;
 }
 
-/* Buttons, Gray */
+menulist#openHandler:hover {
+  -moz-appearance: menulist !important;
+  filter: invert(90%) brightness(150%) saturate(150%) hue-rotate(-178deg) !important;
+}
+
+/* Buttons, Grey (60) */
 
 button#customization-reset-button,
 button#editBMPanel_newFolderButton {
@@ -736,7 +750,7 @@ button#editBookmarkPanelDoneButton:active {
   border: 2px solid var(--blue-40) !important;
 }
 
-/* Buttons, Gray 50 */
+/* Buttons, Grey 50 */
 
 button#editBookmarkPanelRemoveButton {
   -moz-appearance: none !important;
@@ -757,7 +771,7 @@ button#editBookmarkPanelRemoveButton:active {
   border: 2px solid var(--grey-40) !important;
 }
 
-/* Buttons, Gray 80 */
+/* Buttons, Grey 80 */
 
 button#customization-toolbar-visibility-button,
 button#customization-lwtheme-button,

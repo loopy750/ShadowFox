@@ -510,10 +510,6 @@ vbox#sidebar-box.chromeclass-extrachrome {
     padding-right: 2px !important;
   }
 
-  menubar#main-menubar {
-    color: var(--grey-40) !important;
-  }
-
   /* Context menu, TOP/BOTTOM padding fixes */
 
   #personal-bookmarks menupopup menuitem {

@@ -125,12 +125,25 @@
   menupopup menu,
   menuitem {
     -moz-appearance: none !important;
-    color: var(--grey-10) !important;
+    color: var(--grey-20) !important;
   }
 
   menupopup menu:hover,
-  menuitem:hover {
-    color: var(--primary-light-color) !important;
+  menuitem:hover,
+  menu[_moz-menuactive="true"],
+  menuitem[_moz-menuactive="true"] {
+    color: var(--grey-20) !important;
+    background-color: var(--grey-80) !important;
+  }
+
+  /* Context menu, display disabled items in a different colour */
+
+  menuitem[disabled="true"] {
+    color: var(--grey-50) !important;
+  }
+
+  menuitem:hover[disabled="true"] {
+    color: var(--grey-50) !important;
     background-color: var(--grey-80) !important;
   }
 
@@ -139,7 +152,7 @@
   menupopup menuseparator {
     padding: 0 !important;
     border-top: none !important;
-    margin: 2px 6px 2px 6px !important;
+    margin: 2px 4px 2px 4px !important;
     -moz-appearance: none !important;
     background: rgba(0, 0, 0, 0) !important;
     border: 0px !important;
@@ -155,7 +168,7 @@
 
     menupopup menu,
     menuitem {
-      margin: 2px 6px 2px 6px !important;
+      margin: 2px 4px 2px 4px !important;
     }
 
     /* Border added, because Windows has a different drop shadow effect than macOS */
@@ -450,7 +463,7 @@ vbox.navigation richlistbox#categories {
   /* Hover Color */
 
   #configTreeBody::-moz-tree-row(hover) {
-    background: var(--grey-70) !important;
+    background: var(--grey-80) !important;
   }
 
   #configTreeBody::-moz-tree-row(header) {
@@ -853,6 +866,16 @@ vbox.navigation richlistbox#categories {
 
   .navigation {
     background: var(--primary-dark-color) !important;
+  }
+
+  image.fxaSyncIllustration,
+  image.fxaProfileImage {
+    filter: contrast(85%) saturate(10000%) !important;
+  }
+
+  image.searchBarImage.searchBarHiddenImage,
+  image.searchBarImage.searchBarShownImage {
+    filter: invert(80%) grayscale(90%) !important;
   }
 }
 @-moz-document url(about:profiles)  {

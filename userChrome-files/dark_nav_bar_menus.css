@@ -114,6 +114,11 @@ photonpanelmultiview panelview {
     fill: var(--grey-50) !important;
 }
 
+.identity-popup-expander:hover {
+    border-right: solid 1px var(--grey-50) !important;
+    background-color: var(--grey-50) !important;
+    fill: var(--grey-40) !important;
+}
 
 /* New update is available */
 .popup-notification-button[default][highlight="true"]:not([disabled]) {

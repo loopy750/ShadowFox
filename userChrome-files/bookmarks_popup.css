@@ -4,7 +4,7 @@
 #editBMPanel_folderMenuList,
 #editBookmarkPanelRemoveButton,
 #editBookmarkPanelDoneButton,
-#editBMPanel_foldersExpander,
+/*#editBMPanel_foldersExpander,*/
 #editBMPanel_tagsSelectorExpander {
     -moz-appearance: none !important;
     background: var(--grey-70) !important;
@@ -73,8 +73,10 @@ listitem[selected="true"] {
     border-bottom: none !important;
 }
 
-#editBMPanel_newFolderBox {
-    background: var(--grey-60) !important;
-    border: 0px solid var(--grey-50) !important;
+@media not screen and (-moz-windows-theme) {
+  #editBMPanel_newFolderBox {
+    background: var(--grey-70) !important;
+    border: 1px solid var(--grey-50) !important;
     box-shadow: none !important;
+  }
 }

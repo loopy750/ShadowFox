@@ -89,7 +89,6 @@
 #editBMPanel_folderMenuList,
 #editBookmarkPanelRemoveButton,
 #editBookmarkPanelDoneButton,
-#editBMPanel_foldersExpander,
 #editBMPanel_tagsSelectorExpander {
   -moz-appearance: none !important;
   background: var(--grey-70) !important;
@@ -112,7 +111,7 @@
 
 #editBMPanel_folderTree treechildren:not(.autocomplete-treebody)::-moz-tree-row,
 #editBMPanel_tagsSelector treechildren:not(.autocomplete-treebody)::-moz-tree-row {
-  background: var(--grey-60) !important;
+  background: var(--grey-70) !important;
   color: var(--primary-light-color) !important;
 }
 
@@ -153,13 +152,24 @@ listitem[selected="true"] {
 
 #editBMPanel_folderTree {
   border: 1px solid var(--grey-50) !important;
-  border-bottom: none !important;
 }
 
-#editBMPanel_newFolderBox {
-  background: var(--grey-70) !important;
-  border: 1px solid var(--grey-50) !important;
-  box-shadow: none !important;
+@media not screen and (-moz-windows-theme),
+                  and (-moz-windows-classic),
+                  and (-moz-windows-default-theme),
+                  and (-moz-os-version: windows-win7),
+                  and (-moz-os-version: windows-win8),
+                  and (-moz-os-version: windows-win10) {
+  #editBMPanel_folderTree {
+    border: 1px solid var(--grey-50) !important;
+    border-bottom: none !important;
+  }
+
+  vbox#editBookmarkPanelContent grid#editBookmarkPanelGrid rows row#editBMPanel_folderTreeRow vbox hbox#editBMPanel_newFolderBox#editBMPanel_newFolderBox {
+    background: var(--grey-70) !important;
+    border: 1px solid var(--grey-50) !important;
+    box-shadow: none !important;
+  }
 }
 /* The following code is based on that found on
 * https://www.jeffersonscher.com/gm/url-bar-tweaks.html
@@ -509,10 +519,6 @@ vbox#sidebar-box.chromeclass-extrachrome {
     padding-right: 2px !important;
   }
 
-  menubar#main-menubar {
-    color: var(--grey-40) !important;
-  }
-
   /* Context menu, TOP/BOTTOM padding fixes */
 
   #personal-bookmarks menupopup menuitem {
@@ -579,14 +585,66 @@ vbox#sidebar-box.chromeclass-extrachrome {
 #customization-done-button:-moz-any(:focus, :active, :hover):not([disabled]) {
   background-color: var(--primary-accent-color-dark) !important;
 }
+/* ============ */
+
 /* Popup dialog */
 
-@-moz-document url("chrome://global/content/commonDialog.xul"),
-url("chrome://browser/content/places/bookmarkProperties2.xul"),
-url("chrome://mozapps/content/downloads/unknownContentType.xul")  {
-  dialog#bookmarkproperties,
-  dialog#commonDialog,
-  dialog#unknownContentType {
+/* "New Bookmarks" / "Bookmark all tabs..." */
+
+button#editBMPanel_foldersExpander {
+  filter: invert(80%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+}
+
+@-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul")  {
+  dialog#bookmarkproperties {
+    -moz-appearance: none !important;
+    background: var(--grey-60) !important;
+    color: var(--primary-light-color) !important;
+  }
+
+@media not screen and (-moz-windows-theme),
+                        and (-moz-windows-classic),
+                        and (-moz-windows-default-theme),
+                        and (-moz-os-version: windows-win7),
+                        and (-moz-os-version: windows-win8),
+                        and (-moz-os-version: windows-win10) {
+    #editBMPanel_folderTree {
+      border: 1px solid var(--grey-50) !important;
+    }
+
+    vbox#editBookmarkPanelContent grid#editBookmarkPanelGrid rows row#editBMPanel_folderTreeRow vbox hbox#editBMPanel_newFolderBox#editBMPanel_newFolderBox {
+      background: var(--grey-60) !important;
+      border: 0px solid var(--grey-60) !important;
+    }
+}
+
+  /* id needed for "Bookmark all tabs..."
+
+            button {
+                  -moz-appearance: none !important;
+                  color: var(--grey-20) !important;
+                  background: var(--grey-60) !important;
+                  border: 2px solid var(--grey-60) !important;
+            }
+
+            button:hover {
+                  -moz-appearance: none !important;
+                  background: var(--grey-60) !important;
+                  border: 2px solid var(--grey-50) !important;
+            }
+
+            button:active {
+                  -moz-appearance: none !important;
+                  background: var(--grey-50) !important;
+                  border: 2px solid var(--grey-50) !important;
+            }
+      */
+}
+
+/* Common dialog */
+
+@-moz-document url("chrome://global/content/commonDialog.xul")  {
+  dialog#commonDialog {
     -moz-appearance: none !important;
     background: var(--primary-dark-color) !important;
     color: var(--primary-light-color) !important;
@@ -614,28 +672,36 @@ url("chrome://mozapps/content/downloads/unknownContentType.xul")  {
     color: var(--grey-20) !important;
     background: var(--grey-60) !important;
     border: 2px solid var(--grey-60) !important;
+    padding: 0px !important;
+    border-radius: 0px !important;
+  }
+
+  button:focus {
+    background: var(--grey-60) !important;
+    border: 1px solid var(--grey-50) !important;
+    padding: 1px !important;
   }
 
   button:hover {
-    -moz-appearance: none !important;
-    border: 2px solid var(--grey-50) !important;
     background: var(--grey-60) !important;
+    border: 2px solid var(--grey-50) !important;
+    padding: 0px !important;
   }
 
   button:active {
-    -moz-appearance: none !important;
-    background: var(--grey-50) !important;
-    border: 2px solid var(--grey-50) !important;
+    background: var(--blue-50) !important;
+    border: 2px solid var(--blue-50) !important;
+    padding: 0px !important;
   }
 
-  dialog#commonDialog textbox {
+  textbox {
     background: var(--grey-80) !important;
     color: var(--grey-20) !important;
     padding: 2px !important;
     border: 1px solid var(--grey-50) !important;
   }
 
-  dialog#commonDialog textbox:hover {
+  textbox:hover {
     background: var(--grey-80) !important;
     color: var(--grey-10) !important;
     padding: 2px !important;
@@ -673,6 +739,60 @@ url("chrome://mozapps/content/downloads/unknownContentType.xul")  {
   }
 }
 
+/* "Save file" */
+
+@-moz-document url("chrome://mozapps/content/downloads/unknownContentType.xul")  {
+  dialog#unknownContentType {
+    -moz-appearance: none !important;
+    background: var(--primary-dark-color) !important;
+    color: var(--primary-light-color) !important;
+  }
+
+  textbox {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+  }
+
+  caption {
+    -moz-appearance: none !important;
+    color: var(--primary-light-color) !important;
+    background: var(--grey-70) !important;
+  }
+
+  description {
+    -moz-appearance: none !important;
+    color: var(--grey-30) !important;
+    background: var(--grey-70) !important;
+  }
+
+  button {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+    background: var(--grey-60) !important;
+    border: 2px solid var(--grey-60) !important;
+    padding: 0px !important;
+    border-radius: 0px !important;
+  }
+
+  button:focus {
+    background: var(--grey-60) !important;
+    border: 1px solid var(--grey-50) !important;
+    padding: 1px !important;
+  }
+
+  button:hover {
+    background: var(--grey-60) !important;
+    border: 2px solid var(--grey-50) !important;
+    padding: 0px !important;
+  }
+
+  button:active {
+    background: var(--blue-50) !important;
+    border: 2px solid var(--blue-50) !important;
+    padding: 0px !important;
+  }
+}
+
 /* Leave page confirm dialog */
 
 vbox.mainContainer {
@@ -690,16 +810,26 @@ vbox.mainContainer button {
   color: var(--grey-30) !important;
   background: var(--grey-60) !important;
   border: 2px solid var(--grey-60) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
+}
+
+vbox.mainContainer button:focus {
+  background: var(--grey-60) !important;
+  border: 1px solid var(--grey-50) !important;
+  padding: 1px !important;
 }
 
 vbox.mainContainer button:hover {
-  border: 2px solid var(--grey-50) !important;
   background: var(--grey-60) !important;
+  border: 2px solid var(--grey-50) !important;
+  padding: 0px !important;
 }
 
 vbox.mainContainer button:active {
-  border: 2px solid var(--grey-50) !important;
-  background: var(--grey-50) !important;
+  background: var(--blue-50) !important;
+  border: 2px solid var(--blue-50) !important;
+  padding: 0px !important;
 }
 
 /* Checkbox, Radio, Menulist, global invert */
@@ -714,83 +844,84 @@ vbox.mainContainer button:active {
   filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
 }
 
-menulist#openHandler {
+menulist#openHandler,
+#editBMPanel_folderMenuList {
   -moz-appearance: menulist !important;
-  filter: invert(90%) brightness(150%) saturate(150%) hue-rotate(-178deg) !important;
+  filter: invert(92%) brightness(160%) contrast(90%) saturate(150%) hue-rotate(-178deg) !important;
 }
 
-menulist#openHandler:hover {
+menulist#openHandler:hover,
+#editBMPanel_folderMenuList:hover {
   -moz-appearance: menulist !important;
-  filter: invert(90%) brightness(150%) saturate(150%) hue-rotate(-178deg) !important;
-}
-
-/* Buttons, Grey (60) */
-
-button#customization-reset-button,
-button#editBMPanel_newFolderButton {
-  -moz-appearance: none !important;
-  color: var(--grey-20) !important;
-  background: var(--grey-60) !important;
-  border: 2px solid var(--grey-60) !important;
-}
-
-button#customization-reset-button:hover,
-button#editBMPanel_newFolderButton:hover {
-  -moz-appearance: none !important;
-  background: var(--grey-60) !important;
-  border: 2px solid var(--grey-50) !important;
-}
-
-button#customization-reset-button:active,
-button#editBMPanel_newFolderButton:active {
-  -moz-appearance: none !important;
-  background: var(--grey-50) !important;
-  border: 2px solid var(--grey-50) !important;
-}
-
-/* Buttons, Blue */
-
-button#customization-done-button,
-button#editBookmarkPanelDoneButton {
-  -moz-appearance: none !important;
-  color: var(--grey-20) !important;
-  background: var(--blue-50) !important;
-  border: 2px solid var(--blue-50) !important;
-}
-
-button#customization-done-button:hover,
-button#editBookmarkPanelDoneButton:hover {
-  -moz-appearance: none !important;
-  background: var(--blue-50) !important;
-  border: 2px solid var(--blue-40) !important;
-}
-
-button#customization-done-button:active,
-button#editBookmarkPanelDoneButton:active {
-  -moz-appearance: none !important;
-  background: var(--blue-40) !important;
-  border: 2px solid var(--blue-40) !important;
+  filter: invert(90%) brightness(160%) contrast(90%) saturate(150%) hue-rotate(-178deg) !important;
 }
 
 /* Buttons, Grey 50 */
 
+button#editBMPanel_newFolderButton,
 button#editBookmarkPanelRemoveButton {
   -moz-appearance: none !important;
   color: var(--grey-20) !important;
   background: var(--grey-50) !important;
   border: 2px solid var(--grey-50) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
 }
 
+button#editBMPanel_newFolderButton:focus,
+button#editBookmarkPanelRemoveButton:focus {
+  background: var(--grey-50) !important;
+  border: 1px solid var(--grey-40) !important;
+  padding: 1px !important;
+  border-radius: 0px !important;
+}
+
+button#editBMPanel_newFolderButton:hover,
 button#editBookmarkPanelRemoveButton:hover {
-  -moz-appearance: none !important;
   background: var(--grey-50) !important;
   border: 2px solid var(--grey-40) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
 }
 
+button#editBMPanel_newFolderButton:active,
 button#editBookmarkPanelRemoveButton:active {
-  -moz-appearance: none !important;
   background: var(--grey-40) !important;
   border: 2px solid var(--grey-40) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
+}
+
+/* Buttons, Grey 60 */
+
+button#customization-reset-button {
+  -moz-appearance: none !important;
+  color: var(--grey-20) !important;
+  background: var(--grey-60) !important;
+  border: 2px solid var(--grey-60) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
+}
+
+button#customization-reset-button:focus {
+  background: var(--grey-60) !important;
+  border: 1px solid var(--grey-50) !important;
+  padding: 1px !important;
+  border-radius: 0px !important;
+}
+
+button#customization-reset-button:hover {
+  background: var(--grey-60) !important;
+  border: 2px solid var(--grey-50) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
+}
+
+button#customization-reset-button:active {
+  background: var(--blue-50) !important;
+  border: 2px solid var(--blue-50) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
 }
 
 /* Buttons, Grey 80 */
@@ -801,24 +932,69 @@ button#customization-uidensity-button {
   -moz-appearance: none !important;
   color: var(--grey-20) !important;
   background: var(--grey-80) !important;
-  border: 2px solid var(--grey-50) !important;
+  border: 1px solid var(--grey-50) !important;
+}
+
+button#customization-toolbar-visibility-button:focus,
+button#customization-lwtheme-button:focus,
+button#customization-uidensity-button:focus {
+  background: var(--grey-60) !important;
+  border: 1px solid var(--grey-50) !important;
 }
 
 button#customization-toolbar-visibility-button:hover,
 button#customization-lwtheme-button:hover,
 button#customization-uidensity-button:hover {
-  -moz-appearance: none !important;
   background: var(--grey-60) !important;
-  border: 2px solid var(--grey-50) !important;
+  border: 1px solid var(--grey-50) !important;
 }
 
 button#customization-toolbar-visibility-button:active,
 button#customization-lwtheme-button:active,
 button#customization-uidensity-button:active {
-  -moz-appearance: none !important;
   background: var(--grey-50) !important;
-  border: 2px solid var(--grey-50) !important;
+  border: 1px solid var(--grey-50) !important;
 }
+
+/* Buttons, Blue 50 */
+
+button#customization-done-button,
+button#editBookmarkPanelDoneButton {
+  -moz-appearance: none !important;
+  color: var(--grey-20) !important;
+  background: var(--blue-50) !important;
+  border: 2px solid var(--blue-50) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
+}
+
+button#customization-done-button:focus,
+button#editBookmarkPanelDoneButton:focus {
+  background: var(--blue-50) !important;
+  border: 1px solid var(--blue-40) !important;
+  padding: 1px !important;
+  border-radius: 0px !important;
+}
+
+button#customization-done-button:hover,
+button#editBookmarkPanelDoneButton:hover {
+  background: var(--blue-50) !important;
+  border: 2px solid var(--blue-40) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
+}
+
+button#customization-done-button:active,
+button#editBookmarkPanelDoneButton:active {
+  background: var(--blue-40) !important;
+  border: 2px solid var(--blue-40) !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
+}
+
+/* Popup dialog end */
+
+/* ================ */
 /* Color of tab throbber animation */
 
 :root {
@@ -947,7 +1123,19 @@ photonpanelmultiview panelview {
 .identity-popup-expander {
   border-right: solid 1px var(--grey-50) !important;
   background-color: var(--grey-60) !important;
-  fill: var(--grey-50) !important;
+  fill: var(--grey-40) !important;
+}
+
+.identity-popup-expander:hover {
+  border-right: solid 1px var(--grey-50) !important;
+  background-color: var(--grey-50) !important;
+  fill: var(--grey-30) !important;
+}
+
+.identity-popup-expander:active {
+  border-right: solid 1px var(--grey-50) !important;
+  background-color: var(--grey-40) !important;
+  fill: var(--grey-30) !important;
 }
 
 /* New update is available */
@@ -1397,7 +1585,7 @@ browser[type="content"] > html {
   background-color: var(--primary-accent-color) !important;
 }
 
-/* Remove tab placeholder */
+/* WINDOWS ONLY */
 
 @media screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
@@ -1405,8 +1593,48 @@ browser[type="content"] > html {
        screen and (-moz-os-version: windows-win7),
        screen and (-moz-os-version: windows-win8),
        screen and (-moz-os-version: windows-win10) {
+  /* Remove tab placeholder */
+
   .titlebar-placeholder[type="pre-tabs"] {
     display: none !important;
+  }
+
+  /* Min, Max, Close, macOS colours in Windows 10 */
+
+  toolbarbutton#titlebar-min {
+    background-color: rgba(255, 189, 46, .05) !important;
+  }
+
+  toolbarbutton#titlebar-min:hover {
+    background-color: rgba(255, 189, 46, .9) !important;
+  }
+
+  toolbarbutton#titlebar-min:active {
+    background-color: rgba(255, 189, 46, 1) !important;
+  }
+
+  toolbarbutton#titlebar-max {
+    background-color: rgba(40, 201, 64, .05) !important;
+  }
+
+  toolbarbutton#titlebar-max:hover {
+    background-color: rgba(40, 201, 64, .9) !important;
+  }
+
+  toolbarbutton#titlebar-max:active {
+    background-color: rgba(40, 201, 64, 1) !important;
+  }
+
+  toolbarbutton#titlebar-close {
+    background-color: rgba(255, 95, 87, .05) !important;
+  }
+
+  toolbarbutton#titlebar-close:hover {
+    background-color: rgba(255, 95, 87, .9) !important;
+  }
+
+  toolbarbutton#titlebar-close:active {
+    background-color: rgba(255, 95, 87, 1) !important;
   }
 }
 
@@ -1418,7 +1646,7 @@ browser[type="content"] > html {
   }
 
   100% {
-    filter: saturate(350%) invert(5%);
+    filter: saturate(500%) invert(5%);
   }
 }
 
@@ -1428,12 +1656,12 @@ browser[type="content"] > html {
 }
 
 .tabbrowser-tab[busy] {
-  color: var(--primary-accent-color) !important;
+  color: var(--blue-40) !important;
   animation: effect_color 1s infinite alternate !important;
 }
 
 .tabbrowser-tab[pending] {
-  color: var(--primary-accent-color) !important;
+  color: var(--blue-40) !important;
 }
 
 /* Read contents of userChrome.xml */

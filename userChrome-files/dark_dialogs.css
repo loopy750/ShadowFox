@@ -4,15 +4,31 @@
 /* "New Bookmarks" / "Bookmark all tabs..." */
 
 button#editBMPanel_foldersExpander {
-      filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+      filter: invert(80%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
 }
 
 @-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul") {
 
       dialog#bookmarkproperties {
             -moz-appearance: none !important;
-            background: var(--primary-dark-color) !important;
+            background: var(--grey-60) !important;
             color: var(--primary-light-color) !important;
+      }
+
+      @media not screen and (-moz-windows-theme),
+                        and (-moz-windows-classic),
+                        and (-moz-windows-default-theme),
+                        and (-moz-os-version: windows-win7),
+                        and (-moz-os-version: windows-win8),
+                        and (-moz-os-version: windows-win10) {
+          #editBMPanel_folderTree {
+              border: 1px solid var(--grey-50) !important;
+          }
+
+        vbox#editBookmarkPanelContent grid#editBookmarkPanelGrid rows row#editBMPanel_folderTreeRow vbox hbox#editBMPanel_newFolderBox#editBMPanel_newFolderBox {
+          background: var(--grey-60) !important;
+          border: 0px solid var(--grey-60) !important;
+        }
       }
 
       /* id needed for "Bookmark all tabs..."
@@ -26,8 +42,8 @@ button#editBMPanel_foldersExpander {
 
             button:hover {
                   -moz-appearance: none !important;
-                  border: 2px solid var(--grey-50) !important;
                   background: var(--grey-60) !important;
+                  border: 2px solid var(--grey-50) !important;
             }
 
             button:active {
@@ -70,18 +86,26 @@ button#editBMPanel_foldersExpander {
             color: var(--grey-20) !important;
             background: var(--grey-60) !important;
             border: 2px solid var(--grey-60) !important;
+            padding: 0px !important;
+            border-radius: 0px !important;
+      }
+
+      button:focus {
+            background: var(--grey-60) !important;
+            border: 1px solid var(--grey-50) !important;
+            padding: 1px !important;
       }
 
       button:hover {
-            -moz-appearance: none !important;
-            border: 2px solid var(--grey-50) !important;
             background: var(--grey-60) !important;
+            border: 2px solid var(--grey-50) !important;
+            padding: 0px !important;
       }
 
       button:active {
-            -moz-appearance: none !important;
-            background: var(--grey-50) !important;
-            border: 2px solid var(--grey-50) !important;
+            background: var(--blue-50) !important;
+            border: 2px solid var(--blue-50) !important;
+            padding: 0px !important;
       }
 
       textbox {
@@ -149,18 +173,26 @@ button#editBMPanel_foldersExpander {
             color: var(--grey-20) !important;
             background: var(--grey-60) !important;
             border: 2px solid var(--grey-60) !important;
+            padding: 0px !important;
+            border-radius: 0px !important;
+      }
+
+      button:focus {
+            background: var(--grey-60) !important;
+            border: 1px solid var(--grey-50) !important;
+            padding: 1px !important;
       }
 
       button:hover {
-            -moz-appearance: none !important;
-            border: 2px solid var(--grey-50) !important;
             background: var(--grey-60) !important;
+            border: 2px solid var(--grey-50) !important;
+            padding: 0px !important;
       }
 
       button:active {
-            -moz-appearance: none !important;
-            background: var(--grey-50) !important;
-            border: 2px solid var(--grey-50) !important;
+            background: var(--blue-50) !important;
+            border: 2px solid var(--blue-50) !important;
+            padding: 0px !important;
       }
 }
 
@@ -181,16 +213,26 @@ vbox.mainContainer button {
       color: var(--grey-30) !important;
       background: var(--grey-60) !important;
       border: 2px solid var(--grey-60) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
+}
+
+vbox.mainContainer button:focus {
+      background: var(--grey-60) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 1px !important;
 }
 
 vbox.mainContainer button:hover {
-      border: 2px solid var(--grey-50) !important;
       background: var(--grey-60) !important;
+      border: 2px solid var(--grey-50) !important;
+      padding: 0px !important;
 }
 
 vbox.mainContainer button:active {
-      border: 2px solid var(--grey-50) !important;
-      background: var(--grey-50) !important;
+      background: var(--blue-50) !important;
+      border: 2px solid var(--blue-50) !important;
+      padding: 0px !important;
 }
 
 /* Checkbox, Radio, Menulist, global invert */
@@ -207,12 +249,12 @@ vbox.mainContainer button:active {
 
 menulist#openHandler, #editBMPanel_folderMenuList {
       -moz-appearance: menulist !important;
-      filter: invert(90%) brightness(150%) saturate(150%) hue-rotate(-178deg) !important;
+      filter: invert(92%) brightness(160%) contrast(90%) saturate(150%) hue-rotate(-178deg) !important;
 }
 
-menulist#openHandler:hover, #editBMPanel_folderMenuList {
+menulist#openHandler:hover, #editBMPanel_folderMenuList:hover {
       -moz-appearance: menulist !important;
-      filter: invert(90%) brightness(150%) saturate(150%) hue-rotate(-178deg) !important;
+      filter: invert(90%) brightness(160%) contrast(90%) saturate(150%) hue-rotate(-178deg) !important;
 }
 
 /* Buttons, Grey 50 */
@@ -223,20 +265,32 @@ button#editBookmarkPanelRemoveButton  {
       color: var(--grey-20) !important;
       background: var(--grey-50) !important;
       border: 2px solid var(--grey-50) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
+}
+
+button#editBMPanel_newFolderButton:focus,
+button#editBookmarkPanelRemoveButton:focus {
+      background: var(--grey-50) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 1px !important;
+      border-radius: 0px !important;
 }
 
 button#editBMPanel_newFolderButton:hover,
 button#editBookmarkPanelRemoveButton:hover {
-      -moz-appearance: none !important;
-      border: 2px solid var(--grey-40) !important;
       background: var(--grey-50) !important;
+      border: 2px solid var(--grey-40) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
 }
 
 button#editBMPanel_newFolderButton:active,
 button#editBookmarkPanelRemoveButton:active {
-      -moz-appearance: none !important;
       background: var(--grey-40) !important;
       border: 2px solid var(--grey-40) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
 }
 
 /* Buttons, Grey 60 */
@@ -246,18 +300,29 @@ button#customization-reset-button {
       color: var(--grey-20) !important;
       background: var(--grey-60) !important;
       border: 2px solid var(--grey-60) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
+}
+
+button#customization-reset-button:focus {
+      background: var(--grey-60) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 1px !important;
+      border-radius: 0px !important;
 }
 
 button#customization-reset-button:hover {
-      -moz-appearance: none !important;
       background: var(--grey-60) !important;
       border: 2px solid var(--grey-50) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
 }
 
 button#customization-reset-button:active {
-      -moz-appearance: none !important;
-      background: var(--grey-50) !important;
-      border: 2px solid var(--grey-50) !important;
+      background: var(--blue-50) !important;
+      border: 2px solid var(--blue-50) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
 }
 
 /* Buttons, Grey 80 */
@@ -268,23 +333,28 @@ button#customization-uidensity-button {
       -moz-appearance: none !important;
       color: var(--grey-20) !important;
       background: var(--grey-80) !important;
-      border: 2px solid var(--grey-50) !important;
+      border: 1px solid var(--grey-50) !important;
+}
+
+button#customization-toolbar-visibility-button:focus,
+button#customization-lwtheme-button:focus,
+button#customization-uidensity-button:focus {
+      background: var(--grey-60) !important;
+      border: 1px solid var(--grey-50) !important;
 }
 
 button#customization-toolbar-visibility-button:hover,
 button#customization-lwtheme-button:hover,
 button#customization-uidensity-button:hover {
-      -moz-appearance: none !important;
       background: var(--grey-60) !important;
-      border: 2px solid var(--grey-50) !important;
+      border: 1px solid var(--grey-50) !important;
 }
 
 button#customization-toolbar-visibility-button:active,
 button#customization-lwtheme-button:active,
 button#customization-uidensity-button:active {
-      -moz-appearance: none !important;
       background: var(--grey-50) !important;
-      border: 2px solid var(--grey-50) !important;
+      border: 1px solid var(--grey-50) !important;
 }
 
 /* Buttons, Blue 50 */
@@ -295,21 +365,32 @@ button#editBookmarkPanelDoneButton {
       color: var(--grey-20) !important;
       background: var(--blue-50) !important;
       border: 2px solid var(--blue-50) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
+}
+
+button#customization-done-button:focus,
+button#editBookmarkPanelDoneButton:focus {
+      background: var(--blue-50) !important;
+      border: 1px solid var(--blue-40) !important;
+      padding: 1px !important;
+      border-radius: 0px !important;
 }
 
 button#customization-done-button:hover,
 button#editBookmarkPanelDoneButton:hover {
-      -moz-appearance: none !important;
       background: var(--blue-50) !important;
       border: 2px solid var(--blue-40) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
 }
 
 button#customization-done-button:active,
 button#editBookmarkPanelDoneButton:active {
-      -moz-appearance: none !important;
       background: var(--blue-40) !important;
       border: 2px solid var(--blue-40) !important;
+      padding: 0px !important;
+      border-radius: 0px !important;
 }
-
 /* Popup dialog end */
 /* ================ */

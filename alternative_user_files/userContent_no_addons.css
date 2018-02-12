@@ -1132,7 +1132,7 @@ vbox.navigation richlistbox#categories {
 
   image.searchBarImage.searchBarHiddenImage,
   image.searchBarImage.searchBarShownImage {
-    filter: invert(80%) grayscale(90%) !important;
+    filter: invert(80%) grayscale(20%) saturate(200%) hue-rotate(-178deg) !important;
   }
 }
 @-moz-document url(about:profiles)  {

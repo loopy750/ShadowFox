@@ -5,5 +5,12 @@ userChrome-files/dark_sidebar.css
 userChrome-files/page_info.css
 userChrome-files/tab_line_color.css
 userContent-files/all_about_pages.css
+userContent-files/dark_dialogs.css
+
+The following files contain non Windows-only tweaks:
+
+userChrome-files/bookmarks_popup.css
+userChrome-files/page_info.css
 
 Because @media is broken in Firefox 58, these tweaks will be forced onto all Operating Systems until the release of Firefox 59.
+For now, macOS versions can be found in the "\alternative_user_files\macOS" folder.

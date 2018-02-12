@@ -4,7 +4,7 @@
   background-color: var(--primary-accent-color) !important;
 }
 
-/* Remove tab placeholder */
+/* WINDOWS ONLY */
 
 @media screen, 
        screen and (-moz-windows-theme),
@@ -13,16 +13,31 @@
        screen and (-moz-os-version: windows-win7),
        screen and (-moz-os-version: windows-win8),
        screen and (-moz-os-version: windows-win10) {
-	.titlebar-placeholder[type="pre-tabs"] {
-	  display: none !important;
-	}
+
+  /* Remove tab placeholder */
+
+  .titlebar-placeholder[type="pre-tabs"] {
+    display: none !important;
+  }
+
+  /* Min, Max, Close, macOS colours in Windows 10 */
+
+  toolbarbutton#titlebar-min          { background-color: rgba(255, 189, 46, .05) !important; }
+  toolbarbutton#titlebar-min:hover    { background-color: rgba(255, 189, 46, .9) !important; }
+  toolbarbutton#titlebar-min:active   { background-color: rgba(255, 189, 46, 1) !important; }
+  toolbarbutton#titlebar-max          { background-color: rgba(40, 201, 64, .05) !important; }
+  toolbarbutton#titlebar-max:hover    { background-color: rgba(40, 201, 64, .9) !important; }
+  toolbarbutton#titlebar-max:active   { background-color: rgba(40, 201, 64, 1) !important; }
+  toolbarbutton#titlebar-close        { background-color: rgba(255, 95, 87, .05) !important; }
+  toolbarbutton#titlebar-close:hover  { background-color: rgba(255, 95, 87, .9) !important; }
+  toolbarbutton#titlebar-close:active { background-color: rgba(255, 95, 87, 1) !important; }
 }
 
 /* Tabs, different colour if unread */
 
 @keyframes effect_color {
     0% { filter: saturate(100%) invert(0%);}
-    100% { filter: saturate(350%) invert(5%);}
+    100% { filter: saturate(500%) invert(5%);}
 }
 
 .tabbrowser-tab[unread] {
@@ -30,11 +45,11 @@
   font-style: italic;
 }
 .tabbrowser-tab[busy] {
-  color: var(--primary-accent-color) !important;
+  color: var(--blue-40) !important;
   animation: effect_color 1s infinite alternate !important;
 }
 .tabbrowser-tab[pending] {
-  color: var(--primary-accent-color) !important;
+  color: var(--blue-40) !important;
 }
 
 /* Read contents of userChrome.xml */

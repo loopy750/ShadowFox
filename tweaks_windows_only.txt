@@ -4,8 +4,8 @@ userChrome-files/dark_context_menus.css
 userChrome-files/dark_sidebar.css
 userChrome-files/page_info.css
 userChrome-files/tab_line_color.css
+userChrome-files/dark_dialogs.css
 userContent-files/all_about_pages.css
-userContent-files/dark_dialogs.css
 
 The following files contain non Windows-only tweaks:
 

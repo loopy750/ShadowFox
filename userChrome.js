@@ -52,13 +52,18 @@
     }\
     :not(select):not(hbox) > scrollbar thumb:active,\
     :not(select):not(hbox) > scrollbar thumb:hover {\
-        background-color: rgba(159, 159, 159, 0.9) !important;\
+        background-color: rgba(159, 159, 159, 0.8) !important;\
 		background-image: linear-gradient(to right,transparent,rgba(255, 255, 255, 0.1),transparent) !important;\
     }\
     :not(select):not(hbox) > scrollbar:active,\
     :not(select):not(hbox) > scrollbar:hover {\
         // -moz-margin-start: -14px;\
-        box-shadow: -1px 0px 2px 1px rgba(159, 159, 159, 0.1);\
+        box-shadow: -1px 0px 2px 1px rgba(159, 159, 159, 0.25);\
+    }\
+    :not(select):not(hbox) > scrollbar thumb:active {\
+        background-color: rgba(159, 159, 159, 1) !important;\
+		background-image: linear-gradient(to right,transparent,rgba(255, 255, 255, 0.1),transparent) !important;\
+        transition: background-color 0s ease-in-out;\
     }\
     :not(select):not(hbox) > scrollbar scrollbarbutton, :not(select):not(hbox) > scrollbar gripper {\
         display: none;\

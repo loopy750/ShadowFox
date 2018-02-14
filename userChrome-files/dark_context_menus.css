@@ -124,7 +124,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 	menupopup#downloadsContextMenu,
 	menupopup#tabContextMenu,
 	menupopup#tabContextMenu menupopup,
-  toolbaritem#menubar-items menupopup {
+	toolbaritem#menubar-items menupopup {
 	  border-color: var(--grey-70) !important;
 	  border-width: 1px !important;
 	  border-style: solid !important;

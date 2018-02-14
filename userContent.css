@@ -764,6 +764,7 @@ vbox.navigation richlistbox#categories {
 
   #subprocess-reports td {
     background-color: var(--primary-light-color) !important;
+    color: var(--grey-80) !important;
   }
 
   table {
@@ -1008,12 +1009,24 @@ vbox.navigation richlistbox#categories {
   td {
     color: var(--primary-light-color) !important;
     background-color: var(--dark-accent) !important;
-    border: 1px solid var(--grey-60) !important;
+    border: 1px solid var(--grey-70) !important;
   }
 
   button {
     border: 1px solid var(--primary-light-color) !important;
     color: var(--primary-light-color) !important;
+  }
+
+  button:hover {
+    border: 1px solid var(--primary-light-color) !important;
+    color: var(--primary-light-color) !important;
+    background-color: var(--grey-70) !important;
+  }
+
+  button:active {
+    border: 1px solid var(--primary-light-color) !important;
+    color: var(--primary-light-color) !important;
+    background-color: var(--grey-60) !important;
   }
 }
 @-moz-document url(about:url-classifier)  {
@@ -2271,7 +2284,8 @@ vbox.navigation richlistbox#categories {
 
   .Paginate-previous::before,
   .Paginate-next::after,
-  .Card-contents li .Rating-star-group {
+  .Card-contents li .Rating-star-group,
+  .MetadataCard-content .Rating-star-group {
     filter: invert(70%) !important;
   }
 
@@ -2430,5 +2444,18 @@ vbox.navigation richlistbox#categories {
   .highlight .error > :-moz-any(.start-tag, .end-tag, .comment, .cdata, .doctype,
 	                              .pi, .entity, .attribute-name, .attribute-value) {
     color: #de7474 !important;
+  }
+}
+@media screen and (-moz-windows-theme),
+       screen and (-moz-windows-classic),
+       screen and (-moz-windows-default-theme),
+       screen and (-moz-os-version: windows-win7),
+       screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+  /* [WINDOWS ONLY] Styles similar to macOS */
+
+  select:active,
+  select:focus {
+    box-shadow: 0px 0px 1.5px 3px var(--primary-accent-color) !important;
   }
 }

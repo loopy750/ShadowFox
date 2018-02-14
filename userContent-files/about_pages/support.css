@@ -19,12 +19,24 @@
 	td {
 	    color: var(--primary-light-color) !important;
 	    background-color: var(--dark-accent) !important;
-		  border: 1px solid var(--grey-60) !important;
+		  border: 1px solid var(--grey-70) !important;
 	}
 
 	button {
 	    border: 1px solid var(--primary-light-color) !important;
 		  color: var(--primary-light-color) !important;
+	}
+
+	button:hover {
+	    border: 1px solid var(--primary-light-color) !important;
+		  color: var(--primary-light-color) !important;
+	    background-color: var(--grey-70) !important;
+	}
+
+	button:active {
+	    border: 1px solid var(--primary-light-color) !important;
+		  color: var(--primary-light-color) !important;
+	    background-color: var(--grey-60) !important;
 	}
 
 

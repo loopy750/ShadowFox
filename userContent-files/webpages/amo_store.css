@@ -90,7 +90,8 @@
 
 	.Paginate-previous::before,
 	.Paginate-next::after,
-	.Card-contents li .Rating-star-group
+	.Card-contents li .Rating-star-group,
+	.MetadataCard-content .Rating-star-group
 	 {
 		filter: invert(70%) !important
 	}

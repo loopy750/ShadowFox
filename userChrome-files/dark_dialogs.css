@@ -1,5 +1,5 @@
-/* ============ */
-/* Popup dialog */
+/* ================== */
+/* Popup dialog begin */
 
 /* "New Bookmarks" / "Bookmark all tabs..." */
 
@@ -31,7 +31,7 @@ button#editBMPanel_foldersExpander {
         }
       }
 
-      /* id needed for "Bookmark all tabs..."
+      /* id's needed for "Bookmark all tabs..."
 
             button {
                   -moz-appearance: none !important;

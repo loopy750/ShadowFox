@@ -7,6 +7,7 @@
 	
 	#subprocess-reports td {
 	    background-color: var(--primary-light-color) !important;
+		color: var(--grey-80) !important;
 	}
 	
 	table {

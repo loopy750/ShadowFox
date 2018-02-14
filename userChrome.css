@@ -588,9 +588,9 @@ vbox#sidebar-box.chromeclass-extrachrome {
 #customization-done-button:-moz-any(:focus, :active, :hover):not([disabled]) {
   background-color: var(--primary-accent-color-dark) !important;
 }
-/* ============ */
+/* ================== */
 
-/* Popup dialog */
+/* Popup dialog begin */
 
 /* "New Bookmarks" / "Bookmark all tabs..." */
 
@@ -621,7 +621,7 @@ button#editBMPanel_foldersExpander {
     }
 }
 
-  /* id needed for "Bookmark all tabs..."
+  /* id's needed for "Bookmark all tabs..."
 
             button {
                   -moz-appearance: none !important;

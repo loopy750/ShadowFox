@@ -177,19 +177,26 @@ button#editBMPanel_foldersExpander {
             border-radius: 0px !important;
       }
 
-      button:focus {
+      button[disabled] {
+            color: var(--grey-50) !important;
+            background: var(--grey-60) !important;
+            border: 1px solid var(--grey-60) !important;
+            padding: 1px !important;
+      }
+
+      button:focus:not([disabled]) {
             background: var(--grey-60) !important;
             border: 1px solid var(--grey-50) !important;
             padding: 1px !important;
       }
 
-      button:hover {
+      button:hover:not([disabled]) {
             background: var(--grey-60) !important;
             border: 2px solid var(--grey-50) !important;
             padding: 0px !important;
       }
 
-      button:active {
+      button:active:not([disabled]) {
             background: var(--blue-50) !important;
             border: 2px solid var(--blue-50) !important;
             padding: 0px !important;

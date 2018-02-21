@@ -58,11 +58,13 @@
 
     menuitem[disabled="true"] {
       color: var(--grey-50) !important;
+      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
     }
 
     menuitem:hover[disabled="true"] {
       color: var(--grey-50) !important;
       background-color: var(--grey-80) !important;
+      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
     }
 
   	/* Menu Separators - removed */
@@ -89,14 +91,10 @@
   			margin: 2px 4px 2px 4px !important;
   		}
 
-		/* Border added, because Windows has a different drop shadow effect than macOS */
-
-  		menupopup,
-  		popup,
-  		popup > menu > menupopup,
-  		menupopup > menu > menupopup {
-  		  border: 1px solid var(--grey-80) !important;
-  		}
+      /* Fixes for Windows Basic Theme */
+      [disabled="true"] {
+        text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
+      }
   	}
 }
 
@@ -116,4 +114,31 @@
 vbox#category-box richlistbox, vbox#category-box richlistbox .category,
 vbox.navigation, vbox.navigation richlistbox#categories {
   background: var(--grey-80) !important;
+}
+
+@media screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+		hbox.menu-iconic-left[checked] {
+		filter: invert(90%) brightness(115%) saturate(125%) hue-rotate(-178deg) !important;
+	}
+}
+
+/* Border added, because Windows has a different drop shadow effect than macOS */
+
+menupopup,
+popup,
+popup > menu > menupopup,
+menupopup > menu > menupopup {
+  border: 1px solid var(--grey-80) !important;
+}
+
+menupopup#configContext,
+menupopup#addonitem-popup,
+menupopup#signonsTreeContextMenu,
+menupopup#textbox-contextmenu
+scrollbox#popup-internal-box,
+menupopup {
+  border-color: rgba(56, 56, 61, 0.5) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
 }

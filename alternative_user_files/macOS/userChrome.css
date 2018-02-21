@@ -179,6 +179,16 @@ listitem[selected="true"] {
   --panel-separator-color: var(--grey-60) !important;
 }
 
+/* Let's look a bit like macOS */
+
+#urlbar,
+.searchbar-textbox,
+.panel-arrowcontent {
+  border-radius: 4px !important;
+}
+
+/* Shadow effect */
+
 #urlbar[focused=true],
 .searchbar-textbox[focused=true] {
   border: 1px solid var(--primary-accent-color) !important;
@@ -353,12 +363,14 @@ menupopup menuseparator {
 menu[disabled="true"],
 menuitem[disabled="true"] {
   color: var(--grey-50) !important;
+  text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
 }
 
 menu[disabled="true"]:hover,
 menuitem:hover[disabled="true"] {
   color: var(--grey-50) !important;
   background-color: var(--grey-70) !important;
+  text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
 }
 
 #context-navigation menuitem[disabled="true"] {
@@ -439,7 +451,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
   menupopup#downloadsContextMenu,
   menupopup#tabContextMenu,
   menupopup#tabContextMenu menupopup,
-  toolbaritem#menubar-items menupopup {
+  toolbaritem#menubar-items menupopup,
+  menupopup.textbox-contextmenu {
     border-color: rgba(56, 56, 61, 0.5) !important;
     border-width: 1px !important;
     border-style: solid !important;
@@ -467,7 +480,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
 
   menupopup#tabContextMenu > menu > menupopup > .popup-internal-box,
   menupopup#toolbar-context-menu,
-  menupopup#contentAreaContextMenu menupopup {
+  menupopup#contentAreaContextMenu menupopup,
+  menupopup.textbox-contextmenu {
     padding-left: 2px !important;
     padding-right: 2px !important;
   }
@@ -551,6 +565,12 @@ vbox#sidebar-box.chromeclass-extrachrome {
     margin-right: 0px !important;
   }
 
+  /* Fixes for Windows Basic Theme */
+
+  [disabled="true"] {
+    text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
+  }
+
   /* --- OPTIONAL TWEAKS --- */
 
   /* Context menu, left icon padding */
@@ -594,6 +614,36 @@ vbox#sidebar-box.chromeclass-extrachrome {
   }
 }
 
+/* Fixes for Windows Basic Theme */
+
+@media screen and (-moz-windows-classic) {
+  /* Context menus, align icons with text to match macOS style */
+
+  /* 0px for Windows default, 20px for macOS default */
+
+  menupopup#contentAreaContextMenu > .menu-iconic .menu-iconic-icon,
+  menupopup#tabContextMenu > .menu-iconic .menu-iconic-icon,
+  menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-icon,
+  menupopup#tabContextMenu > .menuitem-iconic .menu-iconic-icon {
+    margin-left: 20px !important;
+  }
+
+  menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-text {
+    margin-left: 2px !important;
+  }
+
+  hbox.menu-iconic-left[checked] {
+    filter: invert(60%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+  }
+}
+
+@media screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+  hbox.menu-iconic-left[checked] {
+    filter: invert(90%) brightness(115%) saturate(125%) hue-rotate(-178deg) !important;
+  }
+}
+
 /* Fixes for Waterfox / Older Firefox */
 
 panelmultiview#PanelUI-multiView image {
@@ -612,6 +662,12 @@ panelmultiview#PanelUI-multiView image {
 /* ================== */
 
 /* Popup dialog begin */
+
+#commonDialog {
+  -moz-appearance: none !important;
+  background: var(--primary-dark-color) !important;
+  color: var(--primary-light-color) !important;
+}
 
 /* "New Bookmarks" / "Bookmark all tabs..." */
 
@@ -642,27 +698,32 @@ button#editBMPanel_foldersExpander {
     }
 }
 
-  /* id's needed for "Bookmark all tabs..."
+  button {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+    background: var(--grey-50) !important;
+    border: 2px solid var(--grey-50) !important;
+    padding: 0px !important;
+    border-radius: 0px !important;
+  }
 
-            button {
-                  -moz-appearance: none !important;
-                  color: var(--grey-20) !important;
-                  background: var(--grey-60) !important;
-                  border: 2px solid var(--grey-60) !important;
-            }
+  button:focus {
+    background: var(--grey-50) !important;
+    border: 1px solid var(--grey-40) !important;
+    padding: 1px !important;
+  }
 
-            button:hover {
-                  -moz-appearance: none !important;
-                  background: var(--grey-60) !important;
-                  border: 2px solid var(--grey-50) !important;
-            }
+  button:hover {
+    background: var(--grey-50) !important;
+    border: 2px solid var(--grey-40) !important;
+    padding: 0px !important;
+  }
 
-            button:active {
-                  -moz-appearance: none !important;
-                  background: var(--grey-50) !important;
-                  border: 2px solid var(--grey-50) !important;
-            }
-      */
+  button:active {
+    background: var(--blue-40) !important;
+    border: 2px solid var(--blue-40) !important;
+    padding: 0px !important;
+  }
 }
 
 /* Common dialog */
@@ -772,6 +833,17 @@ button#editBMPanel_foldersExpander {
     color: var(--primary-light-color) !important;
   }
 
+  /* Needed for Windows 7 Basic Theme */
+
+  groupbox {
+    -moz-appearance: none !important;
+    background: var(--grey-70) !important;
+  }
+
+  checkbox[disabled] {
+    text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
+  }
+
   textbox {
     -moz-appearance: none !important;
     color: var(--grey-20) !important;
@@ -803,6 +875,7 @@ button#editBMPanel_foldersExpander {
     background: var(--grey-60) !important;
     border: 1px solid var(--grey-60) !important;
     padding: 1px !important;
+    text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
   }
 
   button:focus:not([disabled]) {
@@ -818,6 +891,38 @@ button#editBMPanel_foldersExpander {
   }
 
   button:active:not([disabled]) {
+    background: var(--blue-50) !important;
+    border: 2px solid var(--blue-50) !important;
+    padding: 0px !important;
+  }
+}
+
+/* Page Info, About */
+
+@-moz-document url("chrome://browser/content/pageinfo/pageInfo.xul"),
+               url("chrome://browser/content/aboutDialog.xul")  {
+  button {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+    background: var(--grey-60) !important;
+    border: 2px solid var(--grey-60) !important;
+    padding: 0px !important;
+    border-radius: 0px !important;
+  }
+
+  button:focus {
+    background: var(--grey-60) !important;
+    border: 1px solid var(--grey-50) !important;
+    padding: 1px !important;
+  }
+
+  button:hover {
+    background: var(--grey-60) !important;
+    border: 2px solid var(--grey-50) !important;
+    padding: 0px !important;
+  }
+
+  button:active {
     background: var(--blue-50) !important;
     border: 2px solid var(--blue-50) !important;
     padding: 0px !important;
@@ -1173,7 +1278,17 @@ photonpanelmultiview panelview {
 
 .popup-notification-button[default][highlight="true"]:not([disabled]) {
   background-color: var(--primary-accent-color) !important;
-  color: #ccc;
+  color: var(--primary-light-color);
+}
+
+.popup-notification-button:hover[default][highlight="true"]:not([disabled]) {
+  background-color: var(--blue-50) !important;
+  color: var(--primary-light-color);
+}
+
+.popup-notification-button:active[default][highlight="true"]:not([disabled]) {
+  background-color: var(--blue-60) !important;
+  color: var(--primary-light-color);
 }
 
 #update-available-whats-new {
@@ -1212,6 +1327,17 @@ toolbar[brighttext] {
 ::-moz-selection {
   background: var(--blue-40);
   color: white !important;
+}
+
+/* Library */
+
+#clearDownloadsButton:not([disabled]) {
+  color: var(--primary-light-color) !important;
+}
+
+#back-button:not([disabled]),
+#forward-button:not([disabled]) {
+  color: var(--primary-light-color) !important;
 }
 /* Remove white flash on load */
 
@@ -1571,7 +1697,8 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
     #security-privacy-groupbox,
     #security-technical-groupbox {
       -moz-appearance: none !important;
-      background-color: var(--grey-70) !important;
+      background-color: var(--grey-50) !important;
+      border-radius: 4px !important;
       border: none !important;
       color: var(--grey-10) !important;
     }

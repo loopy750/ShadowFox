@@ -6,7 +6,15 @@
 	--panel-separator-color: var(--grey-60) !important;
 }
 
+/* Let's look a bit like macOS */
 
+#urlbar,
+.searchbar-textbox,
+.panel-arrowcontent {
+	border-radius: 4px !important;
+}
+
+/* Shadow effect */
 
 #urlbar[focused=true],
 .searchbar-textbox[focused=true] {
@@ -19,7 +27,7 @@
 
 #PopupAutoCompleteRichResult .autocomplete-richlistbox {
 	background-color: var(--grey-60) !important; 
-} 
+}
 
 #PopupAutoCompleteRichResult .autocomplete-richlistitem { 
 	border-bottom-color: var(--primary-light-color) !important; 

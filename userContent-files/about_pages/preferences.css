@@ -73,24 +73,20 @@
   }
 
 	image.fxaSyncIllustration, image.fxaProfileImage  {
-	  filter: contrast(85%) saturate(10000%) !important;
+	  filter: contrast(90%) saturate(150%) !important;
 	}
 	image.searchBarImage.searchBarHiddenImage, image.searchBarImage.searchBarShownImage {
 	  filter: invert(80%) grayscale(20%) saturate(200%) hue-rotate(-178deg) !important;
 	}
 
-	button:active {
+	button:active:not([disabled]) {
 		-moz-appearance: none !important;
 		color: var(--grey-30) !important;
 		background: var(--blue-60) !important;
 	}
 }
 
-
-
 /* dark_context_menus.css */
-
-
 
 /* Main context menu */
 menupopup,
@@ -101,20 +97,7 @@ menupopup scrollbox {
       background: var(--grey-60) !important;
       border-color: var(--grey-70) !important;
       padding: 0px 0px 0px 0px !important;
-}
-
-@media not screen and (-moz-windows-theme),
-                  and (-moz-windows-classic),
-                  and (-moz-windows-default-theme),
-                  and (-moz-os-version: windows-win7),
-                  and (-moz-os-version: windows-win8),
-                  and (-moz-os-version: windows-win10) {
-										menupopup,
-										popup, popup > menu > menupopup,
-										menupopup > menu > menupopup,
-										menupopup scrollbox {
-											border: none !important;
-										}
+      /* border: none !important; */
 }
 
 /* More options right arrow */
@@ -332,41 +315,4 @@ vbox#sidebar-box.chromeclass-extrachrome {
 	menupopup .menu-right {
 	  margin-right: 0px !important;
 	}
-
-	/* --- OPTIONAL TWEAKS --- */
-
-
-  /* Context menu, left icon padding */
-  menuitem#context-media-loop hbox.menu-iconic-left, menupopup#contentAreaContextMenu menuitem#spell-check-enabled hbox.menu-iconic-left
-    {
-			margin-left: 2px !important;
-			margin-right: -2px !important;
-    }
-
-  /* Context menus, align icons with text to match macOS style */
-  /* 0px for Windows default, 29px for macOS default */
-  menupopup#contentAreaContextMenu > .menu-iconic .menu-iconic-icon,
-  menupopup#tabContextMenu > .menu-iconic .menu-iconic-icon,
-  menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-icon,
-  menupopup#tabContextMenu > .menuitem-iconic .menu-iconic-icon {
-    margin-left: 29px !important;
-  }
-
-  menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-text {
-    margin-left: 0px !important;
-  }
-
-  /* Menu items, TOP/BOTTOM padding fixes */
-  menupopup menu, menuitem {
-    padding-top: 1px !important;
-    padding-bottom: 1px !important;
-  }
-
-  /* Menu items, TOP/BOTTOM padding fixes */
-  menupopup#tabContextMenu menuitem,
-  menupopup#tabContextMenu menupopup menuitem,
-  menupopup#placesContext menuitem {
-    padding-top: 1px !important;
-    padding-bottom: 1px !important;
-  }
 }

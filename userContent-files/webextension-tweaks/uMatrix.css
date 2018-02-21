@@ -125,7 +125,7 @@
   }
 
   body .toolbar button.disabled {
-    color: #ccc;
+    color: var(--primary-light-color);
     color: var(--grey-60) !important;
   }
 

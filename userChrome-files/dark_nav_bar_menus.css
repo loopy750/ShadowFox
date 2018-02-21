@@ -129,7 +129,17 @@ photonpanelmultiview panelview {
 /* New update is available */
 .popup-notification-button[default][highlight="true"]:not([disabled]) {
     background-color: var(--primary-accent-color) !important;
-    color: #ccc;
+    color: var(--primary-light-color);
+}
+
+.popup-notification-button:hover[default][highlight="true"]:not([disabled]) {
+    background-color: var(--blue-50) !important;
+    color: var(--primary-light-color);
+}
+
+.popup-notification-button:active[default][highlight="true"]:not([disabled]) {
+    background-color: var(--blue-60) !important;
+    color: var(--primary-light-color);
 }
 
 #update-available-whats-new {
@@ -162,4 +172,15 @@ toolbar[brighttext] {
 ::-moz-selection {
   background: var(--blue-40);
   color: white !important;
+}
+
+/* Library */
+#clearDownloadsButton:not([disabled]) {
+		color: var(--primary-light-color) !important;
+}
+
+#back-button:not([disabled]),
+#forward-button:not([disabled])
+ {
+		color: var(--primary-light-color) !important;
 }

@@ -42,11 +42,13 @@ menupopup menuseparator {
 
 menu[disabled="true"], menuitem[disabled="true"] {
   color: var(--grey-50) !important;
+	text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
 }
 
 menu[disabled="true"]:hover, menuitem:hover[disabled="true"] {
   color: var(--grey-50) !important;
   background-color: var(--grey-70) !important;
+	text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
 }
 
 #context-navigation menuitem[disabled="true"] {
@@ -123,7 +125,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
 	menupopup#downloadsContextMenu,
 	menupopup#tabContextMenu,
 	menupopup#tabContextMenu menupopup,
-	toolbaritem#menubar-items menupopup {
+	toolbaritem#menubar-items menupopup,
+	menupopup.textbox-contextmenu {
 	  border-color: rgba(56, 56, 61, 0.5) !important;
 	  border-width: 1px !important;
 	  border-style: solid !important;
@@ -148,7 +151,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
 	/* Tab menu, LEFT/RIGHT padding fixes */
 	menupopup#tabContextMenu > menu > menupopup > .popup-internal-box,
 	menupopup#toolbar-context-menu,
-	menupopup#contentAreaContextMenu menupopup {
+	menupopup#contentAreaContextMenu menupopup,
+	menupopup.textbox-contextmenu {
 	  padding-left: 2px !important;
 	  padding-right: 2px !important;
 	}
@@ -226,6 +230,11 @@ vbox#sidebar-box.chromeclass-extrachrome {
 	  margin-right: 0px !important;
 	}
 
+  /* Fixes for Windows Basic Theme */
+  [disabled="true"] {
+    text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
+  }
+
 	/* --- OPTIONAL TWEAKS --- */
 
 
@@ -262,6 +271,34 @@ vbox#sidebar-box.chromeclass-extrachrome {
     padding-top: 1px !important;
     padding-bottom: 1px !important;
   }
+}
+
+/* Fixes for Windows Basic Theme */
+
+@media screen and (-moz-windows-classic) {
+  /* Context menus, align icons with text to match macOS style */
+  /* 0px for Windows default, 20px for macOS default */
+  menupopup#contentAreaContextMenu > .menu-iconic .menu-iconic-icon,
+  menupopup#tabContextMenu > .menu-iconic .menu-iconic-icon,
+  menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-icon,
+  menupopup#tabContextMenu > .menuitem-iconic .menu-iconic-icon {
+    margin-left: 20px !important;
+  }
+
+  menupopup#contentAreaContextMenu > .menuitem-iconic .menu-iconic-text {
+    margin-left: 2px !important;
+  }
+
+	hbox.menu-iconic-left[checked] {
+		filter: invert(60%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+	}
+}
+
+@media screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+		hbox.menu-iconic-left[checked] {
+		filter: invert(90%) brightness(115%) saturate(125%) hue-rotate(-178deg) !important;
+	}
 }
 
 /* Fixes for Waterfox / Older Firefox */

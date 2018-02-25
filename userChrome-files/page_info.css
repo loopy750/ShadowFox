@@ -61,8 +61,7 @@
 
 	/* [WINDOWS ONLY] fixes */
 	
-@media screen, 
-       screen and (-moz-windows-theme),
+@media screen, screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),
@@ -85,17 +84,17 @@
 		#security-privacy-groupbox,
 		#security-technical-groupbox {
 		  -moz-appearance: none !important;
-		  background-color: var(--grey-50) !important;
+		  background-color: var(--grey-60) !important;
 			border-radius: 4px !important;
 		  border: none !important;
-		  color: var(--grey-10) !important;
+		  color: var(--grey-20) !important;
 		}
 
 		#security-identity-groupbox,
 		#security-privacy-groupbox,
 		#security-technical-groupbox {
 		  -moz-appearance: none !important;
-		  background-color: var(--grey-80) !important;
+		  background-color: rgba(49, 49, 54, 1) !important;
 		}
 	}
 }

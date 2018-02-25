@@ -128,11 +128,11 @@ panel[type="autocomplete"], panel[type="autocomplete-richlistbox"], .autocomplet
     100% { filter: blur(0px);}
 }
 
-#nav-bar textbox {
+#nav-bar textbox:-moz-lwtheme-brighttext {
     background-color: rgba(63, 63, 63, 1) !important;
     animation: effect_blur 0.5s !important;
 }
 
-#nav-bar textbox:hover {
+#nav-bar textbox:hover:-moz-lwtheme-brighttext {
     background-color: rgba(75, 75, 75, 0.75) !important;
 }

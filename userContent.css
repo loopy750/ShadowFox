@@ -160,8 +160,7 @@
     border: 0px !important;
   }
 
-@media screen, 
-       screen and (-moz-windows-theme),
+@media screen, screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),
@@ -204,7 +203,7 @@ vbox.navigation richlistbox#categories {
   background: var(--grey-80) !important;
 }
 
-@media screen and (-moz-os-version: windows-win8),
+@media screen, screen and (-moz-os-version: windows-win8),
        screen and (-moz-os-version: windows-win10) {
   hbox.menu-iconic-left[checked] {
     filter: invert(90%) brightness(115%) saturate(125%) hue-rotate(-178deg) !important;
@@ -1032,8 +1031,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 /* The following snippets are designed to fix problems
  * only noticed on Windows computers */
 
-@media screen, 
-       screen and (-moz-windows-theme),
+@media screen, screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),
@@ -1625,7 +1623,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
     color: #de7474 !important;
   }
 }
-@media screen and (-moz-windows-theme),
+@media screen, screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),

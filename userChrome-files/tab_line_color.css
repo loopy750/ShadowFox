@@ -6,8 +6,7 @@
 
 /* WINDOWS ONLY */
 
-@media screen, 
-       screen and (-moz-windows-theme),
+@media screen, screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),
@@ -36,8 +35,8 @@
 /* Tabs, different colour if unread */
 
 @keyframes effect_color {
-    0% { filter: saturate(100%) invert(0%);}
-    100% { filter: saturate(500%) invert(5%);}
+    0% { filter: saturate(500%) invert(0%);}
+    100% { filter: saturate(50%) invert(5%);}
 }
 
 .tabbrowser-tab[unread] {
@@ -45,7 +44,7 @@
   font-style: italic;
 }
 .tabbrowser-tab[busy] {
-  color: var(--blue-40) !important;
+  color: var(--grey-40) !important;
   animation: effect_color 1s infinite alternate !important;
 }
 .tabbrowser-tab[pending] {

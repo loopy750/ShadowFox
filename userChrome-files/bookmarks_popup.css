@@ -72,12 +72,12 @@ listitem[selected="true"] {
     border: 1px solid var(--grey-50) !important;
 }
 
-@media not screen and (-moz-windows-theme),
-                  and (-moz-windows-classic),
-                  and (-moz-windows-default-theme),
-                  and (-moz-os-version: windows-win7),
-                  and (-moz-os-version: windows-win8),
-                  and (-moz-os-version: windows-win10) {
+@media not screen and (-moz-windows-theme) {
+@media not screen and (-moz-windows-classic) {
+@media not screen and (-moz-windows-default-theme) {
+@media not screen and (-moz-os-version: windows-win7) {
+@media not screen and (-moz-os-version: windows-win8) {
+@media not screen and (-moz-os-version: windows-win10) {
     #editBMPanel_folderTree {
         border: 1px solid var(--grey-50) !important;
         border-bottom: none !important;
@@ -88,4 +88,4 @@ listitem[selected="true"] {
     border: 1px solid var(--grey-50) !important;
     box-shadow: none !important;
   }
-}
+}}}}}}

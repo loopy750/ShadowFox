@@ -6,7 +6,7 @@ textbox#password-notification-username, textbox#password-notification-password {
 
 /* Windows 7 Basic Theme makes some dark stuff look bad */
 
-@media not screen and (-moz-windows-classic) {
+@media screen, not screen and (-moz-windows-classic) {
 
 @-moz-document url("chrome://global/content/commonDialog.xul") {
       #commonDialog {

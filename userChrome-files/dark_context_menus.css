@@ -234,6 +234,17 @@ vbox#sidebar-box.chromeclass-extrachrome {
     text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
   }
 
+  /* Library */
+  #clearDownloadsButton:not([disabled]) {
+		color: var(--primary-light-color) !important;
+  }
+
+  #back-button:not([disabled]),
+  #forward-button:not([disabled])
+  {
+		color: var(--primary-light-color) !important;
+  }
+
 	/* --- OPTIONAL TWEAKS --- */
 
 

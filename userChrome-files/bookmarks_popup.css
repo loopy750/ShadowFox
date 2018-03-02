@@ -1,3 +1,7 @@
+/* Windows 7 Basic Theme makes some dark stuff look bad */
+
+@media screen, not screen and (-moz-windows-classic) {
+
 /* Bookmarks Pop up */
 #editBMPanel_rows > row > textbox,
 #editBMPanel_rows > row > hbox > textbox,
@@ -70,6 +74,8 @@ listitem[selected="true"] {
 
 #editBMPanel_folderTree {
     border: 1px solid var(--grey-50) !important;
+}
+
 }
 
 @media not screen and (-moz-windows-theme) {

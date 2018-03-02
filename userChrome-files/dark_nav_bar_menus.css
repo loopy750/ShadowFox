@@ -173,14 +173,3 @@ toolbar[brighttext] {
   background: var(--blue-40);
   color: white !important;
 }
-
-/* Library */
-#clearDownloadsButton:not([disabled]) {
-		color: var(--primary-light-color) !important;
-}
-
-#back-button:not([disabled]),
-#forward-button:not([disabled])
- {
-		color: var(--primary-light-color) !important;
-}

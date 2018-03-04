@@ -78,8 +78,8 @@ button#editBMPanel_foldersExpander {
             -moz-appearance: none !important;
             color: var(--grey-10) !important;
             background: linear-gradient(to bottom,
-                  rgba(34,120,223,1) 0%,
-                  rgba(8,63,188,1) 100%) !important;
+                  rgba(49, 125, 228, 1) 0%,
+                  rgba(0, 78, 203, 1) 100%) !important;
             border: 1px solid var(--blue-60) !important;
             padding: 0px 6px 0px 6px !important;
       }
@@ -92,8 +92,8 @@ button#editBMPanel_foldersExpander {
 
       button[dlgtype="accept"]:focus {
             background: linear-gradient(to bottom,
-                  rgba(34,120,223,1) 0%,
-                  rgba(8,63,188,1) 100%) !important;
+                  rgba(49, 125, 228, 1) 0%,
+                  rgba(0, 78, 203, 1) 100%) !important;
             border: 1px solid var(--blue-50) !important;
             padding: 0px 6px 0px 6px !important;
       }
@@ -106,8 +106,8 @@ button#editBMPanel_foldersExpander {
 
       button[dlgtype="accept"]:hover {
             background: linear-gradient(to bottom,
-                  rgba(34,120,223,1) 0%,
-                  rgba(8,63,188,1) 100%) !important;
+                  rgba(49, 125, 228, 1) 0%,
+                  rgba(0, 78, 203, 1) 100%) !important;
             border: 1px solid var(--blue-40) !important;
             padding: 0px 6px 0px 6px !important;
       }
@@ -115,8 +115,8 @@ button#editBMPanel_foldersExpander {
       button[dlgtype="cancel"]:active {
             color: var(--grey-20) !important;
             background: linear-gradient(to bottom,
-                  rgba(37,116,223,1) 0%,
-                  rgba(9,65,189,1) 100%) !important;
+                  rgba(42, 121, 228, 1) 0%,
+                  rgba(0, 80, 204, 1) 100%) !important;
             border: 1px solid var(--blue-50) !important;
             padding: 0px 6px 0px 6px !important;
       }
@@ -124,8 +124,8 @@ button#editBMPanel_foldersExpander {
       button[dlgtype="accept"]:active {
             color: var(--grey-20) !important;
             background: linear-gradient(to bottom,
-                  rgba(75,147,220,1) 0%,
-                  rgba(12,88,215,1) 100%) !important;
+                  rgba(80, 152, 225, 1) 0%,
+                  rgba(0, 103, 230, 1) 100%) !important;
             border: 1px solid var(--blue-40) !important;
             padding: 0px 6px 0px 6px !important;
       }
@@ -182,8 +182,8 @@ button#editBMPanel_foldersExpander {
             -moz-appearance: none !important;
             color: var(--grey-10) !important;
             background: linear-gradient(to bottom,
-                  rgba(34,120,223,1) 0%,
-                  rgba(8,63,188,1) 100%) !important;
+                  rgba(49, 125, 228, 1) 0%,
+                  rgba(0, 78, 203, 1) 100%) !important;
             border: 1px solid var(--blue-60) !important;
             padding: 0px 6px 0px 6px !important;
       }
@@ -196,8 +196,8 @@ button#editBMPanel_foldersExpander {
 
       button[dlgtype="accept"]:focus {
             background: linear-gradient(to bottom,
-                  rgba(34,120,223,1) 0%,
-                  rgba(8,63,188,1) 100%) !important;
+                  rgba(49, 125, 228, 1) 0%,
+                  rgba(0, 78, 203, 1) 100%) !important;
             border: 1px solid var(--blue-50) !important;
             padding: 0px 6px 0px 6px !important;
       }
@@ -210,8 +210,8 @@ button#editBMPanel_foldersExpander {
 
       button[dlgtype="accept"]:hover {
             background: linear-gradient(to bottom,
-                  rgba(34,120,223,1) 0%,
-                  rgba(8,63,188,1) 100%) !important;
+                  rgba(49, 125, 228, 1) 0%,
+                  rgba(0, 78, 203, 1) 100%) !important;
             border: 1px solid var(--blue-40) !important;
             padding: 0px 6px 0px 6px !important;
       }
@@ -219,8 +219,8 @@ button#editBMPanel_foldersExpander {
       button[dlgtype="cancel"]:active, button:active {
             color: var(--grey-20) !important;
             background: linear-gradient(to bottom,
-                  rgba(37,116,223,1) 0%,
-                  rgba(9,65,189,1) 100%) !important;
+                  rgba(42, 121, 228, 1) 0%,
+                  rgba(0, 80, 204, 1) 100%) !important;
             border: 1px solid var(--blue-50) !important;
             padding: 0px 6px 0px 6px !important;
       }
@@ -228,8 +228,8 @@ button#editBMPanel_foldersExpander {
       button[dlgtype="accept"]:active {
             color: var(--grey-20) !important;
             background: linear-gradient(to bottom,
-                  rgba(75,147,220,1) 0%,
-                  rgba(12,88,215,1) 100%) !important;
+                  rgba(80, 152, 225, 1) 0%,
+                  rgba(0, 103, 230, 1) 100%) !important;
             border: 1px solid var(--blue-40) !important;
             padding: 0px 6px 0px 6px !important;
       }

@@ -1,4 +1,6 @@
 @-moz-document url(chrome://browser/content/pageinfo/pageInfo.xul) {
+	
+	@media not screen and (-moz-windows-classic) {
 
 	#topBar {
 	    -moz-appearance: none !important;
@@ -38,6 +40,7 @@
 			           rgba(56,70,82,1) 0%,
 			           rgba(35,39,48,1) 100%) !important;
 			color: white !important;
+      padding: 4px !important;
 		}
 
 	treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {
@@ -97,4 +100,5 @@
 		  background-color: rgba(49, 49, 54, 1) !important;
 		}
 	}
+}
 }

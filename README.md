@@ -1,4 +1,4 @@
-# TL;DR How do I install ShadowFox?
+# Quick Install Guide
 
 - Open the url "about:support" in Firefox
 - Next to "Profile Folder", click "Open Folder"

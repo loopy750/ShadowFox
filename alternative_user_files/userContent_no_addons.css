@@ -170,7 +170,7 @@
 
     menupopup menu,
     menuitem {
-      margin: 2px 4px 2px 4px !important;
+      margin: 2px 2px 2px 2px !important;
     }
 
     /* Fixes for Windows Basic Theme */
@@ -1381,7 +1381,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 
   menupopup,
   menupopup > menu > menupopup {
-    padding: 4px 0px 4px 0px  !important;
+    padding: 0px 0px 0px 0px  !important;
   }
 
   /* Menus, text size to match macOS */

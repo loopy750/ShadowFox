@@ -69,9 +69,11 @@ menuitem[_moz-menuactive="true"] {
 }
 
 /* Sidebar Header Context Menu */
-.panel-arrowcontent {
-  color: var(--grey-10) !important;
-  background: var(--grey-60) !important;
+@media not screen and (-moz-windows-classic) {
+	.panel-arrowcontent {
+		color: var(--grey-10) !important;
+		background: var(--grey-60) !important;
+	}
 }
 
 /* Sidebar border */
@@ -125,7 +127,9 @@ vbox#sidebar-box.chromeclass-extrachrome {
 	menupopup#tabContextMenu,
 	menupopup#tabContextMenu menupopup,
 	toolbaritem#menubar-items menupopup,
-	menupopup.textbox-contextmenu {
+	menupopup.textbox-contextmenu,
+	#SignonViewerDialog menupopup,
+	#placesMenu menupopup {
 	  border-color: rgba(56, 56, 61, 0.5) !important;
 	  border-width: 1px !important;
 	  border-style: solid !important;
@@ -160,6 +164,11 @@ vbox#sidebar-box.chromeclass-extrachrome {
 	menupopup,
 	menupopup > menu > menupopup {
 	  padding: 4px 0px 4px 0px  !important;
+	}
+
+	/* Context menus, TOP/BOTTOM padding fixes (Other) */
+	#SignonViewerDialog menupopup, #placesMenu menupopup {
+	  padding: 4px 2px 4px 2px  !important;
 	}
 
 	/* Menus, text size to match macOS */

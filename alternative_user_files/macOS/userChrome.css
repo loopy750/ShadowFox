@@ -401,9 +401,11 @@ menuitem[_moz-menuactive="true"] {
 
 /* Sidebar Header Context Menu */
 
-.panel-arrowcontent {
-  color: var(--grey-10) !important;
-  background: var(--grey-60) !important;
+@media not screen and (-moz-windows-classic) {
+  .panel-arrowcontent {
+    color: var(--grey-10) !important;
+    background: var(--grey-60) !important;
+  }
 }
 
 /* Sidebar border */
@@ -461,7 +463,9 @@ vbox#sidebar-box.chromeclass-extrachrome {
   menupopup#tabContextMenu,
   menupopup#tabContextMenu menupopup,
   toolbaritem#menubar-items menupopup,
-  menupopup.textbox-contextmenu {
+  menupopup.textbox-contextmenu,
+  #SignonViewerDialog menupopup,
+  #placesMenu menupopup {
     border-color: rgba(56, 56, 61, 0.5) !important;
     border-width: 1px !important;
     border-style: solid !important;
@@ -500,6 +504,13 @@ vbox#sidebar-box.chromeclass-extrachrome {
   menupopup,
   menupopup > menu > menupopup {
     padding: 4px 0px 4px 0px  !important;
+  }
+
+  /* Context menus, TOP/BOTTOM padding fixes (Other) */
+
+  #SignonViewerDialog menupopup,
+  #placesMenu menupopup {
+    padding: 4px 2px 4px 2px  !important;
   }
 
   /* Menus, text size to match macOS */
@@ -775,39 +786,76 @@ textbox#password-notification-password {
 }
 }
 
+    button[dlgtype="cancel"] {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-70) !important;
+      border: 1px solid var(--grey-80) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"] {
+      -moz-appearance: none !important;
+      color: var(--grey-10) !important;
+      background: linear-gradient(to bottom,
+                  rgba(34,120,223,1) 0%,
+                  rgba(8,63,188,1) 100%) !important;
+      border: 1px solid var(--blue-60) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:focus {
+      background: var(--grey-70) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:focus {
+      background: linear-gradient(to bottom,
+                  rgba(34,120,223,1) 0%,
+                  rgba(8,63,188,1) 100%) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:hover {
+      background: var(--grey-70) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:hover {
+      background: linear-gradient(to bottom,
+                  rgba(34,120,223,1) 0%,
+                  rgba(8,63,188,1) 100%) !important;
+      border: 1px solid var(--blue-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:active {
+      color: var(--grey-20) !important;
+      background: linear-gradient(to bottom,
+                  rgba(37,116,223,1) 0%,
+                  rgba(9,65,189,1) 100%) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:active {
+      color: var(--grey-20) !important;
+      background: linear-gradient(to bottom,
+                  rgba(75,147,220,1) 0%,
+                  rgba(12,88,215,1) 100%) !important;
+      border: 1px solid var(--blue-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
 @media screen and (-moz-windows-theme),
             screen and (-moz-windows-classic),
             screen and (-moz-windows-default-theme),
             screen and (-moz-os-version: windows-win7),
             screen and (-moz-os-version: windows-win8),
             screen and (-moz-os-version: windows-win10) {
-      button {
-        -moz-appearance: none !important;
-        color: var(--grey-30) !important;
-        background: var(--grey-70) !important;
-        border: 1px solid var(--grey-80) !important;
-        padding: 1px 6px 1px 6px !important;
-      }
-
-      button:focus {
-        background: var(--grey-70) !important;
-        border: 1px solid var(--grey-50) !important;
-        padding: 1px 6px 1px 6px !important;
-      }
-
-      button:hover {
-        background: var(--grey-70) !important;
-        border: 2px solid var(--grey-50) !important;
-        padding: 0px 5px 0px 5px !important;
-      }
-
-      button:active {
-        color: var(--grey-20) !important;
-        background: var(--blue-50) !important;
-        border: 2px solid var(--blue-50) !important;
-        padding: 0px 5px 0px 5px !important;
-      }
-
       button#editBMPanel_foldersExpander {
         -moz-appearance: button !important;
         filter: invert(80%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
@@ -841,31 +889,72 @@ textbox#password-notification-password {
       background: var(--primary-dark-color) !important;
     }
 
+    button[dlgtype="cancel"],
     button {
       -moz-appearance: none !important;
       color: var(--grey-30) !important;
       background: var(--grey-80) !important;
       border: 1px solid var(--grey-90) !important;
-      padding: 1px 6px 1px 6px !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
+    button[dlgtype="accept"] {
+      -moz-appearance: none !important;
+      color: var(--grey-10) !important;
+      background: linear-gradient(to bottom,
+                  rgba(34,120,223,1) 0%,
+                  rgba(8,63,188,1) 100%) !important;
+      border: 1px solid var(--blue-60) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:focus,
     button:focus {
       background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 1px 6px 1px 6px !important;
+      border: 1px solid var(--grey-60) !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
+    button[dlgtype="accept"]:focus {
+      background: linear-gradient(to bottom,
+                  rgba(34,120,223,1) 0%,
+                  rgba(8,63,188,1) 100%) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:hover,
     button:hover {
       background: var(--grey-80) !important;
-      border: 2px solid var(--grey-50) !important;
-      padding: 0px 5px 0px 5px !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
+    button[dlgtype="accept"]:hover {
+      background: linear-gradient(to bottom,
+                  rgba(34,120,223,1) 0%,
+                  rgba(8,63,188,1) 100%) !important;
+      border: 1px solid var(--blue-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:active,
     button:active {
       color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 2px solid var(--blue-50) !important;
-      padding: 0px 5px 0px 5px !important;
+      background: linear-gradient(to bottom,
+                  rgba(37,116,223,1) 0%,
+                  rgba(9,65,189,1) 100%) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:active {
+      color: var(--grey-20) !important;
+      background: linear-gradient(to bottom,
+                  rgba(75,147,220,1) 0%,
+                  rgba(12,88,215,1) 100%) !important;
+      border: 1px solid var(--blue-40) !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
     textbox {
@@ -955,34 +1044,678 @@ textbox#password-notification-password {
       color: var(--grey-30) !important;
       background: var(--grey-80) !important;
       border: 1px solid var(--grey-90) !important;
-      padding: 1px 6px 1px 6px !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
     button[disabled] {
       color: var(--grey-60) !important;
       background: var(--grey-80) !important;
       border: 1px solid var(--grey-80) !important;
-      padding: 1px 6px 1px 6px !important;
+      padding: 0px 6px 0px 6px !important;
       text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
     }
 
     button:focus:not([disabled]) {
       background: var(--grey-80) !important;
       border: 1px solid var(--grey-50) !important;
-      padding: 1px 6px 1px 6px !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
     button:hover:not([disabled]) {
       background: var(--grey-80) !important;
-      border: 2px solid var(--grey-50) !important;
-      padding: 0px 5px 0px 5px !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
     button:active:not([disabled]) {
       color: var(--grey-20) !important;
       background: var(--blue-50) !important;
-      border: 2px solid var(--blue-50) !important;
-      padding: 0px 5px 0px 5px !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+}
+
+  /* Launch Application dialog */
+
+@-moz-document url("chrome://mozapps/content/handling/dialog.xul")  {
+    dialog {
+      -moz-appearance: none !important;
+      background: var(--grey-60) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    .box-inherit.scrollbox-innerbox {
+      -moz-appearance: none !important;
+      background: var(--primary-dark-color) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    caption {
+      -moz-appearance: none !important;
+      color: var(--primary-light-color) !important;
+      background: var(--grey-60) !important;
+    }
+
+    description {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-60) !important;
+    }
+
+    button {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-90) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:focus {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:hover {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:active {
+      color: var(--grey-20) !important;
+      background: var(--blue-50) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    textbox {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-80) !important;
+      padding: 2px !important;
+      border: 1px solid var(--grey-50) !important;
+    }
+
+    textbox:hover {
+      background: var(--grey-80) !important;
+      color: var(--grey-10) !important;
+      padding: 2px !important;
+      border: 1px solid var(--grey-40) !important;
+    }
+}
+
+  /* Certificate Viewer dialog */
+
+@-moz-document url("chrome://pippki/content/certViewer.xul")  {
+    dialog {
+      -moz-appearance: none !important;
+      background: var(--grey-70) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    .tabs-right {
+      filter: invert(80%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
+    }
+
+    tabpanels,
+    #general_info,
+    #verified {
+      -moz-appearance: none !important;
+      background: var(--grey-80) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    treechildren,
+    textbox#certDumpVal {
+      background: var(--grey-10) !important;
+      color: var(--grey-40) !important;
+      filter: invert(95%) contrast(95%) brightness(150%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
+    }
+
+    .scrollfield,
+    .scrollfield:hover,
+    .groove {
+      border: 1px solid var(--grey-60) !important;
+    }
+
+    caption {
+      -moz-appearance: none !important;
+      color: var(--primary-light-color) !important;
+      background: var(--grey-60) !important;
+    }
+
+    description {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-60) !important;
+    }
+
+    tab[selected="true"]:not([ignorefocus="true"]) {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-80) !important;
+      border-bottom: 0px solid var(--grey-60) !important;
+    }
+
+    tab:not([ignorefocus="true"]) {
+      -moz-appearance: none !important;
+      color: var(--grey-40) !important;
+      background: var(--grey-80) !important;
+      border-bottom: 0px solid var(--grey-60) !important;
+    }
+
+    tab:hover {
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+    }
+
+    button {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-90) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:focus {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:hover {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:active {
+      color: var(--grey-20) !important;
+      background: var(--blue-50) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    textbox {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-80) !important;
+    }
+
+    textbox:hover {
+      background: var(--grey-80) !important;
+      color: var(--grey-10) !important;
+      border: 1px solid var(--grey-80) !important;
+    }
+}
+
+  /* Cookies dialog */
+
+@-moz-document url("chrome://browser/content/preferences/cookies.xul")  {
+    .windowDialog {
+      -moz-appearance: none !important;
+      background: var(--grey-60) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    tabpanels,
+    #general_info,
+    #verified,
+    treechildren {
+      -moz-appearance: none !important;
+      background: var(--grey-10) !important;
+      color: var(--grey-40) !important;
+      filter: invert(95%) contrast(95%) brightness(175%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
+    }
+
+    treecol {
+      -moz-appearance: none !important;
+      border: 0px solid !important;
+      border-bottom: 1px solid !important;
+      border-right: 1px solid rgb(0,0,0) !important;
+      -moz-border-bottom-colors: rgb(0,0,0) !important;
+      background: linear-gradient(to bottom,
+                  rgba(56,70,82,1) 0%,
+                  rgba(35,39,48,1) 100%) !important;
+      color: white !important;
+      padding: 4px !important;
+    }
+
+    splitter.tree-splitter {
+      -moz-appearance: none !important;
+      background: var(--grey-50) !important;
+      color: var(--primary-light-color) !important;
+      padding: 1px !important;
+    }
+
+    caption {
+      -moz-appearance: none !important;
+      color: var(--primary-light-color) !important;
+      background: var(--grey-60) !important;
+    }
+
+    description {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-60) !important;
+    }
+
+    button {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-90) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[disabled] {
+      color: var(--grey-60) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-80) !important;
+      padding: 0px 6px 0px 6px !important;
+      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
+    }
+
+    button:focus:not([disabled]) {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:hover:not([disabled]) {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:active:not([disabled]) {
+      color: var(--grey-20) !important;
+      background: var(--blue-50) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    #cookieInfoBox {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-80) !important;
+      padding: 2px !important;
+    }
+
+    textbox {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      padding: 2px !important;
+      border: 0px solid var(--grey-50) !important;
+    }
+
+    textbox:hover {
+      background: var(--grey-80) !important;
+      color: var(--grey-10) !important;
+      padding: 2px !important;
+      border: 0px solid var(--grey-40) !important;
+    }
+}
+
+  /* Saved Logins dialog */
+
+@-moz-document url("chrome://passwordmgr/content/passwordManager.xul")  {
+    #SignonViewerDialog,
+    #savedsignons {
+      -moz-appearance: none !important;
+      background: var(--grey-70) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    tabpanels,
+    #general_info,
+    #verified,
+    treechildren {
+      -moz-appearance: none !important;
+      background: var(--grey-10) !important;
+      color: var(--grey-40) !important;
+      filter: invert(95%) contrast(95%) brightness(150%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
+    }
+
+    treecol {
+      -moz-appearance: none !important;
+      border: 0px solid !important;
+      border-bottom: 1px solid !important;
+      border-right: 1px solid rgb(0,0,0) !important;
+      -moz-border-bottom-colors: rgb(0,0,0) !important;
+      background: linear-gradient(to bottom,
+                  rgba(56,70,82,1) 0%,
+                  rgba(35,39,48,1) 100%) !important;
+      color: white !important;
+      padding: 4px !important;
+    }
+
+    splitter.tree-splitter,
+    treecolpicker.treecol-image {
+      -moz-appearance: none !important;
+      background: var(--grey-50) !important;
+      color: var(--primary-light-color) !important;
+      padding: 1px !important;
+    }
+
+    caption {
+      -moz-appearance: none !important;
+      color: var(--primary-light-color) !important;
+      background: var(--grey-60) !important;
+    }
+
+    description {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-60) !important;
+    }
+
+    button {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-90) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[disabled] {
+      color: var(--grey-60) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-80) !important;
+      padding: 0px 6px 0px 6px !important;
+      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
+    }
+
+    button:focus:not([disabled]) {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:hover:not([disabled]) {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:active:not([disabled]) {
+      color: var(--grey-20) !important;
+      background: var(--blue-50) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    #cookieInfoBox {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-80) !important;
+      padding: 2px !important;
+    }
+
+    textbox {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      padding: 2px !important;
+      border: 0px solid var(--grey-50) !important;
+    }
+
+    textbox:hover {
+      background: var(--grey-80) !important;
+      color: var(--grey-10) !important;
+      padding: 2px !important;
+      border: 0px solid var(--grey-40) !important;
+    }
+}
+
+  /* Import Wizard dialog */
+
+@-moz-document url("chrome://browser/content/migration/migration.xul")  {
+    #migrationWizard {
+      -moz-appearance: none !important;
+      background: var(--grey-70) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    #dataSources,
+    .wizard-header {
+      -moz-appearance: none !important;
+      background: var(--grey-80) !important;
+      color: var(--primary-light-color) !important;
+      border: 1px solid var(--grey-60) !important;
+    }
+
+    caption {
+      -moz-appearance: none !important;
+      color: var(--primary-light-color) !important;
+      background: var(--grey-70) !important;
+    }
+
+    description {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-70) !important;
+    }
+
+    button {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-90) !important;
+      padding: 0px 6px 0px 6px !important;
+      margin-left: 2px !important;
+    }
+
+    button[disabled] {
+      color: var(--grey-60) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-80) !important;
+      padding: 0px 6px 0px 6px !important;
+      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
+    }
+
+    button:focus:not([disabled]) {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:hover:not([disabled]) {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:active:not([disabled]) {
+      color: var(--grey-20) !important;
+      background: var(--blue-50) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    #cookieInfoBox {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+      background: var(--grey-80) !important;
+      padding: 2px !important;
+    }
+
+    textbox {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      padding: 2px !important;
+      border: 0px solid var(--grey-50) !important;
+    }
+
+    textbox:hover {
+      background: var(--grey-80) !important;
+      color: var(--grey-10) !important;
+      padding: 2px !important;
+      border: 0px solid var(--grey-40) !important;
+    }
+}
+
+  /* Add Security Exception dialog */
+
+@-moz-document url("chrome://pippki/content/exceptionDialog.xul")  {
+    dialog {
+      -moz-appearance: none !important;
+      background: var(--primary-dark-color) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    caption {
+      -moz-appearance: none !important;
+      color: var(--primary-light-color) !important;
+      background: var(--primary-dark-color) !important;
+    }
+
+    description {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--primary-dark-color) !important;
+    }
+
+    button {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-90) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:focus {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:hover {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:active {
+      color: var(--grey-20) !important;
+      background: var(--blue-50) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    textbox {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      padding: 2px !important;
+      border: 1px solid var(--grey-50) !important;
+    }
+
+    textbox:hover {
+      background: var(--grey-80) !important;
+      color: var(--grey-10) !important;
+      padding: 2px !important;
+      border: 1px solid var(--grey-40) !important;
+    }
+}
+
+  /* Delete Server Cert dialog */
+
+@-moz-document url("chrome://pippki/content/deletecert.xul"),
+               url("chrome://pippki/content/changepassword.xul"),
+               url("chrome://pippki/content/load_device.xul"),
+               url("chrome://mozapps/content/extensions/about.xul")  {
+    dialog {
+      -moz-appearance: none !important;
+      background: var(--primary-dark-color) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    .box-padded,
+    .groupbox-body,
+    #clientBox {
+      -moz-appearance: none !important;
+      background: var(--grey-80) !important;
+      color: var(--primary-light-color) !important;
+      border: 1px solid var(--grey-60) !important;
+    }
+
+    .basic-info,
+    .dialog-button-box {
+      -moz-appearance: none !important;
+      background: var(--grey-70) !important;
+      color: var(--primary-light-color) !important;
+    }
+
+    #extensionDescription.boxIndent {
+      -moz-appearance: none !important;
+      background: var(--grey-80) !important;
+      color: var(--primary-light-color) !important;
+      padding-top: 5px !important;
+    }
+
+    .scrollfield,
+    .scrollfield:hover,
+    .groove {
+      border: 1px solid var(--grey-60) !important;
+    }
+
+    caption {
+      -moz-appearance: none !important;
+      color: var(--primary-light-color) !important;
+      background: var(--primary-dark-color) !important;
+    }
+
+    description {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--primary-dark-color) !important;
+    }
+
+    button {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-90) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:focus {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:hover {
+      background: var(--grey-80) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:active {
+      color: var(--grey-20) !important;
+      background: var(--blue-50) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    textbox {
+      -moz-appearance: none !important;
+      color: var(--grey-30) !important;
+      background: var(--grey-80) !important;
+      padding: 2px !important;
+      border: 1px solid var(--grey-50) !important;
+    }
+
+    textbox:hover {
+      background: var(--grey-80) !important;
+      color: var(--grey-10) !important;
+      padding: 2px !important;
+      border: 1px solid var(--grey-40) !important;
     }
 }
 
@@ -995,26 +1728,26 @@ textbox#password-notification-password {
       color: var(--grey-30) !important;
       background: var(--grey-80) !important;
       border: 1px solid var(--grey-90) !important;
-      padding: 1px 6px 1px 6px !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
     button:focus {
       background: var(--grey-80) !important;
       border: 1px solid var(--grey-50) !important;
-      padding: 1px 6px 1px 6px !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
     button:hover {
       background: var(--grey-80) !important;
-      border: 2px solid var(--grey-50) !important;
-      padding: 0px 5px 0px 5px !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
     }
 
     button:active {
       color: var(--grey-20) !important;
       background: var(--blue-50) !important;
-      border: 2px solid var(--blue-50) !important;
-      padding: 0px 5px 0px 5px !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
     }
 }
 
@@ -1035,26 +1768,26 @@ textbox#password-notification-password {
     color: var(--grey-30) !important;
     background: var(--grey-80) !important;
     border: 1px solid var(--grey-90) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   vbox.mainContainer button:focus {
     background: var(--grey-80) !important;
     border: 1px solid var(--grey-50) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   vbox.mainContainer button:hover {
     background: var(--grey-80) !important;
-    border: 2px solid var(--grey-50) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--grey-40) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   vbox.mainContainer button:active {
     color: var(--grey-20) !important;
     background: var(--blue-50) !important;
-    border: 2px solid var(--blue-50) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--blue-50) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   /* Checkbox, Radio, Menulist, global invert */
@@ -1105,29 +1838,29 @@ textbox#password-notification-password {
     color: var(--grey-20) !important;
     background: var(--grey-50) !important;
     border: 1px solid var(--grey-50) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#editBMPanel_newFolderButton:focus,
   button#fullscreen-exit-button:focus {
     background: var(--grey-50) !important;
     border: 1px solid var(--grey-40) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#editBMPanel_newFolderButton:hover,
   button#fullscreen-exit-button:hover {
     background: var(--grey-50) !important;
-    border: 2px solid var(--grey-40) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--grey-30) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#editBMPanel_newFolderButton:active,
   button#fullscreen-exit-button:active {
     color: var(--grey-80) !important;
     background: var(--grey-40) !important;
-    border: 2px solid var(--grey-40) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--grey-40) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   /* Buttons, Grey 70 */
@@ -1137,25 +1870,25 @@ textbox#password-notification-password {
     color: var(--grey-30) !important;
     background: var(--grey-70) !important;
     border: 1px solid var(--grey-80) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#editBookmarkPanelRemoveButton:focus {
     background: var(--grey-70) !important;
     border: 1px solid var(--grey-50) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#editBookmarkPanelRemoveButton:hover {
     background: var(--grey-70) !important;
-    border: 2px solid var(--grey-50) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--grey-40) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#editBookmarkPanelRemoveButton:active {
     background: var(--grey-50) !important;
-    border: 2px solid var(--grey-50) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--grey-50) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   /* Buttons, Blue 50 */
@@ -1165,25 +1898,25 @@ textbox#password-notification-password {
     color: var(--grey-20) !important;
     background: var(--blue-50) !important;
     border: 1px solid var(--blue-50) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#editBookmarkPanelDoneButton:focus {
     background: var(--blue-50) !important;
     border: 1px solid var(--blue-40) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#editBookmarkPanelDoneButton:hover {
     background: var(--blue-50) !important;
-    border: 2px solid var(--blue-40) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--blue-30) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#editBookmarkPanelDoneButton:active {
     background: var(--blue-40) !important;
-    border: 2px solid var(--blue-40) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--blue-40) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   /* Customization page */
@@ -1194,26 +1927,26 @@ textbox#password-notification-password {
     -moz-appearance: none !important;
     color: var(--grey-20) !important;
     background: var(--grey-60) !important;
-    border: 2px solid var(--grey-60) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--grey-60) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#customization-reset-button:focus {
     background: var(--grey-60) !important;
     border: 1px solid var(--grey-50) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#customization-reset-button:hover {
     background: var(--grey-60) !important;
-    border: 2px solid var(--grey-50) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--grey-40) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#customization-reset-button:active {
     background: var(--blue-50) !important;
-    border: 2px solid var(--blue-50) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--blue-50) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   /* Customization page, Grey 80 */
@@ -1238,7 +1971,7 @@ textbox#password-notification-password {
   button#customization-lwtheme-button:hover,
   button#customization-uidensity-button:hover {
     background: var(--grey-60) !important;
-    border: 1px solid var(--grey-50) !important;
+    border: 1px solid var(--grey-40) !important;
   }
 
   button#customization-toolbar-visibility-button:active,
@@ -1255,25 +1988,25 @@ textbox#password-notification-password {
     color: var(--grey-20) !important;
     background: var(--blue-60) !important;
     border: 1px solid var(--blue-70) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#customization-done-button:focus {
     background: var(--blue-60) !important;
     border: 1px solid var(--blue-50) !important;
-    padding: 1px 6px 1px 6px !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#customization-done-button:hover {
     background: var(--blue-60) !important;
-    border: 2px solid var(--blue-50) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--blue-40) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 
   button#customization-done-button:active {
     background: var(--blue-50) !important;
-    border: 2px solid var(--blue-50) !important;
-    padding: 0px 5px 0px 5px !important;
+    border: 1px solid var(--blue-50) !important;
+    padding: 0px 6px 0px 6px !important;
   }
 }
 
@@ -1751,64 +2484,66 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
   }
 }
 @-moz-document url(chrome://browser/content/pageinfo/pageInfo.xul)  {
-  #topBar {
-    -moz-appearance: none !important;
-    background: var(--grey-80) !important;
-  }
+@media not screen and (-moz-windows-classic) {
+    #topBar {
+      -moz-appearance: none !important;
+      background: var(--grey-80) !important;
+    }
 
-  #mainDeck {
-    background: var(--primary-dark-color) !important;
-    color: white !important;
-  }
+    #mainDeck {
+      background: var(--primary-dark-color) !important;
+      color: white !important;
+    }
 
-  textbox {
-    color: var(--primary-light-color) !important;
-  }
+    textbox {
+      color: var(--primary-light-color) !important;
+    }
 
-  tree {
-    -moz-appearance: none !important;
-    border: 1px solid rgb(0,0,0) !important;
-    color: rgb(200,200,200) !important;
-    background-color: var(--grey-60) !important;
-  }
+    tree {
+      -moz-appearance: none !important;
+      border: 1px solid rgb(0,0,0) !important;
+      color: rgb(200,200,200) !important;
+      background-color: var(--grey-60) !important;
+    }
 
-  treechildren::-moz-tree-row {
-    background-color: transparent !important;
-    overflow-y: scroll  !important;
-  }
+    treechildren::-moz-tree-row {
+      background-color: transparent !important;
+      overflow-y: scroll  !important;
+    }
 
-  treecol {
-    -moz-appearance: none !important;
-    border: 0px solid !important;
-    border-bottom: 1px solid !important;
-    border-right: 1px solid rgb(0,0,0) !important;
-    -moz-border-bottom-colors: rgb(0,0,0) !important;
-    background: linear-gradient(to bottom,
+    treecol {
+      -moz-appearance: none !important;
+      border: 0px solid !important;
+      border-bottom: 1px solid !important;
+      border-right: 1px solid rgb(0,0,0) !important;
+      -moz-border-bottom-colors: rgb(0,0,0) !important;
+      background: linear-gradient(to bottom,
 			           rgba(56,70,82,1) 0%,
 			           rgba(35,39,48,1) 100%) !important;
-    color: white !important;
-  }
+      color: white !important;
+      padding: 4px !important;
+    }
 
-  treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {
-    background: var(--primary-accent-color) !important;
-  }
+    treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {
+      background: var(--primary-accent-color) !important;
+    }
 
-  .permission {
-    -moz-appearance: none !important;
-    background: var(--grey-60) !important;
-    color: var(--primary-light-color) !important;
-    border-color: var(--grey-70) !important;
-  }
+    .permission {
+      -moz-appearance: none !important;
+      background: var(--grey-60) !important;
+      color: var(--primary-light-color) !important;
+      border-color: var(--grey-70) !important;
+    }
 
-  #permPluginTemplate {
-    color: var(--primary-light-color) !important;
-  }
+    #permPluginTemplate {
+      color: var(--primary-light-color) !important;
+    }
 
-  #permList {
-    border: 2px solid var(--grey-70) !important;
-  }
+    #permList {
+      border: 2px solid var(--grey-70) !important;
+    }
 
-  /* [WINDOWS ONLY] fixes */
+    /* [WINDOWS ONLY] fixes */
 
 @media screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
@@ -1816,35 +2551,36 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
        screen and (-moz-os-version: windows-win7),
        screen and (-moz-os-version: windows-win8),
        screen and (-moz-os-version: windows-win10) {
-    #topBar {
-      -moz-appearance: none !important;
-      background-color: var(--grey-80) !important;
-      border: none !important;
-      padding-top: 5px !important;
-      padding-bottom: 5px !important;
-      color: var(--grey-20) !important;
-    }
+      #topBar {
+        -moz-appearance: none !important;
+        background-color: var(--grey-80) !important;
+        border: none !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        color: var(--grey-20) !important;
+      }
 
-    #metaTagsCaption,
-    #security-identity,
-    #security-privacy,
-    #security-technical,
-    #security-identity-groupbox,
-    #security-privacy-groupbox,
-    #security-technical-groupbox {
-      -moz-appearance: none !important;
-      background-color: var(--grey-60) !important;
-      border-radius: 4px !important;
-      border: none !important;
-      color: var(--grey-20) !important;
-    }
+      #metaTagsCaption,
+      #security-identity,
+      #security-privacy,
+      #security-technical,
+      #security-identity-groupbox,
+      #security-privacy-groupbox,
+      #security-technical-groupbox {
+        -moz-appearance: none !important;
+        background-color: var(--grey-60) !important;
+        border-radius: 4px !important;
+        border: none !important;
+        color: var(--grey-20) !important;
+      }
 
-    #security-identity-groupbox,
-    #security-privacy-groupbox,
-    #security-technical-groupbox {
-      -moz-appearance: none !important;
-      background-color: rgba(49, 49, 54, 1) !important;
-    }
+      #security-identity-groupbox,
+      #security-privacy-groupbox,
+      #security-technical-groupbox {
+        -moz-appearance: none !important;
+        background-color: rgba(49, 49, 54, 1) !important;
+      }
+}
 }
 }
 /* Remove 1px border underneath bookmarks bar */

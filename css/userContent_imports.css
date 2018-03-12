@@ -5,13 +5,13 @@
 
 
 @import "userContent-files/all_about_pages.css";
-@import 'userContent-files/webpages/amo_store.css';
-@import 'userContent-files/webpages/directory_listings.css';
-@import 'userContent-files/webpages/manifest.css';
+@import "userContent-files/webpages/amo_store.css";
+@import "userContent-files/webpages/directory_listings.css";
+@import "userContent-files/webpages/manifest.css";
 
-@import 'userContent-files/webpages/raw_githubusercontent.css';
+@import "userContent-files/webpages/raw_githubusercontent.css";
 @import "userContent-files/webpages/view_source.css";
-@import 'userContent-files/webpages/www.css';
+@import "userContent-files/webpages/www.css";
 
 /* Import about page files
  * Recommended for everyone using the dark theme */

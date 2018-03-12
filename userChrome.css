@@ -2575,5 +2575,5 @@ statuspanel .statuspanel-label {
 /* Read contents of userChrome.xml */
 
 toolbarbutton#alltabs-button {
-  -moz-binding: url("../userChrome.xml#js");
+  -moz-binding: url("userChrome.xml#js");
 }

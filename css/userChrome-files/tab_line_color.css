@@ -1,0 +1,58 @@
+/* Change active tab line color */
+
+.tab-line[selected="true"] {
+  background-color: var(--primary-accent-color) !important;
+}
+
+/* WINDOWS ONLY */
+
+@media screen and (-moz-windows-theme),
+       screen and (-moz-windows-classic),
+       screen and (-moz-windows-default-theme),
+       screen and (-moz-os-version: windows-win7),
+       screen and (-moz-os-version: windows-win8),
+       screen and (-moz-os-version: windows-win10) {
+
+  /* Remove tab placeholder */
+
+  .titlebar-placeholder[type="pre-tabs"] {
+    display: none !important;
+  }
+
+  /* Min, Max, Close, macOS colours in Windows 10 */
+
+  toolbarbutton#titlebar-min          { background-color: rgba(255, 189, 46, .05) !important; }
+  toolbarbutton#titlebar-min:hover    { background-color: rgba(255, 189, 46, .9) !important; }
+  toolbarbutton#titlebar-min:active   { background-color: rgba(255, 189, 46, 1) !important; }
+  toolbarbutton#titlebar-max          { background-color: rgba(40, 201, 64, .05) !important; }
+  toolbarbutton#titlebar-max:hover    { background-color: rgba(40, 201, 64, .9) !important; }
+  toolbarbutton#titlebar-max:active   { background-color: rgba(40, 201, 64, 1) !important; }
+  toolbarbutton#titlebar-close        { background-color: rgba(255, 95, 87, .05) !important; }
+  toolbarbutton#titlebar-close:hover  { background-color: rgba(255, 95, 87, .9) !important; }
+  toolbarbutton#titlebar-close:active { background-color: rgba(255, 95, 87, 1) !important; }
+}
+
+/* Tabs, different colour if unread */
+
+@keyframes effect_color {
+    0% { filter: saturate(500%) invert(0%);}
+    100% { filter: saturate(50%) invert(5%);}
+}
+
+.tabbrowser-tab[unread] {
+  color: var(--grey-40) !important;
+  font-style: italic;
+}
+.tabbrowser-tab[busy] {
+  color: var(--grey-40) !important;
+  animation: effect_color 1s infinite alternate !important;
+}
+.tabbrowser-tab[pending] {
+  color: var(--blue-40) !important;
+}
+
+/* Read contents of userChrome.xml */
+
+toolbarbutton#alltabs-button {
+    -moz-binding: url("../../userChrome.xml#js");
+}

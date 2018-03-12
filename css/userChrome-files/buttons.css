@@ -1,0 +1,462 @@
+/* Windows 7 Basic Theme makes some dark stuff look bad */
+
+@media not screen and (-moz-windows-classic) {
+
+      :root {
+            --button-primary-color: var(--grey-30);
+            --button-primary-background-color: var(--grey-80);
+            --button-primary-border-color: var(--grey-60);
+
+            --button-primary-focus-background-color: var(--grey-80);
+            --button-primary-focus-border-color: var(--grey-50);
+
+            --button-primary-hover-background-color: var(--grey-80);
+            --button-primary-hover-border-color: var(--grey-40);
+
+            --button-primary-active-color: var(--grey-20);
+            --button-primary-active-background-color: var(--blue-50);
+            --button-primary-active-border-color: var(--blue-50);
+      }
+
+      /* Button border radius for macOS */
+
+      @media not screen and (-moz-windows-theme) {
+            @media not screen and (-moz-windows-classic) {
+                  @media not screen and (-moz-windows-default-theme) {
+                        @media not screen and (-moz-os-version: windows-win7) {
+                              @media not screen and (-moz-os-version: windows-win8) {
+                                    @media not screen and (-moz-os-version: windows-win10) {
+                                          button {
+                                                border-radius: 4px !important;
+                                          }
+                                          button#editBMPanel_newFolderButton {
+                                                border-radius: 0px !important;
+                                          }
+                                    }
+                              }
+                        }
+                  }
+            }
+      }
+
+      @-moz-document url("chrome://browser/content/pageinfo/pageInfo.xul"),
+            url("chrome://browser/content/aboutDialog.xul"),
+            url("chrome://mozapps/content/handling/dialog.xul"),
+            url("chrome://mozapps/content/extensions/about.xul"),
+            url("chrome://pippki/content/exceptionDialog.xul"),
+            url("chrome://pippki/content/deletecert.xul"),
+            url("chrome://pippki/content/changepassword.xul"),
+            url("chrome://pippki/content/load_device.xul"),
+            url("chrome://pippki/content/editcacert.xul"),
+            url("chrome://pippki/content/certViewer.xul"),
+            url("chrome://mozapps/content/downloads/unknownContentType.xul"),
+            url("chrome://browser/content/preferences/cookies.xul"),
+            url("chrome://passwordmgr/content/passwordManager.xul"),
+            url("chrome://browser/content/migration/migration.xul") {
+                  button {
+                        -moz-appearance: none !important;
+                        color: var(--button-primary-color) !important;
+                        background: var(--button-primary-background-color) !important;
+                        border: 1px solid var(--button-primary-border-color) !important;
+                        padding: 0px 6px 0px 6px !important;
+                        box-shadow: none !important;
+                  }
+
+                  button[disabled] {
+                        color: var(--grey-60) !important;
+                        background: var(--button-primary-background-color) !important;
+                        border: 1px solid var(--grey-80) !important;
+                        padding: 0px 6px 0px 6px !important;
+                        text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
+                  }
+
+                  button[dlgtype="cancel"]:not([disabled]) {
+                        -moz-appearance: none !important;
+                        color: var(--button-primary-color) !important;
+                        background: var(--button-primary-background-color) !important;
+                        border: 1px solid var(--button-primary-border-color) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="accept"]:not([disabled]) {
+                        -moz-appearance: none !important;
+                        color: var(--grey-10) !important;
+                        background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+                        border: 1px solid var(--blue-60) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button:focus:not([disabled]) {
+                        background: var(--button-primary-focus-background-color) !important;
+                        border: 1px solid var(--button-primary-focus-border-color) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="cancel"]:focus:not([disabled]), button:focus:not([disabled]) {
+                        background: var(--button-primary-focus-background-color) !important;
+                        border: 1px solid var(--button-primary-focus-border-color) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="accept"]:focus:not([disabled]) {
+                        background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+                        border: 1px solid var(--blue-50) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button:hover:not([disabled]) {
+                        background: var(--button-primary-hover-background-color) !important;
+                        border: 1px solid var(--button-primary-hover-border-color) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="cancel"]:hover:not([disabled]), button:hover:not([disabled]) {
+                        background: var(--button-primary-hover-background-color) !important;
+                        border: 1px solid var(--button-primary-hover-border-color) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="accept"]:hover:not([disabled]) {
+                        background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+                        border: 1px solid var(--blue-40) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button:active:not([disabled]) {
+                        color: var(--button-primary-active-color) !important;
+                        background: var(--button-primary-active-background-color) !important;
+                        border: 1px solid var(--button-primary-active-border-color) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="cancel"]:active:not([disabled]), button:active:not([disabled]) {
+                        color: var(--button-primary-active-color) !important;
+                        background: linear-gradient(to bottom,
+                              rgba(42, 121, 228, 1) 0%,
+                              rgba(0, 80, 204, 1) 100%) !important;
+                        border: 1px solid var(--button-primary-active-border-color) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="accept"]:active:not([disabled]) {
+                        color: var(--button-primary-active-color) !important;
+                        background: linear-gradient(to bottom,
+                              rgba(80, 152, 225, 1) 0%,
+                              rgba(0, 103, 230, 1) 100%) !important;
+                        border: 1px solid var(--blue-40) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+      }
+
+      @-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul"),
+            url("chrome://global/content/commonDialog.xul"),
+            url("chrome://global/content/appPicker.xul") {
+                  button[dlgtype="cancel"] {
+                        -moz-appearance: none !important;
+                        color: var(--button-primary-color) !important;
+                        background: var(--button-primary-background-color) !important;
+                        border: 1px solid var(--grey-50) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="accept"] {
+                        -moz-appearance: none !important;
+                        color: var(--grey-10) !important;
+                        background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+                        border: 1px solid var(--blue-60) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="cancel"]:focus, button:focus {
+                        background: var(--button-primary-focus-background-color) !important;
+                        border: 1px solid var(--grey-40) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="accept"]:focus {
+                        background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+                        border: 1px solid var(--blue-50) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="cancel"]:hover, button:hover {
+                        background: var(--button-primary-hover-background-color) !important;
+                        border: 1px solid var(--grey-30) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="accept"]:hover {
+                        background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+                        border: 1px solid var(--blue-40) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="cancel"]:active, button:active {
+                        color: var(--button-primary-active-color) !important;
+                        background: linear-gradient(to bottom,
+                              rgba(42, 121, 228, 1) 0%,
+                              rgba(0, 80, 204, 1) 100%) !important;
+                        border: 1px solid var(--button-primary-active-border-color) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+
+                  button[dlgtype="accept"]:active {
+                        color: var(--button-primary-active-color) !important;
+                        background: linear-gradient(to bottom,
+                              rgba(80, 152, 225, 1) 0%,
+                              rgba(0, 103, 230, 1) 100%) !important;
+                        border: 1px solid var(--blue-40) !important;
+                        padding: 0px 6px 0px 6px !important;
+                  }
+      }
+
+      @-moz-document url("chrome://browser/content/migration/migration.xul") {
+            button {
+                  -moz-appearance: none !important;
+                  margin-left: 2px !important;
+            }
+      }
+
+      /* Leave page confirm dialog */
+
+      vbox.mainContainer {
+            color: var(--primary-light-color) !important;
+            background: var(--primary-dark-color) !important;
+      }
+
+      vbox.mainContainer grid.topContainer {
+            color: var(--primary-light-color) !important;
+            background: var(--grey-80) !important;
+      }
+
+      vbox.mainContainer button {
+            -moz-appearance: none !important;
+            color: var(--button-primary-color) !important;
+            background: var(--button-primary-background-color) !important;
+            border: 1px solid var(--button-primary-border-color) !important;
+            padding: 0px 6px 0px 6px !important;
+            box-shadow: none !important;
+      }
+
+      vbox.mainContainer button:focus {
+            background: var(--button-primary-focus-background-color) !important;
+            border: 1px solid var(--button-primary-focus-border-color) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      vbox.mainContainer button:hover {
+            background: var(--button-primary-hover-background-color) !important;
+            border: 1px solid var(--button-primary-hover-border-color) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      vbox.mainContainer button:active {
+            color: var(--button-primary-active-color) !important;
+            background: var(--button-primary-active-background-color) !important;
+            border: 1px solid var(--button-primary-active-border-color) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      /* Buttons, Grey 50 */
+
+      button#editBMPanel_newFolderButton,
+      button#fullscreen-exit-button {
+            -moz-appearance: none !important;
+            color: var(--grey-20) !important;
+            background: var(--grey-50) !important;
+            border: 1px solid var(--grey-50) !important;
+            padding: 0px 6px 0px 6px !important;
+            box-shadow: none !important;
+      }
+
+      button#editBMPanel_newFolderButton:focus,
+      button#fullscreen-exit-button:focus {
+            background: var(--grey-50) !important;
+            border: 1px solid var(--grey-40) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#editBMPanel_newFolderButton:hover,
+      button#fullscreen-exit-button:hover {
+            background: var(--grey-50) !important;
+            border: 1px solid var(--grey-30) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#editBMPanel_newFolderButton:active,
+      button#fullscreen-exit-button:active {
+            color: var(--grey-80) !important;
+            background: var(--grey-40) !important;
+            border: 1px solid var(--grey-40) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      /* Buttons, Grey 70 */
+
+      button#editBookmarkPanelRemoveButton {
+            -moz-appearance: none !important;
+            color: var(--button-primary-color) !important;
+            background: var(--grey-70) !important;
+            border: 1px solid var(--grey-50) !important;
+            padding: 0px 6px 0px 6px !important;
+            box-shadow: none !important;
+      }
+
+      button#editBookmarkPanelRemoveButton:focus {
+            background: var(--grey-70) !important;
+            border: 1px solid var(--grey-40) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#editBookmarkPanelRemoveButton:hover {
+            background: var(--grey-70) !important;
+            border: 1px solid var(--grey-30) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#editBookmarkPanelRemoveButton:active {
+            background: var(--grey-50) !important;
+            border: 1px solid var(--grey-50) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      /* Buttons, Blue 50 */
+
+      button#editBookmarkPanelDoneButton {
+            -moz-appearance: none !important;
+            color: var(--grey-20) !important;
+            background: var(--blue-50) !important;
+            border: 1px solid var(--blue-50) !important;
+            padding: 0px 6px 0px 6px !important;
+            box-shadow: none !important;
+      }
+
+      button#editBookmarkPanelDoneButton:focus {
+            background: var(--blue-50) !important;
+            border: 1px solid var(--blue-40) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#editBookmarkPanelDoneButton:hover {
+            background: var(--blue-50) !important;
+            border: 1px solid var(--blue-30) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#editBookmarkPanelDoneButton:active {
+            background: var(--blue-40) !important;
+            border: 1px solid var(--blue-40) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      /* Customization page */
+
+      /* Customization page, Grey 60 */
+
+      button#customization-reset-button {
+            -moz-appearance: none !important;
+            color: var(--grey-20) !important;
+            background: var(--grey-60) !important;
+            border: 1px solid var(--grey-60) !important;
+            padding: 0px 6px 0px 6px !important;
+            box-shadow: none !important;
+      }
+
+      button#customization-reset-button:focus {
+            background: var(--grey-60) !important;
+            border: 1px solid var(--button-primary-focus-border-color) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#customization-reset-button:hover {
+            background: var(--grey-60) !important;
+            border: 1px solid var(--button-primary-hover-border-color) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#customization-reset-button:active {
+            background: var(--button-primary-active-background-color) !important;
+            border: 1px solid var(--button-primary-active-border-color) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      /* Customization page, Grey 80 */
+
+      button#customization-toolbar-visibility-button,
+      button#customization-lwtheme-button,
+      button#customization-uidensity-button {
+            -moz-appearance: none !important;
+            color: var(--grey-20) !important;
+            background: var(--button-primary-background-color) !important;
+            border: 1px solid var(--grey-50) !important;
+            box-shadow: none !important;
+      }
+
+      button#customization-toolbar-visibility-button:focus,
+      button#customization-lwtheme-button:focus,
+      button#customization-uidensity-button:focus {
+            background: var(--grey-60) !important;
+            border: 1px solid var(--button-primary-focus-border-color) !important;
+      }
+
+      button#customization-toolbar-visibility-button:hover,
+      button#customization-lwtheme-button:hover,
+      button#customization-uidensity-button:hover {
+            background: var(--grey-60) !important;
+            border: 1px solid var(--button-primary-hover-border-color) !important;
+      }
+
+      button#customization-toolbar-visibility-button:active,
+      button#customization-lwtheme-button:active,
+      button#customization-uidensity-button:active {
+            background: var(--grey-50) !important;
+            border: 1px solid var(--grey-50) !important;
+      }
+
+      /* Customization page, Blue 50 */
+
+      button#customization-done-button {
+            -moz-appearance: none !important;
+            color: var(--grey-20) !important;
+            background: var(--blue-60) !important;
+            border: 1px solid var(--blue-70) !important;
+            padding: 0px 6px 0px 6px !important;
+            box-shadow: none !important;
+      }
+
+      button#customization-done-button:focus {
+            background: var(--blue-60) !important;
+            border: 1px solid var(--blue-50) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#customization-done-button:hover {
+            background: var(--blue-60) !important;
+            border: 1px solid var(--blue-40) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      button#customization-done-button:active {
+            background: var(--button-primary-active-background-color) !important;
+            border: 1px solid var(--button-primary-active-border-color) !important;
+            padding: 0px 6px 0px 6px !important;
+      }
+
+      /* "New Bookmarks" / "Bookmark all tabs..." */
+
+      button#editBMPanel_foldersExpander {
+            filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+      }
+}

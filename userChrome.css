@@ -479,8 +479,7 @@ panel[type="autocomplete-richlistbox"],
 @-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul"),
             url("chrome://global/content/commonDialog.xul"),
             url("chrome://global/content/appPicker.xul")  {
-    button[dlgtype="cancel"],
-    button {
+    button[dlgtype="cancel"] {
       -moz-appearance: none !important;
       color: var(--button-primary-color) !important;
       background: var(--button-primary-background-color) !important;
@@ -795,8 +794,28 @@ popup,
 popup > menu > menupopup {
   -moz-appearance: none!important;
   background: var(--grey-60) !important;
-  border: none !important;
+  border-color: rgba(56, 56, 61, 0.5) !important;
   padding: 0 !important;
+}
+
+@media not screen and (-moz-windows-theme) {
+@media not screen and (-moz-windows-classic) {
+@media not screen and (-moz-windows-default-theme) {
+@media not screen and (-moz-os-version: windows-win7) {
+@media not screen and (-moz-os-version: windows-win8) {
+@media not screen and (-moz-os-version: windows-win10) {
+            menupopup,
+            menupopup > menu > menupopup,
+            menupopup scrollbox,
+            popup,
+            popup > menu > menupopup {
+              border: none !important;
+            }
+}
+}
+}
+}
+}
 }
 
 /* More options right arrow */
@@ -1066,7 +1085,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
   /* Context menu, left icon padding */
 
   menuitem#context-media-loop hbox.menu-iconic-left,
-  menupopup#contentAreaContextMenu menuitem#spell-check-enabled hbox.menu-iconic-left {
+  menupopup#contentAreaContextMenu menuitem[type="checkbox"] hbox.menu-iconic-left {
     margin-left: 2px !important;
     margin-right: -2px !important;
   }
@@ -1134,11 +1153,15 @@ vbox#sidebar-box.chromeclass-extrachrome {
   }
 }
 
-/* Fixes for Waterfox / Older Firefox */
+/* Add-on menu notification */
 
-panelmultiview#PanelUI-multiView image,
-panelview#PanelUI-mainView image {
-  filter: invert(98%) !important;
+toolbarbutton.addon-banner-item {
+  background: var(--grey-70) !important;
+  color: var(--grey-30) !important;
+}
+
+toolbarbutton.addon-banner-item:hover {
+  color: var(--grey-20) !important;
 }
 
 /* Opacity */
@@ -1156,6 +1179,13 @@ label.text-link.popup-notification-learnmore-link {
 
 label.text-link.popup-notification-learnmore-link:hover {
   color: var(--blue-40) !important;
+}
+
+/* Fixes for Waterfox / Older Firefox */
+
+panelmultiview#PanelUI-multiView image,
+panelview#PanelUI-mainView image {
+  filter: invert(98%) !important;
 }
 #customization-done-button {
   color: var(--primary-light-color);
@@ -1480,7 +1510,7 @@ label.text-link.popup-notification-learnmore-link:hover {
 @-moz-document url("chrome://browser/content/preferences/cookies.xul")  {
     .windowDialog {
       -moz-appearance: none !important;
-      background: var(--grey-60) !important;
+      background: var(--grey-70) !important;
       color: var(--primary-light-color) !important;
     }
 
@@ -1491,7 +1521,7 @@ label.text-link.popup-notification-learnmore-link:hover {
       -moz-appearance: none !important;
       background: var(--grey-10) !important;
       color: var(--grey-40) !important;
-      filter: invert(95%) contrast(95%) brightness(175%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
+      filter: invert(95%) contrast(95%) brightness(125%) grayscale(5%) saturate(300%) hue-rotate(-178deg) !important;
     }
 
     treecol {
@@ -1566,7 +1596,7 @@ label.text-link.popup-notification-learnmore-link:hover {
       -moz-appearance: none !important;
       background: var(--grey-10) !important;
       color: var(--grey-40) !important;
-      filter: invert(95%) contrast(95%) brightness(150%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
+      filter: invert(95%) contrast(95%) brightness(125%) grayscale(5%) saturate(300%) hue-rotate(-178deg) !important;
     }
 
     treecol {
@@ -2550,5 +2580,5 @@ statuspanel .statuspanel-label {
 /* Read contents of userChrome.xml */
 
 toolbarbutton#alltabs-button {
-  -moz-binding: url("userChrome.xml#js");
+  -moz-binding: url("../userChrome.xml#js");
 }

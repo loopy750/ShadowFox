@@ -99,7 +99,7 @@
     --in-content-link-color-hover: var(--primary-accent-color-dark) !important;
     --in-content-link-color-visited: var(--dark-accent) !important;
     --in-content-primary-button-background: var(--dark-accent) !important;
-    --in-content-primary-button-background-hover: var(--primary-accent-color-dark) !important;
+    --in-content-primary-button-background-hover: var(--grey-60) !important;
     --in-content-primary-button-background-active: var(--primary-accent-color-dark) !important;
     --in-content-table-header-background: var(--dark-accent) !important;
     --in-content-category-background: var(--primary-dark-color) !important;

@@ -7,9 +7,9 @@
 #editBMPanel_rows > row > hbox > textbox,
 #editBMPanel_folderMenuList,
 #editBookmarkPanelRemoveButton,
-#editBookmarkPanelDoneButton,
+#editBookmarkPanelDoneButton
 /*#editBMPanel_foldersExpander,*/
-#editBMPanel_tagsSelectorExpander {
+/*#editBMPanel_tagsSelectorExpander*/ {
     -moz-appearance: none !important;
     background: var(--grey-70) !important;
     color: var(--primary-light-color) !important;

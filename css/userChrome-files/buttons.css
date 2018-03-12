@@ -155,6 +155,7 @@
       }
 
       @-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul"),
+            url("chrome://browser/content/places/bookmarkProperties.xul"),
             url("chrome://global/content/commonDialog.xul"),
             url("chrome://global/content/appPicker.xul") {
                   button[dlgtype="cancel"] {
@@ -456,7 +457,8 @@
 
       /* "New Bookmarks" / "Bookmark all tabs..." */
 
-      button#editBMPanel_foldersExpander {
+      button#editBMPanel_foldersExpander,
+      button#editBMPanel_tagsSelectorExpander {
             filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
       }
 }

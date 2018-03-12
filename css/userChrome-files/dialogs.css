@@ -8,14 +8,6 @@
             filter: invert(85%) brightness(125%) saturate(110%) hue-rotate(-178deg) !important;
       }
 
-      @-moz-document url("chrome://global/content/commonDialog.xul") {
-            #commonDialog {
-                  -moz-appearance: none !important;
-                  background: var(--primary-dark-color) !important;
-                  color: var(--primary-light-color) !important;
-            }
-      }
-
       @-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul") {
 
             dialog#bookmarkproperties {

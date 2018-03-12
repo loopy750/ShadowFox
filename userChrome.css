@@ -231,8 +231,9 @@ panel[type="autocomplete-richlistbox"],
   #editBMPanel_rows > row > hbox > textbox,
   #editBMPanel_folderMenuList,
   #editBookmarkPanelRemoveButton,
-  #editBookmarkPanelDoneButton,
-  #editBMPanel_tagsSelectorExpander {
+  #editBookmarkPanelDoneButton
+
+ {
     -moz-appearance: none !important;
     background: var(--grey-70) !important;
     color: var(--primary-light-color) !important;
@@ -477,6 +478,7 @@ panel[type="autocomplete-richlistbox"],
 }
 
 @-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul"),
+            url("chrome://browser/content/places/bookmarkProperties.xul"),
             url("chrome://global/content/commonDialog.xul"),
             url("chrome://global/content/appPicker.xul")  {
     button[dlgtype="cancel"] {
@@ -781,7 +783,8 @@ panel[type="autocomplete-richlistbox"],
 
   /* "New Bookmarks" / "Bookmark all tabs..." */
 
-  button#editBMPanel_foldersExpander {
+  button#editBMPanel_foldersExpander,
+  button#editBMPanel_tagsSelectorExpander {
     filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
   }
 }
@@ -1206,14 +1209,6 @@ panelview#PanelUI-mainView image {
   textbox#password-notification-password {
     filter: invert(85%) brightness(125%) saturate(110%) hue-rotate(-178deg) !important;
   }
-
-@-moz-document url("chrome://global/content/commonDialog.xul")  {
-    #commonDialog {
-      -moz-appearance: none !important;
-      background: var(--primary-dark-color) !important;
-      color: var(--primary-light-color) !important;
-    }
-}
 
 @-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul")  {
     dialog#bookmarkproperties {

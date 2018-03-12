@@ -1,4 +1,0 @@
-/* Minimize white flash when loading some sites */
-browser[type="content-primary"], #content, browser[type="content"] > html {
-    background: var(--primary-dark-color) !important;
-}

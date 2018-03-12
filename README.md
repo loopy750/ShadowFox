@@ -1,3 +1,15 @@
+![header](css/screenshots/header.png)
+
+ShadowFox was inspired by changes made in Firefox 57, which limited the amount addons could customize both the user interface and "protected" web pages.
+
+This project aims at creating a universal dark theme for Firefox while adhering to the modern design principles set by Mozilla.
+
+## Preview
+
+![preferences](css/screenshots/preview.png)
+
+ShadowFox styles the entire user interface, protected webpages (such as `about:` pages and addons.mozilla.org), and over 20 popular addons.
+
 # Quick Install Guide
 
 - Open the url "about:support" in Firefox
@@ -78,19 +90,6 @@ These tweaks are found in the directory `./webextension`
 #### Webextension tweaks hosted on userstyles.org
 
 * [Stylus](https://userstyles.org/styles/153739/stylus-dark-shadowfox)
-
-
-# What do the changes look like?
-
-Here are just a few examples:
-
-Context Menus and Sidebar                   | `about:` pages
-:------------------------------------------:| :------------------------------------------:                                         
-![dark_menus](Screenshots/contextmenus_windows.png) | ![dark_menus](Screenshots/preferences_windows.png)
-
-`view-source:` pages                        | Mozilla Addon Store
-:------------------------------------------:| :------------------------------------------:                                         
-![dark_menus](Screenshots/viewsource_windows.png)   | ![dark_menus](Screenshots/addons_windows.png)
 
 
 # How do I install/modify ShadowFox

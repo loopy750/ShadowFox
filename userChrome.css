@@ -82,104 +82,6 @@
     background: var(--dark-accent) !important;
   }
 }
-/* Windows 7 Basic Theme makes some dark stuff look bad */
-
-@media screen, not screen and (-moz-windows-classic) {
-  /* Bookmarks Pop up */
-
-  #editBMPanel_rows > row > textbox,
-  #editBMPanel_rows > row > hbox > textbox,
-  #editBMPanel_folderMenuList,
-  #editBookmarkPanelRemoveButton,
-  #editBookmarkPanelDoneButton,
-  #editBMPanel_tagsSelectorExpander {
-    -moz-appearance: none !important;
-    background: var(--grey-70) !important;
-    color: var(--primary-light-color) !important;
-    border: 1px solid var(--grey-50) !important;
-    box-shadow: none !important;
-  }
-
-  #editBookmarkPanel .expander-down > .button-box > .button-icon {
-    filter: invert(65%) !important;
-  }
-
-  #editBMPanel_folderTree,
-  #editBMPanel_tagsSelector {
-    -moz-appearance: none !important;
-    background: var(--grey-70) !important;
-    color: var(--primary-light-color) !important;
-    opacity: 1 !important;
-  }
-
-  #editBMPanel_folderTree treechildren:not(.autocomplete-treebody)::-moz-tree-row,
-  #editBMPanel_tagsSelector treechildren:not(.autocomplete-treebody)::-moz-tree-row {
-    background: var(--grey-70) !important;
-    color: var(--primary-light-color) !important;
-  }
-
-  #editBMPanel_folderTree treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover),
-  #editBMPanel_tagsSelector treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover) {
-    background: var(--dark-accent) !important;
-    color: var(--primary-accent-color) !important;
-    -moz-border-top-colors: var(--dark-accent) !important;
-    -moz-border-right-colors: var(--dark-accent) !important;
-    -moz-border-left-colors: var(--dark-accent) !important;
-    -moz-border-bottom-colors: var(--dark-accent) !important;
-  }
-
-  /* Change the outline of icons to light instead of dark */
-
-  #editBMPanel_folderTree treechildren::-moz-tree-image {
-    fill: var(--primary-light-color) !important;
-  }
-
-  #editBMPanel_folderTree treechildren::-moz-tree-image(selected) {
-    fill: white !important;
-  }
-
-  /* Selected, in focus */
-
-  #editBMPanel_folderTree treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {
-    background: var(--primary-accent-color) !important;
-  }
-
-  listitem[selected="true"] {
-    background-color: var(--primary-accent-color) !important;
-    color: white !important;
-  }
-
-  #editBMPanel_folderTree treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current) {
-    background: var(--blue-40) !important;
-  }
-
-  #editBMPanel_folderTree {
-    border: 1px solid var(--grey-50) !important;
-  }
-}
-
-@media not screen and (-moz-windows-theme) {
-@media not screen and (-moz-windows-classic) {
-@media not screen and (-moz-windows-default-theme) {
-@media not screen and (-moz-os-version: windows-win7) {
-@media not screen and (-moz-os-version: windows-win8) {
-@media not screen and (-moz-os-version: windows-win10) {
-            #editBMPanel_folderTree {
-              border: 1px solid var(--grey-50) !important;
-              border-bottom: none !important;
-            }
-
-            vbox#editBookmarkPanelContent grid#editBookmarkPanelGrid rows row#editBMPanel_folderTreeRow vbox hbox#editBMPanel_newFolderBox#editBMPanel_newFolderBox {
-              background: var(--grey-70) !important;
-              border: 1px solid var(--grey-50) !important;
-              box-shadow: none !important;
-            }
-}
-}
-}
-}
-}
-}
 /* The following code is based on that found on
 * https://www.jeffersonscher.com/gm/url-bar-tweaks.html
 * Copyright © 2017 Jefferson Scher (BSD-3-Clause License or CC-BY License) */
@@ -320,18 +222,581 @@ panel[type="autocomplete-richlistbox"],
 #nav-bar textbox:hover:-moz-lwtheme-brighttext {
   background-color: rgba(75, 75, 75, 0.75) !important;
 }
+/* Windows 7 Basic Theme makes some dark stuff look bad */
+
+@media not screen and (-moz-windows-classic) {
+  /* Bookmarks Pop up */
+
+  #editBMPanel_rows > row > textbox,
+  #editBMPanel_rows > row > hbox > textbox,
+  #editBMPanel_folderMenuList,
+  #editBookmarkPanelRemoveButton,
+  #editBookmarkPanelDoneButton,
+  #editBMPanel_tagsSelectorExpander {
+    -moz-appearance: none !important;
+    background: var(--grey-70) !important;
+    color: var(--primary-light-color) !important;
+    border: 1px solid var(--grey-50) !important;
+    box-shadow: none !important;
+  }
+
+  #editBookmarkPanel .expander-down > .button-box > .button-icon {
+    filter: invert(65%) !important;
+  }
+
+  #editBMPanel_folderTree,
+  #editBMPanel_tagsSelector {
+    -moz-appearance: none !important;
+    background: var(--grey-70) !important;
+    color: var(--primary-light-color) !important;
+    opacity: 1 !important;
+  }
+
+  #editBMPanel_folderTree treechildren:not(.autocomplete-treebody)::-moz-tree-row,
+  #editBMPanel_tagsSelector treechildren:not(.autocomplete-treebody)::-moz-tree-row {
+    background: var(--grey-70) !important;
+    color: var(--primary-light-color) !important;
+  }
+
+  #editBMPanel_folderTree treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover),
+  #editBMPanel_tagsSelector treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover) {
+    background: var(--dark-accent) !important;
+    color: var(--primary-accent-color) !important;
+    -moz-border-top-colors: var(--dark-accent) !important;
+    -moz-border-right-colors: var(--dark-accent) !important;
+    -moz-border-left-colors: var(--dark-accent) !important;
+    -moz-border-bottom-colors: var(--dark-accent) !important;
+  }
+
+  /* Change the outline of icons to light instead of dark */
+
+  #editBMPanel_folderTree treechildren::-moz-tree-image {
+    fill: var(--primary-light-color) !important;
+  }
+
+  #editBMPanel_folderTree treechildren::-moz-tree-image(selected) {
+    fill: white !important;
+  }
+
+  /* Selected, in focus */
+
+  #editBMPanel_folderTree treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {
+    background: var(--primary-accent-color) !important;
+  }
+
+  listitem[selected="true"] {
+    background-color: var(--primary-accent-color) !important;
+    color: white !important;
+  }
+
+  #editBMPanel_folderTree treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current) {
+    background: var(--blue-40) !important;
+  }
+
+  #editBMPanel_folderTree {
+    border: 1px solid var(--grey-50) !important;
+  }
+}
+
+@media not screen and (-moz-windows-theme) {
+@media not screen and (-moz-windows-classic) {
+@media not screen and (-moz-windows-default-theme) {
+@media not screen and (-moz-os-version: windows-win7) {
+@media not screen and (-moz-os-version: windows-win8) {
+@media not screen and (-moz-os-version: windows-win10) {
+            #editBMPanel_folderTree {
+              border: 1px solid var(--grey-50) !important;
+              border-bottom: none !important;
+            }
+
+            vbox#editBookmarkPanelContent grid#editBookmarkPanelGrid rows row#editBMPanel_folderTreeRow vbox hbox#editBMPanel_newFolderBox#editBMPanel_newFolderBox {
+              background: var(--grey-70) !important;
+              border: 1px solid var(--grey-50) !important;
+              box-shadow: none !important;
+            }
+}
+}
+}
+}
+}
+}
+/* Windows 7 Basic Theme makes some dark stuff look bad */
+
+@media not screen and (-moz-windows-classic) {
+  :root {
+    --button-primary-color: var(--grey-30);
+    --button-primary-background-color: var(--grey-80);
+    --button-primary-border-color: var(--grey-60);
+    --button-primary-focus-background-color: var(--grey-80);
+    --button-primary-focus-border-color: var(--grey-50);
+    --button-primary-hover-background-color: var(--grey-80);
+    --button-primary-hover-border-color: var(--grey-40);
+    --button-primary-active-color: var(--grey-20);
+    --button-primary-active-background-color: var(--blue-50);
+    --button-primary-active-border-color: var(--blue-50);
+  }
+
+  /* Button border radius for macOS */
+
+@media not screen and (-moz-windows-theme) {
+@media not screen and (-moz-windows-classic) {
+@media not screen and (-moz-windows-default-theme) {
+@media not screen and (-moz-os-version: windows-win7) {
+@media not screen and (-moz-os-version: windows-win8) {
+@media not screen and (-moz-os-version: windows-win10) {
+              button {
+                border-radius: 4px !important;
+              }
+
+              button#editBMPanel_newFolderButton {
+                border-radius: 0px !important;
+              }
+}
+}
+}
+}
+}
+}
+
+@-moz-document url("chrome://browser/content/pageinfo/pageInfo.xul"),
+            url("chrome://browser/content/aboutDialog.xul"),
+            url("chrome://mozapps/content/handling/dialog.xul"),
+            url("chrome://mozapps/content/extensions/about.xul"),
+            url("chrome://pippki/content/exceptionDialog.xul"),
+            url("chrome://pippki/content/deletecert.xul"),
+            url("chrome://pippki/content/changepassword.xul"),
+            url("chrome://pippki/content/load_device.xul"),
+            url("chrome://pippki/content/editcacert.xul"),
+            url("chrome://pippki/content/certViewer.xul"),
+            url("chrome://mozapps/content/downloads/unknownContentType.xul"),
+            url("chrome://browser/content/preferences/cookies.xul"),
+            url("chrome://passwordmgr/content/passwordManager.xul"),
+            url("chrome://browser/content/migration/migration.xul")  {
+    button {
+      -moz-appearance: none !important;
+      color: var(--button-primary-color) !important;
+      background: var(--button-primary-background-color) !important;
+      border: 1px solid var(--button-primary-border-color) !important;
+      padding: 0px 6px 0px 6px !important;
+      box-shadow: none !important;
+    }
+
+    button[disabled] {
+      color: var(--grey-60) !important;
+      background: var(--button-primary-background-color) !important;
+      border: 1px solid var(--grey-80) !important;
+      padding: 0px 6px 0px 6px !important;
+      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
+    }
+
+    button[dlgtype="cancel"]:not([disabled]) {
+      -moz-appearance: none !important;
+      color: var(--button-primary-color) !important;
+      background: var(--button-primary-background-color) !important;
+      border: 1px solid var(--button-primary-border-color) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:not([disabled]) {
+      -moz-appearance: none !important;
+      color: var(--grey-10) !important;
+      background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+      border: 1px solid var(--blue-60) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:focus:not([disabled]) {
+      background: var(--button-primary-focus-background-color) !important;
+      border: 1px solid var(--button-primary-focus-border-color) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:focus:not([disabled]),
+    button:focus:not([disabled]) {
+      background: var(--button-primary-focus-background-color) !important;
+      border: 1px solid var(--button-primary-focus-border-color) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:focus:not([disabled]) {
+      background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:hover:not([disabled]) {
+      background: var(--button-primary-hover-background-color) !important;
+      border: 1px solid var(--button-primary-hover-border-color) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:hover:not([disabled]),
+    button:hover:not([disabled]) {
+      background: var(--button-primary-hover-background-color) !important;
+      border: 1px solid var(--button-primary-hover-border-color) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:hover:not([disabled]) {
+      background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+      border: 1px solid var(--blue-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button:active:not([disabled]) {
+      color: var(--button-primary-active-color) !important;
+      background: var(--button-primary-active-background-color) !important;
+      border: 1px solid var(--button-primary-active-border-color) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:active:not([disabled]),
+    button:active:not([disabled]) {
+      color: var(--button-primary-active-color) !important;
+      background: linear-gradient(to bottom,
+                              rgba(42, 121, 228, 1) 0%,
+                              rgba(0, 80, 204, 1) 100%) !important;
+      border: 1px solid var(--button-primary-active-border-color) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:active:not([disabled]) {
+      color: var(--button-primary-active-color) !important;
+      background: linear-gradient(to bottom,
+                              rgba(80, 152, 225, 1) 0%,
+                              rgba(0, 103, 230, 1) 100%) !important;
+      border: 1px solid var(--blue-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+}
+
+@-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul"),
+            url("chrome://global/content/commonDialog.xul"),
+            url("chrome://global/content/appPicker.xul")  {
+    button[dlgtype="cancel"],
+    button {
+      -moz-appearance: none !important;
+      color: var(--button-primary-color) !important;
+      background: var(--button-primary-background-color) !important;
+      border: 1px solid var(--grey-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"] {
+      -moz-appearance: none !important;
+      color: var(--grey-10) !important;
+      background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+      border: 1px solid var(--blue-60) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:focus,
+    button:focus {
+      background: var(--button-primary-focus-background-color) !important;
+      border: 1px solid var(--grey-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:focus {
+      background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+      border: 1px solid var(--blue-50) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:hover,
+    button:hover {
+      background: var(--button-primary-hover-background-color) !important;
+      border: 1px solid var(--grey-30) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:hover {
+      background: linear-gradient(to bottom,
+                              rgba(49, 125, 228, 1) 0%,
+                              rgba(0, 78, 203, 1) 100%) !important;
+      border: 1px solid var(--blue-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="cancel"]:active,
+    button:active {
+      color: var(--button-primary-active-color) !important;
+      background: linear-gradient(to bottom,
+                              rgba(42, 121, 228, 1) 0%,
+                              rgba(0, 80, 204, 1) 100%) !important;
+      border: 1px solid var(--button-primary-active-border-color) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+
+    button[dlgtype="accept"]:active {
+      color: var(--button-primary-active-color) !important;
+      background: linear-gradient(to bottom,
+                              rgba(80, 152, 225, 1) 0%,
+                              rgba(0, 103, 230, 1) 100%) !important;
+      border: 1px solid var(--blue-40) !important;
+      padding: 0px 6px 0px 6px !important;
+    }
+}
+
+@-moz-document url("chrome://browser/content/migration/migration.xul")  {
+    button {
+      -moz-appearance: none !important;
+      margin-left: 2px !important;
+    }
+}
+
+  /* Leave page confirm dialog */
+
+  vbox.mainContainer {
+    color: var(--primary-light-color) !important;
+    background: var(--primary-dark-color) !important;
+  }
+
+  vbox.mainContainer grid.topContainer {
+    color: var(--primary-light-color) !important;
+    background: var(--grey-80) !important;
+  }
+
+  vbox.mainContainer button {
+    -moz-appearance: none !important;
+    color: var(--button-primary-color) !important;
+    background: var(--button-primary-background-color) !important;
+    border: 1px solid var(--button-primary-border-color) !important;
+    padding: 0px 6px 0px 6px !important;
+    box-shadow: none !important;
+  }
+
+  vbox.mainContainer button:focus {
+    background: var(--button-primary-focus-background-color) !important;
+    border: 1px solid var(--button-primary-focus-border-color) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  vbox.mainContainer button:hover {
+    background: var(--button-primary-hover-background-color) !important;
+    border: 1px solid var(--button-primary-hover-border-color) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  vbox.mainContainer button:active {
+    color: var(--button-primary-active-color) !important;
+    background: var(--button-primary-active-background-color) !important;
+    border: 1px solid var(--button-primary-active-border-color) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  /* Buttons, Grey 50 */
+
+  button#editBMPanel_newFolderButton,
+  button#fullscreen-exit-button {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+    background: var(--grey-50) !important;
+    border: 1px solid var(--grey-50) !important;
+    padding: 0px 6px 0px 6px !important;
+    box-shadow: none !important;
+  }
+
+  button#editBMPanel_newFolderButton:focus,
+  button#fullscreen-exit-button:focus {
+    background: var(--grey-50) !important;
+    border: 1px solid var(--grey-40) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#editBMPanel_newFolderButton:hover,
+  button#fullscreen-exit-button:hover {
+    background: var(--grey-50) !important;
+    border: 1px solid var(--grey-30) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#editBMPanel_newFolderButton:active,
+  button#fullscreen-exit-button:active {
+    color: var(--grey-80) !important;
+    background: var(--grey-40) !important;
+    border: 1px solid var(--grey-40) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  /* Buttons, Grey 70 */
+
+  button#editBookmarkPanelRemoveButton {
+    -moz-appearance: none !important;
+    color: var(--button-primary-color) !important;
+    background: var(--grey-70) !important;
+    border: 1px solid var(--grey-50) !important;
+    padding: 0px 6px 0px 6px !important;
+    box-shadow: none !important;
+  }
+
+  button#editBookmarkPanelRemoveButton:focus {
+    background: var(--grey-70) !important;
+    border: 1px solid var(--grey-40) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#editBookmarkPanelRemoveButton:hover {
+    background: var(--grey-70) !important;
+    border: 1px solid var(--grey-30) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#editBookmarkPanelRemoveButton:active {
+    background: var(--grey-50) !important;
+    border: 1px solid var(--grey-50) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  /* Buttons, Blue 50 */
+
+  button#editBookmarkPanelDoneButton {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+    background: var(--blue-50) !important;
+    border: 1px solid var(--blue-50) !important;
+    padding: 0px 6px 0px 6px !important;
+    box-shadow: none !important;
+  }
+
+  button#editBookmarkPanelDoneButton:focus {
+    background: var(--blue-50) !important;
+    border: 1px solid var(--blue-40) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#editBookmarkPanelDoneButton:hover {
+    background: var(--blue-50) !important;
+    border: 1px solid var(--blue-30) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#editBookmarkPanelDoneButton:active {
+    background: var(--blue-40) !important;
+    border: 1px solid var(--blue-40) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  /* Customization page */
+
+  /* Customization page, Grey 60 */
+
+  button#customization-reset-button {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+    background: var(--grey-60) !important;
+    border: 1px solid var(--grey-60) !important;
+    padding: 0px 6px 0px 6px !important;
+    box-shadow: none !important;
+  }
+
+  button#customization-reset-button:focus {
+    background: var(--grey-60) !important;
+    border: 1px solid var(--button-primary-focus-border-color) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#customization-reset-button:hover {
+    background: var(--grey-60) !important;
+    border: 1px solid var(--button-primary-hover-border-color) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#customization-reset-button:active {
+    background: var(--button-primary-active-background-color) !important;
+    border: 1px solid var(--button-primary-active-border-color) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  /* Customization page, Grey 80 */
+
+  button#customization-toolbar-visibility-button,
+  button#customization-lwtheme-button,
+  button#customization-uidensity-button {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+    background: var(--button-primary-background-color) !important;
+    border: 1px solid var(--grey-50) !important;
+    box-shadow: none !important;
+  }
+
+  button#customization-toolbar-visibility-button:focus,
+  button#customization-lwtheme-button:focus,
+  button#customization-uidensity-button:focus {
+    background: var(--grey-60) !important;
+    border: 1px solid var(--button-primary-focus-border-color) !important;
+  }
+
+  button#customization-toolbar-visibility-button:hover,
+  button#customization-lwtheme-button:hover,
+  button#customization-uidensity-button:hover {
+    background: var(--grey-60) !important;
+    border: 1px solid var(--button-primary-hover-border-color) !important;
+  }
+
+  button#customization-toolbar-visibility-button:active,
+  button#customization-lwtheme-button:active,
+  button#customization-uidensity-button:active {
+    background: var(--grey-50) !important;
+    border: 1px solid var(--grey-50) !important;
+  }
+
+  /* Customization page, Blue 50 */
+
+  button#customization-done-button {
+    -moz-appearance: none !important;
+    color: var(--grey-20) !important;
+    background: var(--blue-60) !important;
+    border: 1px solid var(--blue-70) !important;
+    padding: 0px 6px 0px 6px !important;
+    box-shadow: none !important;
+  }
+
+  button#customization-done-button:focus {
+    background: var(--blue-60) !important;
+    border: 1px solid var(--blue-50) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#customization-done-button:hover {
+    background: var(--blue-60) !important;
+    border: 1px solid var(--blue-40) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  button#customization-done-button:active {
+    background: var(--button-primary-active-background-color) !important;
+    border: 1px solid var(--button-primary-active-border-color) !important;
+    padding: 0px 6px 0px 6px !important;
+  }
+
+  /* "New Bookmarks" / "Bookmark all tabs..." */
+
+  button#editBMPanel_foldersExpander {
+    filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+  }
+}
 /* Main context menu */
 
 menupopup,
-popup,
-popup > menu > menupopup,
 menupopup > menu > menupopup,
-menupopup scrollbox {
-  -moz-appearance: none !important;
+menupopup scrollbox,
+popup,
+popup > menu > menupopup {
+  -moz-appearance: none!important;
   background: var(--grey-60) !important;
-  border-color: var(--grey-70) !important;
-  padding: 0px 0px 0px 0px !important;
   border: none !important;
+  padding: 0 !important;
 }
 
 /* More options right arrow */
@@ -391,9 +856,7 @@ menuitem:hover[disabled="true"] {
   background-color: var(--grey-80) !important;
 }
 
-menupopup menu:hover,
-menuitem:hover,
-menu[_moz-menuactive="true"],
+menupopup menu[_moz-menuactive="true"],
 menuitem[_moz-menuactive="true"] {
   color: var(--grey-10) !important;
   background-color: var(--grey-80) !important;
@@ -401,11 +864,9 @@ menuitem[_moz-menuactive="true"] {
 
 /* Sidebar Header Context Menu */
 
-@media not screen and (-moz-windows-classic) {
-  .panel-arrowcontent {
-    color: var(--grey-10) !important;
-    background: var(--grey-60) !important;
-  }
+.panel-arrowcontent {
+  color: var(--grey-10) !important;
+  background: var(--grey-60) !important;
 }
 
 /* Sidebar border */
@@ -417,14 +878,14 @@ vbox#sidebar-box.chromeclass-extrachrome {
 }
 
 /* The following snippets are designed to fix problems
- * only noticed on Windows computers */
+* only noticed on Windows computers */
 
-@media screen, screen and (-moz-windows-theme),
-       screen and (-moz-windows-classic),
-       screen and (-moz-windows-default-theme),
-       screen and (-moz-os-version: windows-win7),
-       screen and (-moz-os-version: windows-win8),
-       screen and (-moz-os-version: windows-win10) {
+@media screen and (-moz-windows-theme),
+	screen and (-moz-windows-classic),
+	screen and (-moz-windows-default-theme),
+	screen and (-moz-os-version: windows-win7),
+	screen and (-moz-os-version: windows-win8),
+	screen and (-moz-os-version: windows-win10) {
   /* Remove white separators between menu items */
 
   menupopup menuseparator {
@@ -465,7 +926,9 @@ vbox#sidebar-box.chromeclass-extrachrome {
   toolbaritem#menubar-items menupopup,
   menupopup.textbox-contextmenu,
   #SignonViewerDialog menupopup,
-  #placesMenu menupopup {
+  #placesMenu menupopup,
+  menulist#editBMPanel_folderMenuList > menupopup,
+  menupopup#openHandlerPopup {
     border-color: rgba(56, 56, 61, 0.5) !important;
     border-width: 1px !important;
     border-style: solid !important;
@@ -494,7 +957,12 @@ vbox#sidebar-box.chromeclass-extrachrome {
   menupopup#tabContextMenu > menu > menupopup > .popup-internal-box,
   menupopup#toolbar-context-menu,
   menupopup#contentAreaContextMenu menupopup,
-  menupopup.textbox-contextmenu {
+  menupopup#autohide-context,
+  menupopup#backForwardMenu,
+  menupopup.textbox-contextmenu,
+  #customization-toolbar-menu,
+  toolbaritem#menubar-items menupopup,
+  toolbaritem#menubar-items menupopup > menu > menupopup {
     padding-left: 2px !important;
     padding-right: 2px !important;
   }
@@ -550,15 +1018,6 @@ vbox#sidebar-box.chromeclass-extrachrome {
   toolbaritem#menubar-items menupopup menupopup > menuitem,
   toolbaritem#menubar-items menupopup menupopup > menu {
     font-size: 1em !important;
-  }
-
-  /* Toolbar menu, LEFT/RIGHT padding fixes */
-
-  #customization-toolbar-menu,
-  toolbaritem#menubar-items menupopup,
-  toolbaritem#menubar-items menupopup > menu > menupopup {
-    padding-left: 2px !important;
-    padding-right: 2px !important;
   }
 
   /* Context menu, TOP/BOTTOM padding fixes */
@@ -668,8 +1127,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
   }
 }
 
-@media screen, screen and (-moz-os-version: windows-win8),
-       screen and (-moz-os-version: windows-win10) {
+@media screen and (-moz-os-version: windows-win8),
+	screen and (-moz-os-version: windows-win10) {
   hbox.menu-iconic-left[checked] {
     filter: invert(90%) brightness(115%) saturate(125%) hue-rotate(-178deg) !important;
   }
@@ -710,14 +1169,14 @@ label.text-link.popup-notification-learnmore-link:hover {
 }
 /* Popup dialog begin */
 
-textbox#password-notification-username,
-textbox#password-notification-password {
-  filter: invert(85%) brightness(125%) saturate(110%) hue-rotate(-178deg) !important;
-}
-
 /* Windows 7 Basic Theme makes some dark stuff look bad */
 
 @media not screen and (-moz-windows-classic) {
+  textbox#password-notification-username,
+  textbox#password-notification-password {
+    filter: invert(85%) brightness(125%) saturate(110%) hue-rotate(-178deg) !important;
+  }
+
 @-moz-document url("chrome://global/content/commonDialog.xul")  {
     #commonDialog {
       -moz-appearance: none !important;
@@ -725,34 +1184,6 @@ textbox#password-notification-password {
       color: var(--primary-light-color) !important;
     }
 }
-
-  /* Button border radius for macOS */
-
-@media not screen and (-moz-windows-theme) {
-@media not screen and (-moz-windows-classic) {
-@media not screen and (-moz-windows-default-theme) {
-@media not screen and (-moz-os-version: windows-win7) {
-@media not screen and (-moz-os-version: windows-win8) {
-@media not screen and (-moz-os-version: windows-win10) {
-              button {
-                border-radius: 4px !important;
-              }
-
-              button#editBMPanel_newFolderButton {
-                border-radius: 0px !important;
-              }
-}
-}
-}
-}
-}
-}
-
-  /* "New Bookmarks" / "Bookmark all tabs..." */
-
-  button#editBMPanel_foldersExpander {
-    filter: invert(80%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
-  }
 
 @-moz-document url("chrome://browser/content/places/bookmarkProperties2.xul")  {
     dialog#bookmarkproperties {
@@ -786,76 +1217,12 @@ textbox#password-notification-password {
 }
 }
 
-    button[dlgtype="cancel"] {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-70) !important;
-      border: 1px solid var(--grey-80) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="accept"] {
-      -moz-appearance: none !important;
-      color: var(--grey-10) !important;
-      background: linear-gradient(to bottom,
-                  rgba(49, 125, 228, 1) 0%,
-                  rgba(0, 78, 203, 1) 100%) !important;
-      border: 1px solid var(--blue-60) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="cancel"]:focus {
-      background: var(--grey-70) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="accept"]:focus {
-      background: linear-gradient(to bottom,
-                  rgba(49, 125, 228, 1) 0%,
-                  rgba(0, 78, 203, 1) 100%) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="cancel"]:hover {
-      background: var(--grey-70) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="accept"]:hover {
-      background: linear-gradient(to bottom,
-                  rgba(49, 125, 228, 1) 0%,
-                  rgba(0, 78, 203, 1) 100%) !important;
-      border: 1px solid var(--blue-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="cancel"]:active {
-      color: var(--grey-20) !important;
-      background: linear-gradient(to bottom,
-                  rgba(42, 121, 228, 1) 0%,
-                  rgba(0, 80, 204, 1) 100%) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="accept"]:active {
-      color: var(--grey-20) !important;
-      background: linear-gradient(to bottom,
-                  rgba(80, 152, 225, 1) 0%,
-                  rgba(0, 103, 230, 1) 100%) !important;
-      border: 1px solid var(--blue-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
 @media screen and (-moz-windows-theme),
-            screen and (-moz-windows-classic),
-            screen and (-moz-windows-default-theme),
-            screen and (-moz-os-version: windows-win7),
-            screen and (-moz-os-version: windows-win8),
-            screen and (-moz-os-version: windows-win10) {
+                  screen and (-moz-windows-classic),
+                  screen and (-moz-windows-default-theme),
+                  screen and (-moz-os-version: windows-win7),
+                  screen and (-moz-os-version: windows-win8),
+                  screen and (-moz-os-version: windows-win10) {
       button#editBMPanel_foldersExpander {
         -moz-appearance: button !important;
         filter: invert(80%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
@@ -887,74 +1254,6 @@ textbox#password-notification-password {
       -moz-appearance: none !important;
       color: var(--grey-30) !important;
       background: var(--primary-dark-color) !important;
-    }
-
-    button[dlgtype="cancel"],
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="accept"] {
-      -moz-appearance: none !important;
-      color: var(--grey-10) !important;
-      background: linear-gradient(to bottom,
-                  rgba(49, 125, 228, 1) 0%,
-                  rgba(0, 78, 203, 1) 100%) !important;
-      border: 1px solid var(--blue-60) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="cancel"]:focus,
-    button:focus {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-60) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="accept"]:focus {
-      background: linear-gradient(to bottom,
-                  rgba(49, 125, 228, 1) 0%,
-                  rgba(0, 78, 203, 1) 100%) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="cancel"]:hover,
-    button:hover {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="accept"]:hover {
-      background: linear-gradient(to bottom,
-                  rgba(49, 125, 228, 1) 0%,
-                  rgba(0, 78, 203, 1) 100%) !important;
-      border: 1px solid var(--blue-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="cancel"]:active,
-    button:active {
-      color: var(--grey-20) !important;
-      background: linear-gradient(to bottom,
-                  rgba(42, 121, 228, 1) 0%,
-                  rgba(0, 80, 204, 1) 100%) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[dlgtype="accept"]:active {
-      color: var(--grey-20) !important;
-      background: linear-gradient(to bottom,
-                  rgba(80, 152, 225, 1) 0%,
-                  rgba(0, 103, 230, 1) 100%) !important;
-      border: 1px solid var(--blue-40) !important;
-      padding: 0px 6px 0px 6px !important;
     }
 
     textbox {
@@ -1011,7 +1310,7 @@ textbox#password-notification-password {
       color: var(--grey-30) !important;
     }
 
-    /* Needed for Windows 7 Basic Theme */
+    /* Required if Windows 7 Basic Theme was used */
 
     groupbox {
       -moz-appearance: none !important;
@@ -1038,46 +1337,12 @@ textbox#password-notification-password {
       color: var(--grey-20) !important;
       background: var(--primary-dark-color) !important;
     }
-
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[disabled] {
-      color: var(--grey-60) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-80) !important;
-      padding: 0px 6px 0px 6px !important;
-      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
-    }
-
-    button:focus:not([disabled]) {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:hover:not([disabled]) {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:active:not([disabled]) {
-      color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
 }
 
   /* Launch Application dialog */
 
-@-moz-document url("chrome://mozapps/content/handling/dialog.xul")  {
+@-moz-document url("chrome://mozapps/content/handling/dialog.xul"),
+            url("chrome://global/content/appPicker.xul")  {
     dialog {
       -moz-appearance: none !important;
       background: var(--grey-60) !important;
@@ -1090,43 +1355,29 @@ textbox#password-notification-password {
       color: var(--primary-light-color) !important;
     }
 
+    listbox#app-picker-listbox {
+      -moz-appearance: none !important;
+      background: var(--primary-dark-color) !important;
+      color: var(--primary-light-color) !important;
+      border: 1px solid var(--grey-50) !important;
+    }
+
+    listitem.listitem-iconic {
+      -moz-appearance: none !important;
+      color: var(--grey-20) !important;
+    }
+
     caption {
       -moz-appearance: none !important;
       color: var(--primary-light-color) !important;
       background: var(--grey-60) !important;
     }
 
-    description {
+    description,
+    #content-description {
       -moz-appearance: none !important;
       color: var(--grey-30) !important;
       background: var(--grey-60) !important;
-    }
-
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:focus {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:hover {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:active {
-      color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
     }
 
     textbox {
@@ -1210,33 +1461,6 @@ textbox#password-notification-password {
       background: var(--grey-80) !important;
     }
 
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:focus {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:hover {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:active {
-      color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
     textbox {
       -moz-appearance: none !important;
       color: var(--grey-30) !important;
@@ -1277,8 +1501,8 @@ textbox#password-notification-password {
       border-right: 1px solid rgb(0,0,0) !important;
       -moz-border-bottom-colors: rgb(0,0,0) !important;
       background: linear-gradient(to bottom,
-                  rgba(56,70,82,1) 0%,
-                  rgba(35,39,48,1) 100%) !important;
+                        rgba(56,70,82,1) 0%,
+                        rgba(35,39,48,1) 100%) !important;
       color: white !important;
       padding: 4px !important;
     }
@@ -1300,41 +1524,6 @@ textbox#password-notification-password {
       -moz-appearance: none !important;
       color: var(--grey-30) !important;
       background: var(--grey-60) !important;
-    }
-
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[disabled] {
-      color: var(--grey-60) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-80) !important;
-      padding: 0px 6px 0px 6px !important;
-      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
-    }
-
-    button:focus:not([disabled]) {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:hover:not([disabled]) {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:active:not([disabled]) {
-      color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
     }
 
     #cookieInfoBox {
@@ -1387,8 +1576,8 @@ textbox#password-notification-password {
       border-right: 1px solid rgb(0,0,0) !important;
       -moz-border-bottom-colors: rgb(0,0,0) !important;
       background: linear-gradient(to bottom,
-                  rgba(56,70,82,1) 0%,
-                  rgba(35,39,48,1) 100%) !important;
+                        rgba(56,70,82,1) 0%,
+                        rgba(35,39,48,1) 100%) !important;
       color: white !important;
       padding: 4px !important;
     }
@@ -1411,41 +1600,6 @@ textbox#password-notification-password {
       -moz-appearance: none !important;
       color: var(--grey-30) !important;
       background: var(--grey-60) !important;
-    }
-
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button[disabled] {
-      color: var(--grey-60) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-80) !important;
-      padding: 0px 6px 0px 6px !important;
-      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
-    }
-
-    button:focus:not([disabled]) {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:hover:not([disabled]) {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:active:not([disabled]) {
-      color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
     }
 
     #cookieInfoBox {
@@ -1500,42 +1654,6 @@ textbox#password-notification-password {
       background: var(--grey-70) !important;
     }
 
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-      margin-left: 2px !important;
-    }
-
-    button[disabled] {
-      color: var(--grey-60) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-80) !important;
-      padding: 0px 6px 0px 6px !important;
-      text-shadow: 1px 1px 0px rgba(74, 74, 79, 0.1) !important;
-    }
-
-    button:focus:not([disabled]) {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:hover:not([disabled]) {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:active:not([disabled]) {
-      color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
     #cookieInfoBox {
       -moz-appearance: none !important;
       color: var(--grey-20) !important;
@@ -1580,33 +1698,6 @@ textbox#password-notification-password {
       background: var(--primary-dark-color) !important;
     }
 
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:focus {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:hover {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:active {
-      color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
     textbox {
       -moz-appearance: none !important;
       color: var(--grey-30) !important;
@@ -1623,12 +1714,13 @@ textbox#password-notification-password {
     }
 }
 
-  /* Delete Server Cert dialog */
+  /* Delete Server Cert, others dialog */
 
 @-moz-document url("chrome://pippki/content/deletecert.xul"),
-               url("chrome://pippki/content/changepassword.xul"),
-               url("chrome://pippki/content/load_device.xul"),
-               url("chrome://mozapps/content/extensions/about.xul")  {
+            url("chrome://pippki/content/changepassword.xul"),
+            url("chrome://pippki/content/load_device.xul"),
+            url("chrome://mozapps/content/extensions/about.xul"),
+            url("chrome://pippki/content/editcacert.xul")  {
     dialog {
       -moz-appearance: none !important;
       background: var(--primary-dark-color) !important;
@@ -1676,33 +1768,6 @@ textbox#password-notification-password {
       background: var(--primary-dark-color) !important;
     }
 
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:focus {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:hover {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:active {
-      color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
     textbox {
       -moz-appearance: none !important;
       color: var(--grey-30) !important;
@@ -1719,77 +1784,6 @@ textbox#password-notification-password {
     }
 }
 
-  /* Page Info, About */
-
-@-moz-document url("chrome://browser/content/pageinfo/pageInfo.xul"),
-      url("chrome://browser/content/aboutDialog.xul")  {
-    button {
-      -moz-appearance: none !important;
-      color: var(--grey-30) !important;
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-90) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:focus {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:hover {
-      background: var(--grey-80) !important;
-      border: 1px solid var(--grey-40) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-
-    button:active {
-      color: var(--grey-20) !important;
-      background: var(--blue-50) !important;
-      border: 1px solid var(--blue-50) !important;
-      padding: 0px 6px 0px 6px !important;
-    }
-}
-
-  /* Leave page confirm dialog */
-
-  vbox.mainContainer {
-    color: var(--primary-light-color) !important;
-    background: var(--primary-dark-color) !important;
-  }
-
-  vbox.mainContainer grid.topContainer {
-    color: var(--primary-light-color) !important;
-    background: var(--grey-80) !important;
-  }
-
-  vbox.mainContainer button {
-    -moz-appearance: none !important;
-    color: var(--grey-30) !important;
-    background: var(--grey-80) !important;
-    border: 1px solid var(--grey-90) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  vbox.mainContainer button:focus {
-    background: var(--grey-80) !important;
-    border: 1px solid var(--grey-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  vbox.mainContainer button:hover {
-    background: var(--grey-80) !important;
-    border: 1px solid var(--grey-40) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  vbox.mainContainer button:active {
-    color: var(--grey-20) !important;
-    background: var(--blue-50) !important;
-    border: 1px solid var(--blue-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
   /* Checkbox, Radio, Menulist, global invert */
 
   .checkbox-check {
@@ -1805,21 +1799,58 @@ textbox#password-notification-password {
   menulist#openHandler,
   #editBMPanel_folderMenuList {
     -moz-appearance: menulist !important;
-    filter: invert(95%) brightness(165%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
+    filter: invert(95%) brightness(95%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
   }
+
+@media not screen and (-moz-windows-theme) {
+@media not screen and (-moz-windows-classic) {
+@media not screen and (-moz-windows-default-theme) {
+@media not screen and (-moz-os-version: windows-win7) {
+@media not screen and (-moz-os-version: windows-win8) {
+@media not screen and (-moz-os-version: windows-win10) {
+              menulist#openHandler,
+              #editBMPanel_folderMenuList {
+                -moz-appearance: menulist !important;
+                filter: invert(95%) brightness(165%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
+              }
+}
+}
+}
+}
+}
+}
 
   menulist#openHandler:hover,
   #editBMPanel_folderMenuList:hover {
     -moz-appearance: menulist !important;
-    filter: invert(90%) brightness(165%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
+    filter: invert(88%) brightness(100%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
   }
 
+@media not screen and (-moz-windows-theme) {
+@media not screen and (-moz-windows-classic) {
+@media not screen and (-moz-windows-default-theme) {
+@media not screen and (-moz-os-version: windows-win7) {
+@media not screen and (-moz-os-version: windows-win8) {
+@media not screen and (-moz-os-version: windows-win10) {
+              menulist#openHandler:hover,
+              #editBMPanel_folderMenuList:hover {
+                -moz-appearance: menulist !important;
+                filter: invert(90%) brightness(165%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
+              }
+}
+}
+}
+}
+}
+}
+
 @media screen and (-moz-os-version: windows-win7),
-      screen and (-moz-os-version: windows-win8),
-      screen and (-moz-os-version: windows-win10) {
+            screen and (-moz-os-version: windows-win8),
+            screen and (-moz-os-version: windows-win10) {
     menulist#openHandler,
     #editBMPanel_folderMenuList {
       -moz-appearance: menulist !important;
+      color: var(--grey-60) !important;
       filter: invert(95%) grayscale(90%) brightness(115%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
     }
 
@@ -1829,188 +1860,175 @@ textbox#password-notification-password {
       filter: invert(85%) grayscale(90%) brightness(115%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
     }
 }
-
-  /* Buttons, Grey 50 */
-
-  button#editBMPanel_newFolderButton,
-  button#fullscreen-exit-button {
-    -moz-appearance: none !important;
-    color: var(--grey-20) !important;
-    background: var(--grey-50) !important;
-    border: 1px solid var(--grey-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#editBMPanel_newFolderButton:focus,
-  button#fullscreen-exit-button:focus {
-    background: var(--grey-50) !important;
-    border: 1px solid var(--grey-40) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#editBMPanel_newFolderButton:hover,
-  button#fullscreen-exit-button:hover {
-    background: var(--grey-50) !important;
-    border: 1px solid var(--grey-30) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#editBMPanel_newFolderButton:active,
-  button#fullscreen-exit-button:active {
-    color: var(--grey-80) !important;
-    background: var(--grey-40) !important;
-    border: 1px solid var(--grey-40) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  /* Buttons, Grey 70 */
-
-  button#editBookmarkPanelRemoveButton {
-    -moz-appearance: none !important;
-    color: var(--grey-30) !important;
-    background: var(--grey-70) !important;
-    border: 1px solid var(--grey-80) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#editBookmarkPanelRemoveButton:focus {
-    background: var(--grey-70) !important;
-    border: 1px solid var(--grey-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#editBookmarkPanelRemoveButton:hover {
-    background: var(--grey-70) !important;
-    border: 1px solid var(--grey-40) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#editBookmarkPanelRemoveButton:active {
-    background: var(--grey-50) !important;
-    border: 1px solid var(--grey-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  /* Buttons, Blue 50 */
-
-  button#editBookmarkPanelDoneButton {
-    -moz-appearance: none !important;
-    color: var(--grey-20) !important;
-    background: var(--blue-50) !important;
-    border: 1px solid var(--blue-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#editBookmarkPanelDoneButton:focus {
-    background: var(--blue-50) !important;
-    border: 1px solid var(--blue-40) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#editBookmarkPanelDoneButton:hover {
-    background: var(--blue-50) !important;
-    border: 1px solid var(--blue-30) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#editBookmarkPanelDoneButton:active {
-    background: var(--blue-40) !important;
-    border: 1px solid var(--blue-40) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  /* Customization page */
-
-  /* Customization page, Grey 60 */
-
-  button#customization-reset-button {
-    -moz-appearance: none !important;
-    color: var(--grey-20) !important;
-    background: var(--grey-60) !important;
-    border: 1px solid var(--grey-60) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#customization-reset-button:focus {
-    background: var(--grey-60) !important;
-    border: 1px solid var(--grey-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#customization-reset-button:hover {
-    background: var(--grey-60) !important;
-    border: 1px solid var(--grey-40) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#customization-reset-button:active {
-    background: var(--blue-50) !important;
-    border: 1px solid var(--blue-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  /* Customization page, Grey 80 */
-
-  button#customization-toolbar-visibility-button,
-  button#customization-lwtheme-button,
-  button#customization-uidensity-button {
-    -moz-appearance: none !important;
-    color: var(--grey-20) !important;
-    background: var(--grey-80) !important;
-    border: 1px solid var(--grey-50) !important;
-  }
-
-  button#customization-toolbar-visibility-button:focus,
-  button#customization-lwtheme-button:focus,
-  button#customization-uidensity-button:focus {
-    background: var(--grey-60) !important;
-    border: 1px solid var(--grey-50) !important;
-  }
-
-  button#customization-toolbar-visibility-button:hover,
-  button#customization-lwtheme-button:hover,
-  button#customization-uidensity-button:hover {
-    background: var(--grey-60) !important;
-    border: 1px solid var(--grey-40) !important;
-  }
-
-  button#customization-toolbar-visibility-button:active,
-  button#customization-lwtheme-button:active,
-  button#customization-uidensity-button:active {
-    background: var(--grey-50) !important;
-    border: 1px solid var(--grey-50) !important;
-  }
-
-  /* Customization page, Blue 50 */
-
-  button#customization-done-button {
-    -moz-appearance: none !important;
-    color: var(--grey-20) !important;
-    background: var(--blue-60) !important;
-    border: 1px solid var(--blue-70) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#customization-done-button:focus {
-    background: var(--blue-60) !important;
-    border: 1px solid var(--blue-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#customization-done-button:hover {
-    background: var(--blue-60) !important;
-    border: 1px solid var(--blue-40) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
-
-  button#customization-done-button:active {
-    background: var(--blue-50) !important;
-    border: 1px solid var(--blue-50) !important;
-    padding: 0px 6px 0px 6px !important;
-  }
 }
 
 /* Popup dialog end */
+/* Top Border */
+
+.browserContainer > findbar {
+  border-top: 1px solid var(--grey-80) !important;
+}
+
+/* Alter buttons */
+
+.findbar-find-previous,
+.findbar-find-next {
+  border: none !important;
+  background: none !important;
+  border-radius: 2px !important;
+  fill: var(--primary-light-color) !important;
+}
+
+/* Fix spacing */
+
+.findbar-find-previous {
+  margin-left: 6px !important;
+}
+
+/* Buttons on hover */
+
+.findbar-find-previous:hover,
+.findbar-find-next:hover {
+  background: var(--toolbarbutton-hover-background) !important;
+}
+@-moz-document url(chrome://browser/content/places/places.xul),
+url(chrome://browser/content/places/bookmarkProperties.xul)  {
+  /* Details Dock and Bookmark Properties*/
+
+  #detailsDeck,
+  #bookmarkproperties {
+    -moz-appearance: none !important;
+    background-color: var(--grey-70) !important;
+    color: var(--primary-light-color) !important;
+    border: 0px solid black !important;
+  }
+
+  /* Toolbar */
+
+  toolbar {
+    -moz-appearance: none !important;
+    background-color: var(--grey-80) !important;
+    border: 0px solid black !important;
+  }
+
+  /* Main Area */
+
+  #placeContent,
+  #places #downloadsRichListBox {
+    -moz-appearance: none !important;
+    border: 1px solid var(--grey-60) !important;
+    color: rgb(200,200,200) !important;
+    background-color: var(--grey-60) !important;
+  }
+
+  /* Sidebar */
+
+  #placesList {
+    -moz-appearance: none !important;
+    color: rgb(200,200,200) !important;
+    background-color: rgba(12, 12, 13, .8) !important;
+  }
+
+  /* Column Header */
+
+  #contentView treecol {
+    -moz-appearance: none !important;
+    border: 0px solid !important;
+    border-bottom: 1px solid !important;
+    border-right: 1px solid rgb(0,0,0) !important;
+    -moz-border-bottom-colors: rgb(0,0,0) !important;
+    background: linear-gradient(to bottom,
+		           rgba(56,70,82,1) 0%,
+		           rgba(35,39,48,1) 100%) !important;
+    color: white !important;
+  }
+
+  /* Text Boxes - One Line */
+
+  #places textbox:not([multiline="true"]),
+  #editBookmarkPanelContent textbox:not([multiline="true"]) {
+    -moz-appearance: none !important;
+    color: var(--primary-light-color) !important;
+    background-color: var(--grey-60) !important;
+  }
+
+  /* Bookmarks Description Field */
+
+  #places #editBMPanel_descriptionField,
+  #editBookmarkPanelContent #editBMPanel_descriptionField {
+    -moz-appearance: none !important;
+    background-color: var(--grey-60) !important;
+    color: var(--primary-light-color) !important;
+  }
+
+  /*  Bookmark Tag Options  */
+
+  listbox {
+    -moz-appearance: none !important;
+    background-color: var(--grey-60) !important;
+    color: var(--primary-light-color) !important;
+  }
+
+  #places listbox:focus > listitem[selected="true"] {
+    background-color: var(--primary-accent-color) !important;
+    color: black !important;
+  }
+
+  /*								*
+	 *	  Tree Items	*
+	 *								*/
+
+  #places treechildren::-moz-tree-row {
+    background-color: transparent !important;
+    overflow-y: scroll  !important;
+  }
+
+  /* Change the outline of icons to light instead of dark */
+
+  #places treechildren::-moz-tree-image,
+  #places treechildren::-moz-tree-image {
+    fill: var(--primary-light-color) !important;
+  }
+
+  /* Selected, not in focus */
+
+  #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd) {
+    background: rgba(12, 12, 13, .1) !important;
+  }
+
+  #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current) {
+    background: var(--blue-50) !important;
+  }
+
+  treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
+    -moz-border-top-colors: var(--grey-80) !important;
+    -moz-border-right-colors: var(--grey-80) !important;
+    -moz-border-left-colors: var(--grey-80) !important;
+    -moz-border-bottom-colors: var(--grey-80) !important;
+  }
+
+  /* Selected, in focus */
+
+  #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {
+    background: var(--blue-50) !important;
+  }
+
+  #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover) {
+    background: var(--dark-accent) !important;
+    -moz-border-top-colors: var(--dark-accent) !important;
+    -moz-border-right-colors: var(--dark-accent) !important;
+    -moz-border-left-colors: var(--dark-accent) !important;
+    -moz-border-bottom-colors: var(--dark-accent) !important;
+  }
+
+  #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover, selected) {
+    background: var(--primary-accent-color) !important;
+  }
+
+  #placesMenu > menu {
+    color: var(--primary-light-color) !important;
+  }
+}
 /* Color of tab throbber animation */
 
 :root {
@@ -2208,6 +2226,133 @@ toolbar[brighttext] {
   background: var(--blue-40);
   color: white !important;
 }
+@-moz-document url(chrome://browser/content/pageinfo/pageInfo.xul)  {
+@media not screen and (-moz-windows-classic) {
+    #topBar {
+      -moz-appearance: none !important;
+      background: var(--grey-80) !important;
+    }
+
+    #mainDeck {
+      background: var(--primary-dark-color) !important;
+      color: white !important;
+    }
+
+    textbox {
+      color: var(--primary-light-color) !important;
+    }
+
+    tree {
+      -moz-appearance: none !important;
+      border: 1px solid rgb(0,0,0) !important;
+      color: rgb(200,200,200) !important;
+      background-color: var(--grey-60) !important;
+    }
+
+    treechildren::-moz-tree-row {
+      background-color: transparent !important;
+      overflow-y: scroll  !important;
+    }
+
+    treecol {
+      -moz-appearance: none !important;
+      border: 0px solid !important;
+      border-bottom: 1px solid !important;
+      border-right: 1px solid rgb(0,0,0) !important;
+      -moz-border-bottom-colors: rgb(0,0,0) !important;
+      background: linear-gradient(to bottom,
+				rgba(56,70,82,1) 0%,
+				rgba(35,39,48,1) 100%) !important;
+      color: white !important;
+      padding: 4px !important;
+    }
+
+    treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {
+      background: var(--primary-accent-color) !important;
+    }
+
+    .permission {
+      -moz-appearance: none !important;
+      background: var(--grey-60) !important;
+      color: var(--primary-light-color) !important;
+      border-color: var(--grey-70) !important;
+    }
+
+    #permPluginTemplate {
+      color: var(--primary-light-color) !important;
+    }
+
+    #permList {
+      border: 2px solid var(--grey-70) !important;
+    }
+
+    /* [WINDOWS ONLY] fixes */
+
+@media screen and (-moz-windows-theme),
+			screen and (-moz-windows-classic),
+			screen and (-moz-windows-default-theme),
+			screen and (-moz-os-version: windows-win7),
+			screen and (-moz-os-version: windows-win8),
+			screen and (-moz-os-version: windows-win10) {
+      #topBar {
+        -moz-appearance: none !important;
+        background-color: var(--grey-80) !important;
+        border: none !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        color: var(--grey-20) !important;
+      }
+
+      #metaTagsCaption,
+      #security-identity,
+      #security-privacy,
+      #security-technical,
+      #security-identity-groupbox,
+      #security-privacy-groupbox,
+      #security-technical-groupbox {
+        -moz-appearance: none !important;
+        background-color: var(--grey-60) !important;
+        border-radius: 4px !important;
+        border: none !important;
+        color: var(--grey-20) !important;
+      }
+
+      #security-identity-groupbox,
+      #security-privacy-groupbox,
+      #security-technical-groupbox {
+        -moz-appearance: none !important;
+        background-color: rgba(49, 49, 54, 1) !important;
+      }
+}
+}
+}
+/* Remove 1px border underneath bookmarks bar */
+
+#navigator-toolbox::after {
+  border-bottom: 0px !important;
+}
+/* Minimize white flash when loading some sites */
+
+#browser vbox#appcontent tabbrowser,
+#content,
+browser[type=content-primary],
+browser[type=content] > html {
+  background: var(--primary-dark-color) !important;
+}
+#identity-box.verifiedIdentity {
+  --urlbar-separator-color: var(--grey-50) !important;
+}
+
+.identity-popup-connection-secure,
+#identity-box.verifiedIdentity #identity-icon-labels {
+  color: var(--primary-accent-color) !important;
+}
+
+#identity-popup[connection^=secure] #identity-popup-securityView,
+#identity-popup[connection^=secure] #identity-popup-security-content,
+#connection-icon {
+  fill: var(--primary-accent-color) !important;
+}
 /* Remove white flash on load */
 
 #sidebar,
@@ -2296,7 +2441,7 @@ toolbar[brighttext] {
 /* Siderbar slider - thank you u/_Dimitri_
  *  Add this section if on Windows */
 
-@media screen, screen and (-moz-windows-theme),
+@media screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),
@@ -2317,298 +2462,6 @@ statuspanel .statuspanel-label {
   color: var(--primary-light-color) !important;
   border: none !important;
 }
-/* Top Border */
-
-.browserContainer > findbar {
-  border-top: 1px solid var(--grey-80) !important;
-}
-
-/* Alter buttons */
-
-.findbar-find-previous,
-.findbar-find-next {
-  border: none !important;
-  background: none !important;
-  border-radius: 2px !important;
-  fill: var(--primary-light-color) !important;
-}
-
-/* Fix spacing */
-
-.findbar-find-previous {
-  margin-left: 6px !important;
-}
-
-/* Buttons on hover */
-
-.findbar-find-previous:hover,
-.findbar-find-next:hover {
-  background: var(--toolbarbutton-hover-background) !important;
-}
-@-moz-document url(chrome://browser/content/places/places.xul),
-url(chrome://browser/content/places/bookmarkProperties.xul)  {
-  /* Details Dock and Bookmark Properties*/
-
-  #detailsDeck,
-  #bookmarkproperties {
-    -moz-appearance: none !important;
-    background-color: var(--grey-70) !important;
-    color: var(--primary-light-color) !important;
-    border: 0px solid black !important;
-  }
-
-  /* Toolbar */
-
-  toolbar {
-    -moz-appearance: none !important;
-    background-color: var(--grey-80) !important;
-    border: 0px solid black !important;
-  }
-
-  /* Main Area */
-
-  #placeContent,
-  #places #downloadsRichListBox {
-    -moz-appearance: none !important;
-    border: 1px solid var(--grey-60) !important;
-    color: rgb(200,200,200) !important;
-    background-color: var(--grey-60) !important;
-  }
-
-  /* Sidebar */
-
-  #placesList {
-    -moz-appearance: none !important;
-    color: rgb(200,200,200) !important;
-    background-color: rgba(12, 12, 13, .8) !important;
-  }
-
-  /* Column Header */
-
-  #contentView treecol {
-    -moz-appearance: none !important;
-    border: 0px solid !important;
-    border-bottom: 1px solid !important;
-    border-right: 1px solid rgb(0,0,0) !important;
-    -moz-border-bottom-colors: rgb(0,0,0) !important;
-    background: linear-gradient(to bottom,
-		           rgba(56,70,82,1) 0%,
-		           rgba(35,39,48,1) 100%) !important;
-    color: white !important;
-  }
-
-  /* Text Boxes - One Line */
-
-  #places textbox:not([multiline="true"]),
-  #editBookmarkPanelContent textbox:not([multiline="true"]) {
-    -moz-appearance: none !important;
-    color: var(--primary-light-color) !important;
-    background-color: var(--grey-60) !important;
-  }
-
-  /* Bookmarks Description Field */
-
-  #places #editBMPanel_descriptionField,
-  #editBookmarkPanelContent #editBMPanel_descriptionField {
-    -moz-appearance: none !important;
-    background-color: var(--grey-60) !important;
-    color: var(--primary-light-color) !important;
-  }
-
-  /*  Bookmark Tag Options  */
-
-  listbox {
-    -moz-appearance: none !important;
-    background-color: var(--grey-60) !important;
-    color: var(--primary-light-color) !important;
-  }
-
-  #places listbox:focus > listitem[selected="true"] {
-    background-color: var(--primary-accent-color) !important;
-    color: black !important;
-  }
-
-  /*								*
-	 *	  Tree Items	*
-	 *								*/
-
-  #places treechildren::-moz-tree-row {
-    background-color: transparent !important;
-    overflow-y: scroll  !important;
-  }
-
-  /* Change the outline of icons to light instead of dark */
-
-  #places treechildren::-moz-tree-image,
-  #places treechildren::-moz-tree-image {
-    fill: var(--primary-light-color) !important;
-  }
-
-  /* Selected, not in focus */
-
-  #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(odd) {
-    background: rgba(12, 12, 13, .1) !important;
-  }
-
-  #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current) {
-    background: var(--blue-40) !important;
-  }
-
-  treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
-    -moz-border-top-colors: var(--grey-80) !important;
-    -moz-border-right-colors: var(--grey-80) !important;
-    -moz-border-left-colors: var(--grey-80) !important;
-    -moz-border-bottom-colors: var(--grey-80) !important;
-  }
-
-  /* Selected, in focus */
-
-  #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {
-    background: var(--primary-accent-color) !important;
-  }
-
-  #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover) {
-    background: var(--dark-accent) !important;
-    -moz-border-top-colors: var(--dark-accent) !important;
-    -moz-border-right-colors: var(--dark-accent) !important;
-    -moz-border-left-colors: var(--dark-accent) !important;
-    -moz-border-bottom-colors: var(--dark-accent) !important;
-  }
-
-  #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover, selected) {
-    background: var(--primary-accent-color) !important;
-  }
-
-  #placesMenu > menu {
-    color: var(--primary-light-color) !important;
-  }
-}
-@-moz-document url(chrome://browser/content/pageinfo/pageInfo.xul)  {
-@media not screen and (-moz-windows-classic) {
-    #topBar {
-      -moz-appearance: none !important;
-      background: var(--grey-80) !important;
-    }
-
-    #mainDeck {
-      background: var(--primary-dark-color) !important;
-      color: white !important;
-    }
-
-    textbox {
-      color: var(--primary-light-color) !important;
-    }
-
-    tree {
-      -moz-appearance: none !important;
-      border: 1px solid rgb(0,0,0) !important;
-      color: rgb(200,200,200) !important;
-      background-color: var(--grey-60) !important;
-    }
-
-    treechildren::-moz-tree-row {
-      background-color: transparent !important;
-      overflow-y: scroll  !important;
-    }
-
-    treecol {
-      -moz-appearance: none !important;
-      border: 0px solid !important;
-      border-bottom: 1px solid !important;
-      border-right: 1px solid rgb(0,0,0) !important;
-      -moz-border-bottom-colors: rgb(0,0,0) !important;
-      background: linear-gradient(to bottom,
-			           rgba(56,70,82,1) 0%,
-			           rgba(35,39,48,1) 100%) !important;
-      color: white !important;
-      padding: 4px !important;
-    }
-
-    treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current, focus) {
-      background: var(--primary-accent-color) !important;
-    }
-
-    .permission {
-      -moz-appearance: none !important;
-      background: var(--grey-60) !important;
-      color: var(--primary-light-color) !important;
-      border-color: var(--grey-70) !important;
-    }
-
-    #permPluginTemplate {
-      color: var(--primary-light-color) !important;
-    }
-
-    #permList {
-      border: 2px solid var(--grey-70) !important;
-    }
-
-    /* [WINDOWS ONLY] fixes */
-
-@media screen, screen and (-moz-windows-theme),
-       screen and (-moz-windows-classic),
-       screen and (-moz-windows-default-theme),
-       screen and (-moz-os-version: windows-win7),
-       screen and (-moz-os-version: windows-win8),
-       screen and (-moz-os-version: windows-win10) {
-      #topBar {
-        -moz-appearance: none !important;
-        background-color: var(--grey-80) !important;
-        border: none !important;
-        padding-top: 5px !important;
-        padding-bottom: 5px !important;
-        color: var(--grey-20) !important;
-      }
-
-      #metaTagsCaption,
-      #security-identity,
-      #security-privacy,
-      #security-technical,
-      #security-identity-groupbox,
-      #security-privacy-groupbox,
-      #security-technical-groupbox {
-        -moz-appearance: none !important;
-        background-color: var(--grey-60) !important;
-        border-radius: 4px !important;
-        border: none !important;
-        color: var(--grey-20) !important;
-      }
-
-      #security-identity-groupbox,
-      #security-privacy-groupbox,
-      #security-technical-groupbox {
-        -moz-appearance: none !important;
-        background-color: rgba(49, 49, 54, 1) !important;
-      }
-}
-}
-}
-/* Remove 1px border underneath bookmarks bar */
-
-#navigator-toolbox::after {
-  border-bottom: 0px !important;
-}
-/* Minimize white flash when loading some sites */
-
-browser[type="content-primary"],
-#content,
-browser[type="content"] > html {
-  background: var(--primary-dark-color) !important;
-}
-#identity-box.verifiedIdentity {
-  --urlbar-separator-color: var(--grey-50) !important;
-}
-
-.identity-popup-connection-secure,
-#identity-box.verifiedIdentity #identity-icon-labels {
-  color: var(--primary-accent-color) !important;
-}
-
-#identity-popup[connection^=secure] #identity-popup-securityView,
-#identity-popup[connection^=secure] #identity-popup-security-content,
-#connection-icon {
-  fill: var(--primary-accent-color) !important;
-}
 /* Change active tab line color */
 
 .tab-line[selected="true"] {
@@ -2617,7 +2470,7 @@ browser[type="content"] > html {
 
 /* WINDOWS ONLY */
 
-@media screen, screen and (-moz-windows-theme),
+@media screen and (-moz-windows-theme),
        screen and (-moz-windows-classic),
        screen and (-moz-windows-default-theme),
        screen and (-moz-os-version: windows-win7),

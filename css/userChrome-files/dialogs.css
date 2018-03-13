@@ -292,9 +292,8 @@
                   100% { box-shadow: 0 0 1px 1px var(--primary-accent-color); }
             }
 
-            dialog textbox:active, dialog textbox[focused=true] {
-                  background: var(--grey-90) !important;
-                  color: var(--grey-10) !important;
+            dialog textbox.scrollfield:active, dialog textbox.scrollfield[focused=true],
+            dialog textbox#certDumpVal:active, dialog textbox#certDumpVal[focused=true] {
                   border: 1px solid var(--grey-50) !important;
                   animation: border_glow .3s normal !important;
                   transition: box-shadow .3s ease-in !important;
@@ -545,8 +544,6 @@
             }
 
             dialog textbox:active, dialog textbox[focused=true] {
-                  background: var(--grey-90) !important;
-                  color: var(--grey-10) !important;
                   border: 1px solid var(--grey-50) !important;
                   animation: border_glow .3s normal !important;
                   transition: box-shadow .3s ease-in !important;
@@ -629,8 +626,6 @@
                   }
 
                   dialog textbox:active, dialog textbox[focused=true] {
-                        background: var(--grey-90) !important;
-                        color: var(--grey-10) !important;
                         border: 1px solid var(--grey-50) !important;
                         animation: border_glow .3s normal !important;
                         transition: box-shadow .3s ease-in !important;

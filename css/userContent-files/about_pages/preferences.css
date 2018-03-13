@@ -70,7 +70,7 @@
 		background: var(--grey-60) !important;
 	}
 
-	.navigation {
+	.navigation, hbox.sticky-container {
     background: var(--primary-dark-color) !important;
   }
 

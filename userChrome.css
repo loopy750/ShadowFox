@@ -1492,6 +1492,36 @@ hbox.menu-right {
       color: var(--grey-10) !important;
       border: 1px solid var(--grey-80) !important;
     }
+
+    /* Border glow animation */
+
+@keyframes border_glow {
+      0% {
+        box-shadow: 0 0 0px 0px var(--primary-accent-color);
+      }
+
+      32% {
+        box-shadow: 0 0 0px 0px var(--primary-accent-color);
+      }
+
+      33% {
+        box-shadow: 0 0 20px 5px var(--primary-accent-color);
+      }
+
+      100% {
+        box-shadow: 0 0 1px 1px var(--primary-accent-color);
+      }
+}
+
+    dialog textbox:active,
+    dialog textbox[focused=true] {
+      background: var(--grey-90) !important;
+      color: var(--grey-10) !important;
+      border: 1px solid var(--grey-50) !important;
+      animation: border_glow .3s normal !important;
+      transition: box-shadow .3s ease-in !important;
+      box-shadow: 0 0 1px 1px var(--primary-accent-color);
+    }
 }
 
   /* Cookies dialog */
@@ -1731,6 +1761,36 @@ hbox.menu-right {
       padding: 2px !important;
       border: 1px solid var(--grey-40) !important;
     }
+
+    /* Border glow animation */
+
+@keyframes border_glow {
+      0% {
+        box-shadow: 0 0 0px 0px var(--primary-accent-color);
+      }
+
+      32% {
+        box-shadow: 0 0 0px 0px var(--primary-accent-color);
+      }
+
+      33% {
+        box-shadow: 0 0 20px 5px var(--primary-accent-color);
+      }
+
+      100% {
+        box-shadow: 0 0 1px 1px var(--primary-accent-color);
+      }
+}
+
+    dialog textbox:active,
+    dialog textbox[focused=true] {
+      background: var(--grey-90) !important;
+      color: var(--grey-10) !important;
+      border: 1px solid var(--grey-50) !important;
+      animation: border_glow .3s normal !important;
+      transition: box-shadow .3s ease-in !important;
+      box-shadow: 0 0 1px 1px var(--primary-accent-color);
+    }
 }
 
   /* Delete Server Cert, others dialog */
@@ -1800,6 +1860,36 @@ hbox.menu-right {
       color: var(--grey-10) !important;
       padding: 2px !important;
       border: 1px solid var(--grey-40) !important;
+    }
+
+    /* Border glow animation */
+
+@keyframes border_glow {
+      0% {
+        box-shadow: 0 0 0px 0px var(--primary-accent-color);
+      }
+
+      32% {
+        box-shadow: 0 0 0px 0px var(--primary-accent-color);
+      }
+
+      33% {
+        box-shadow: 0 0 20px 5px var(--primary-accent-color);
+      }
+
+      100% {
+        box-shadow: 0 0 1px 1px var(--primary-accent-color);
+      }
+}
+
+    dialog textbox:active,
+    dialog textbox[focused=true] {
+      background: var(--grey-90) !important;
+      color: var(--grey-10) !important;
+      border: 1px solid var(--grey-50) !important;
+      animation: border_glow .3s normal !important;
+      transition: box-shadow .3s ease-in !important;
+      box-shadow: 0 0 1px 1px var(--primary-accent-color);
     }
 }
 

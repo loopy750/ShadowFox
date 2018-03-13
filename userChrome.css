@@ -116,19 +116,20 @@
   border-bottom-color: var(--primary-light-color) !important;
 }
 
-/* Hover color */
-
+/*
 .autocomplete-richlistitem:hover,
 treechildren.searchbar-treebody::-moz-tree-row(hover) {
-  background-color: var(--grey-30) !important;
+background-color: var(--grey-30) !important;
 }
 
-.autocomplete-richlistitem .ac-title,
-.autocomplete-richlistitem .ac-action,
+
+.autocomplete-richlistitem .ac-title,  
+.autocomplete-richlistitem .ac-action, 
 .autocomplete-richlistitem .ac-separator,
-#PopupSearchAutoComplete {
-  color: var(--primary-dark-color) !important;
+#PopupSearchAutoComplete { 
+color: var(--primary-dark-color) !important; 
 }
+*/
 
 .autocomplete-richlistitem[selected=true] {
   background-color: var(--primary-accent-color) !important;

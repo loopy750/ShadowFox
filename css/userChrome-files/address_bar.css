@@ -18,8 +18,8 @@
 
 #urlbar[focused=true],
 .searchbar-textbox[focused=true] {
-  border: 1px solid var(--primary-accent-color) !important;
-  box-shadow: 0 1px 4px var(--primary-accent-color) !important;
+	border: 1px solid var(--primary-accent-color) !important;
+	box-shadow: 0 1px 4px var(--primary-accent-color) !important;
 }
 
 
@@ -34,24 +34,25 @@
 }
 
 
-/* Hover color */
+/*
 .autocomplete-richlistitem:hover,
 treechildren.searchbar-treebody::-moz-tree-row(hover) {
-  background-color: var(--grey-30) !important;
+background-color: var(--grey-30) !important;
 }
 
- 
+
 .autocomplete-richlistitem .ac-title,  
 .autocomplete-richlistitem .ac-action, 
 .autocomplete-richlistitem .ac-separator,
 #PopupSearchAutoComplete { 
-	color: var(--primary-dark-color) !important; 
+color: var(--primary-dark-color) !important; 
 }
- 
+*/
+
 .autocomplete-richlistitem[selected=true] { 
 	background-color: var(--primary-accent-color) !important; 
 }
- 
+
 .autocomplete-richlistitem[selected=true] .ac-title,  
 .ac-title[selected], 
 .autocomplete-richlistitem[selected=true] .ac-action, 
@@ -86,8 +87,8 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
 }
 
 .search-panel-header {
-	  background-color: var(--grey-80) !important;
-    border-top: none !important;	
+	background-color: var(--grey-80) !important;
+	border-top: none !important;	
 }
 
 .search-panel-one-offs {
@@ -99,32 +100,32 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
 
 
 panel[type="autocomplete"], panel[type="autocomplete-richlistbox"], .autocomplete-history-popup {
-	  color: var(--primary-light-color) !important;
-    background: var(--primary-dark-color) !important;
+	color: var(--primary-light-color) !important;
+	background: var(--primary-dark-color) !important;
 }
 
 
 /* Changes the hover color and text color */
 .autocomplete-tree {
-	  color: var(--primary-light-color) !important;
+	color: var(--primary-light-color) !important;
 }
 
 .searchbar-treebody::-moz-tree-row {
-    background-color: var(--grey-60) !important;
+	background-color: var(--grey-60) !important;
 }
 
 .searchbar-treebody::-moz-tree-row(hover) {
-    background-color: background-color: var(--grey-70) !important;
+	background-color: background-color: var(--grey-70) !important;
 }
 
 .searchbar-treebody::-moz-tree-row(selected) {
-    background-color: var(--primary-accent-color) !important;
+	background-color: var(--primary-accent-color) !important;
 }
 
 #nav-bar textbox:-moz-lwtheme-brighttext {
-    background-color: rgba(63, 63, 63, 1) !important;
+	background-color: rgba(63, 63, 63, 1) !important;
 }
 
 #nav-bar textbox:hover:-moz-lwtheme-brighttext {
-    background-color: rgba(75, 75, 75, 0.75) !important;
+	background-color: rgba(75, 75, 75, 0.75) !important;
 }

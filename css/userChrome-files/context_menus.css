@@ -368,3 +368,8 @@ panelmultiview#PanelUI-multiView image,
 panelview#PanelUI-mainView image {
 	filter: invert(98%) !important;
 }
+
+/* Fixes for Firefox 60 */
+hbox.menu-right {
+	color: var(--primary-dark-color) !important;
+}

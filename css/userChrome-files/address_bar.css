@@ -1,12 +1,8 @@
-/* The following code is based on that found on
-* https://www.jeffersonscher.com/gm/url-bar-tweaks.html
-* Copyright © 2017 Jefferson Scher (BSD-3-Clause License or CC-BY License) */
-
 :root {
-	--panel-separator-color: var(--grey-60) !important;
+	--panel-separator-color: var(--grey-60) !important
 }
 
-/* Let's look a bit like macOS */
+/* Looks like macOS */
 
 #urlbar,
 .searchbar-textbox,
@@ -14,118 +10,72 @@
 	border-radius: 4px !important;
 }
 
-/* Shadow effect */
-
 #urlbar[focused=true],
 .searchbar-textbox[focused=true] {
-	border: 1px solid var(--primary-accent-color) !important;
+	border: 1px solid !important;
 	box-shadow: 0 1px 4px var(--primary-accent-color) !important;
+	border-color: var(--primary-accent-color) !important
 }
 
-
-/* URL Bar Drop Down */
-
-#PopupAutoCompleteRichResult .autocomplete-richlistbox {
-	background-color: var(--grey-60) !important; 
+#PopupAutoCompleteRichResult .autocomplete-richlistbox,
+.searchbar-treebody::-moz-tree-row {
+	background-color: var(--grey-60) !important
 }
 
-#PopupAutoCompleteRichResult .autocomplete-richlistitem { 
-	border-bottom-color: var(--primary-light-color) !important; 
+#PopupAutoCompleteRichResult .autocomplete-richlistitem,
+.autocomplete-tree {
+	border-bottom-color: var(--primary-light-color) !important
 }
 
-
-/*
-.autocomplete-richlistitem:hover,
-treechildren.searchbar-treebody::-moz-tree-row(hover) {
-background-color: var(--grey-30) !important;
+#PopupSearchAutoComplete tree,
+popupset#mainPopupSet panel#PopupAutoCompleteRichResult,
+popupset#mainPopupSet panel#PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-action,
+popupset#mainPopupSet panel#PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-separator,
+popupset#mainPopupSet panel#PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-title,
+popupset#mainPopupSet panel#PopupAutoCompleteRichResult .autocomplete-tree {
+	color: var(--grey-30) !important
 }
 
-
-.autocomplete-richlistitem .ac-title,  
-.autocomplete-richlistitem .ac-action, 
-.autocomplete-richlistitem .ac-separator,
-#PopupSearchAutoComplete { 
-color: var(--primary-dark-color) !important; 
-}
-*/
-
-.autocomplete-richlistitem[selected=true] { 
-	background-color: var(--primary-accent-color) !important; 
+.autocomplete-richlistitem[selected=true],
+.searchbar-treebody::-moz-tree-row(selected) {
+	background-color: var(--blue-50) !important
 }
 
-.autocomplete-richlistitem[selected=true] .ac-title,  
-.ac-title[selected], 
-.autocomplete-richlistitem[selected=true] .ac-action, 
-.ac-action[selected], 
-.autocomplete-richlistitem[selected=true] .ac-separator, 
-.ac-separator[selected] { 
-	color: white !important; 
-} 
-
-.autocomplete-richlistitem[selected=true] .ac-url,  
-.ac-url[selected] { 
-	color: white !important; 
+.ac-action[selected],
+.ac-separator[selected],
+.ac-title[selected],
+.ac-url[selected],
+.autocomplete-richlistitem[selected=true] .ac-action,
+.autocomplete-richlistitem[selected=true] .ac-separator,
+.autocomplete-richlistitem[selected=true] .ac-title,
+.autocomplete-richlistitem[selected=true] .ac-url {
+	color: var(--grey-20) !important
 }
 
-.ac-url { 
-	color: var(--primary-accent-color) !important; 
-} 
+.ac-url,
+.search-panel-input-value {
+	color: var(--grey-20) !important
+}
 
 .search-one-offs {
-	background: var(--grey-60) !important;
+	background: var(--grey-80) !important
 }
 
-.search-panel-input-value {
-	color: var(--primary-accent-color) !important;;
-}
-
-
-
-/* Search one-offs */
+.search-panel-header,
 .search-panel-one-offs {
 	background: var(--grey-80) !important;
+	border-top: none !important
 }
 
-.search-panel-header {
-	background-color: var(--grey-80) !important;
-	border-top: none !important;	
-}
-
-.search-panel-one-offs {
-	border-top: none !important;
-}
-
-
-/* Searchbar */
-
-
-panel[type="autocomplete"], panel[type="autocomplete-richlistbox"], .autocomplete-history-popup {
+.autocomplete-history-popup,
+panel[type=autocomplete-richlistbox],
+panel[type=autocomplete] {
 	color: var(--primary-light-color) !important;
-	background: var(--primary-dark-color) !important;
+	background: var(--grey-70) !important
 }
 
-
-/* Changes the hover color and text color */
-.autocomplete-tree {
-	color: var(--primary-light-color) !important;
-}
-
-.searchbar-treebody::-moz-tree-row {
-	background-color: var(--grey-60) !important;
-}
-
-.searchbar-treebody::-moz-tree-row(hover) {
-	background-color: background-color: var(--grey-70) !important;
-}
-
-.searchbar-treebody::-moz-tree-row(selected) {
-	background-color: var(--primary-accent-color) !important;
-}
-
-#nav-bar textbox:-moz-lwtheme-brighttext {
-	background-color: rgba(63, 63, 63, 1) !important;
-}
-
-#nav-bar textbox:hover:-moz-lwtheme-brighttext {
-	background-color: rgba(75, 75, 75, 0.75) !important;
+.searchbar-treebody::-moz-tree-row(hover),
+popupset#mainPopupSet panel#PopupAutoCompleteRichResult .autocomplete-richlistitem:hover,
+treechildren.searchbar-treebody::-moz-tree-row(hover) {
+	background-color: var(--grey-70) !important
 }

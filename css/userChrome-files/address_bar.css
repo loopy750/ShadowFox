@@ -79,3 +79,17 @@ popupset#mainPopupSet panel#PopupAutoCompleteRichResult .autocomplete-richlistit
 treechildren.searchbar-treebody::-moz-tree-row(hover) {
 	background-color: var(--grey-70) !important
 }
+
+@-moz-document url-prefix(about:sessionrestore) {
+  button#tabsToggle {
+    background-color: var(--primary-dark-color) !important;
+  }
+}
+
+#nav-bar textbox:-moz-lwtheme-brighttext {
+  background-color: rgba(63, 63, 63, 1) !important;
+}
+
+#nav-bar textbox:hover:-moz-lwtheme-brighttext {
+  background-color: rgba(75, 75, 75, 0.75) !important;
+}

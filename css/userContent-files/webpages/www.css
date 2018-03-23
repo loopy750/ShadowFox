@@ -7,7 +7,7 @@
 
 	/* [WINDOWS ONLY] Styles similar to macOS */
 
-	select:active, select:focus {
+	select:not([disabled]):active, select:not([disabled]):focus {
 		box-shadow: 0px 0px 1.5px 3px var(--primary-accent-color) !important;
 	}
 }

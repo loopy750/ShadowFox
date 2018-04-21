@@ -327,7 +327,10 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
             url("chrome://mozapps/content/downloads/unknownContentType.xul"),
             url("chrome://browser/content/preferences/cookies.xul"),
             url("chrome://passwordmgr/content/passwordManager.xul"),
-            url("chrome://browser/content/migration/migration.xul")  {
+            url("chrome://browser/content/migration/migration.xul"),
+            url("chrome://browser/content/sanitize.xul"),
+            url("chrome://global/content/resetProfile.xul"),
+            url("chrome://mozapps/content/update/history.xul")  {
     button {
       -moz-appearance: none !important;
       color: var(--button-primary-color) !important;
@@ -788,7 +791,7 @@ popup > menu > menupopup {
 
 #context-navigation menuitem {
   color: var(--grey-10) !important;
-  background: var(--grey-70) !important;
+  background: var(--grey-60) !important;
 }
 
 #context-navigation menuitem:hover {
@@ -806,10 +809,26 @@ menuitem {
 /* Menu Separators - removed */
 
 menupopup menuseparator {
-  padding: 0 !important;
+  -moz-appearance: none !important;
+  padding: 1px !important;
+  margin: 4px 0 !important;
+  background: var(--grey-70) !important;
   border-top: none !important;
-  margin: 2px 6px 2px 6px !important;
 }
+
+menugroup#context-navigation {
+  margin: 0 0 0 0 !important;
+}
+
+/* Menu Separators - previous style */
+
+/*
+menupopup menuseparator {
+	padding: 0 !important;
+	border-top: none !important;
+	margin: 2px 6px 2px 6px !important;
+}
+*/
 
 /* Context menu, display disabled items in a different colour */
 
@@ -832,7 +851,7 @@ menuitem:hover[disabled="true"] {
 
 #context-navigation menuitem:hover[disabled="true"] {
   color: var(--grey-50) !important;
-  background-color: var(--grey-80) !important;
+  background-color: var(--grey-70) !important;
 }
 
 menupopup menu[_moz-menuactive="true"],
@@ -868,10 +887,19 @@ vbox#sidebar-box.chromeclass-extrachrome {
   /* Remove white separators between menu items */
 
   menupopup menuseparator {
-    -moz-appearance: none !important;
-    background: rgba(0, 0, 0, 0) !important;
-    border: 0px !important;
+    padding: 0 !important;
+    border-color: var(--grey-70)!important;
   }
+
+  /* Remove white separators between menu items - previous style */
+
+  /*
+		menupopup menuseparator {
+			-moz-appearance:none !important;
+			background: rgba(0, 0, 0, 0) !important;
+			border: 0px !important;
+		}
+		*/
 
   /* Removes white bar between icons and menu items */
 
@@ -1153,6 +1181,12 @@ panelview#PanelUI-mainView image {
 hbox.menu-right {
   color: var(--primary-dark-color) !important;
 }
+
+/* Scroll buttons, submenu fix */
+
+#BMB_bookmarksPopup .popup-internal-box {
+  background-color: var(--grey-60) !important;
+}
 #customization-done-button {
   color: var(--primary-light-color);
   font-weight: 700;
@@ -1386,7 +1420,9 @@ hbox.menu-right {
 
   /* Certificate Viewer dialog */
 
-@-moz-document url("chrome://pippki/content/certViewer.xul")  {
+@-moz-document url("chrome://pippki/content/certViewer.xul"),
+            url("chrome://browser/content/sanitize.xul"),
+            url("chrome://mozapps/content/update/history.xul")  {
     dialog {
       -moz-appearance: none !important;
       background: var(--grey-70) !important;
@@ -1397,9 +1433,16 @@ hbox.menu-right {
       filter: invert(80%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
     }
 
+    .update-status-value {
+      -moz-appearance: none !important;
+      background: none !important;
+      color: var(--primary-light-color) !important;
+    }
+
     tabpanels,
     #general_info,
-    #verified {
+    #verified,
+    richlistbox#historyItems {
       -moz-appearance: none !important;
       background: var(--grey-80) !important;
       color: var(--primary-light-color) !important;
@@ -1410,6 +1453,10 @@ hbox.menu-right {
       background: var(--grey-10) !important;
       color: var(--grey-40) !important;
       filter: invert(95%) contrast(95%) brightness(150%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
+    }
+
+    listbox#itemList {
+      filter: invert(95%) brightness(95%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
     }
 
     .scrollfield,
@@ -1766,7 +1813,8 @@ hbox.menu-right {
             url("chrome://pippki/content/changepassword.xul"),
             url("chrome://pippki/content/load_device.xul"),
             url("chrome://mozapps/content/extensions/about.xul"),
-            url("chrome://pippki/content/editcacert.xul")  {
+            url("chrome://pippki/content/editcacert.xul"),
+            url("chrome://global/content/resetProfile.xul")  {
     dialog {
       -moz-appearance: none !important;
       background: var(--primary-dark-color) !important;
@@ -1871,7 +1919,8 @@ hbox.menu-right {
   }
 
   menulist#openHandler,
-  #editBMPanel_folderMenuList {
+  #editBMPanel_folderMenuList,
+  menulist#sanitizeDurationChoice {
     -moz-appearance: menulist !important;
     filter: invert(95%) brightness(95%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
   }
@@ -1883,7 +1932,8 @@ hbox.menu-right {
 @media not screen and (-moz-os-version: windows-win8) {
 @media not screen and (-moz-os-version: windows-win10) {
               menulist#openHandler,
-              #editBMPanel_folderMenuList {
+              #editBMPanel_folderMenuList,
+              menulist#sanitizeDurationChoice {
                 -moz-appearance: menulist !important;
                 filter: invert(95%) brightness(165%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
               }
@@ -1895,7 +1945,8 @@ hbox.menu-right {
 }
 
   menulist#openHandler:hover,
-  #editBMPanel_folderMenuList:hover {
+  #editBMPanel_folderMenuList:hover,
+  menulist#sanitizeDurationChoice:hover {
     -moz-appearance: menulist !important;
     filter: invert(88%) brightness(100%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
   }
@@ -1907,7 +1958,8 @@ hbox.menu-right {
 @media not screen and (-moz-os-version: windows-win8) {
 @media not screen and (-moz-os-version: windows-win10) {
               menulist#openHandler:hover,
-              #editBMPanel_folderMenuList:hover {
+              #editBMPanel_folderMenuList:hover,
+              menulist#sanitizeDurationChoice:hover {
                 -moz-appearance: menulist !important;
                 filter: invert(90%) brightness(165%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
               }
@@ -1922,14 +1974,16 @@ hbox.menu-right {
             screen and (-moz-os-version: windows-win8),
             screen and (-moz-os-version: windows-win10) {
     menulist#openHandler,
-    #editBMPanel_folderMenuList {
+    #editBMPanel_folderMenuList,
+    menulist#sanitizeDurationChoice {
       -moz-appearance: menulist !important;
       color: var(--grey-60) !important;
       filter: invert(95%) grayscale(90%) brightness(115%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
     }
 
     menulist#openHandler:hover,
-    #editBMPanel_folderMenuList:hover {
+    #editBMPanel_folderMenuList:hover,
+    menulist#sanitizeDurationChoice:hover {
       -moz-appearance: menulist !important;
       filter: invert(85%) grayscale(90%) brightness(115%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
     }

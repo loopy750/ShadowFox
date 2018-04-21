@@ -211,94 +211,106 @@
 
       /* Certificate Viewer dialog */
 
-      @-moz-document url("chrome://pippki/content/certViewer.xul") {
+      @-moz-document url("chrome://pippki/content/certViewer.xul"),
+            url("chrome://browser/content/sanitize.xul"),
+            url("chrome://mozapps/content/update/history.xul") {
 
-            dialog {
-                  -moz-appearance: none !important;
-                  background: var(--grey-70) !important;
-                  color: var(--primary-light-color) !important;
-            }
+                  dialog {
+                        -moz-appearance: none !important;
+                        background: var(--grey-70) !important;
+                        color: var(--primary-light-color) !important;
+                  }
 
-            .tabs-right {
-                  filter: invert(80%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
-            }
+                  .tabs-right {
+                        filter: invert(80%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
+                  }
 
-            tabpanels, #general_info, #verified {
-                  -moz-appearance: none !important;
-                  background: var(--grey-80) !important;
-                  color: var(--primary-light-color) !important;
-            }
+                  .update-status-value {
+                        -moz-appearance: none !important;
+                        background: none !important;
+                        color: var(--primary-light-color) !important;
+                  }
 
-            treechildren, textbox#certDumpVal {
-                  background: var(--grey-10) !important;
-                  color: var(--grey-40) !important;
-                  filter: invert(95%) contrast(95%) brightness(150%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
-            }
+                  tabpanels, #general_info, #verified, richlistbox#historyItems {
+                        -moz-appearance: none !important;
+                        background: var(--grey-80) !important;
+                        color: var(--primary-light-color) !important;
+                  }
 
-            .scrollfield, .scrollfield:hover, .groove {
-                  border: 1px solid var(--grey-60) !important;
-            }
+                  treechildren, textbox#certDumpVal {
+                        background: var(--grey-10) !important;
+                        color: var(--grey-40) !important;
+                        filter: invert(95%) contrast(95%) brightness(150%) grayscale(5%) saturate(200%) hue-rotate(-178deg) !important;
+                  }
+                  
+                  listbox#itemList {
+                        filter: invert(95%) brightness(95%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
+                  }
 
-            caption {
-                  -moz-appearance: none !important;
-                  color: var(--primary-light-color) !important;
-                  background: var(--grey-60) !important;
-            }
+                  .scrollfield, .scrollfield:hover, .groove {
+                        border: 1px solid var(--grey-60) !important;
+                  }
 
-            description {
-                  -moz-appearance: none !important;
-                  color: var(--grey-30) !important;
-                  background: var(--grey-60) !important;
-            }
+                  caption {
+                        -moz-appearance: none !important;
+                        color: var(--primary-light-color) !important;
+                        background: var(--grey-60) !important;
+                  }
 
-            tab[selected="true"]:not([ignorefocus="true"]) {
-                  -moz-appearance: none !important;
-                  color: var(--grey-20) !important;
-                  background: var(--grey-80) !important;
-                  border-bottom: 0px solid var(--grey-60) !important;
-            }
+                  description {
+                        -moz-appearance: none !important;
+                        color: var(--grey-30) !important;
+                        background: var(--grey-60) !important;
+                  }
 
-            tab:not([ignorefocus="true"]) {
-                  -moz-appearance: none !important;
-                  color: var(--grey-40) !important;
-                  background: var(--grey-80) !important;
-                  border-bottom: 0px solid var(--grey-60) !important;
-            }
+                  tab[selected="true"]:not([ignorefocus="true"]) {
+                        -moz-appearance: none !important;
+                        color: var(--grey-20) !important;
+                        background: var(--grey-80) !important;
+                        border-bottom: 0px solid var(--grey-60) !important;
+                  }
 
-            tab:hover {
-                  color: var(--grey-30) !important;
-                  background: var(--grey-80) !important;
-            }
+                  tab:not([ignorefocus="true"]) {
+                        -moz-appearance: none !important;
+                        color: var(--grey-40) !important;
+                        background: var(--grey-80) !important;
+                        border-bottom: 0px solid var(--grey-60) !important;
+                  }
 
-            textbox {
-                  -moz-appearance: none !important;
-                  color: var(--grey-30) !important;
-                  background: var(--grey-80) !important;
-                  border: 1px solid var(--grey-80) !important;
-            }
+                  tab:hover {
+                        color: var(--grey-30) !important;
+                        background: var(--grey-80) !important;
+                  }
 
-            textbox:hover {
-                  background: var(--grey-80) !important;
-                  color: var(--grey-10) !important;
-                  border: 1px solid var(--grey-80) !important;
-            }
+                  textbox {
+                        -moz-appearance: none !important;
+                        color: var(--grey-30) !important;
+                        background: var(--grey-80) !important;
+                        border: 1px solid var(--grey-80) !important;
+                  }
 
-            /* Border glow animation */
+                  textbox:hover {
+                        background: var(--grey-80) !important;
+                        color: var(--grey-10) !important;
+                        border: 1px solid var(--grey-80) !important;
+                  }
 
-            @keyframes border_glow {
-                  0% { box-shadow: 0 0 0px 0px var(--primary-accent-color); }
-                  32% { box-shadow: 0 0 0px 0px var(--primary-accent-color); }
-                  33% { box-shadow: 0 0 20px 5px var(--primary-accent-color); }
-                  100% { box-shadow: 0 0 1px 1px var(--primary-accent-color); }
-            }
+                  /* Border glow animation */
 
-            dialog textbox.scrollfield:active, dialog textbox.scrollfield[focused=true],
-            dialog textbox#certDumpVal:active, dialog textbox#certDumpVal[focused=true] {
-                  border: 1px solid var(--grey-50) !important;
-                  animation: border_glow .3s normal !important;
-                  transition: box-shadow .3s ease-in !important;
-                  box-shadow: 0 0 1px 1px var(--primary-accent-color);
-            }
+                  @keyframes border_glow {
+                        0% { box-shadow: 0 0 0px 0px var(--primary-accent-color); }
+                        32% { box-shadow: 0 0 0px 0px var(--primary-accent-color); }
+                        33% { box-shadow: 0 0 20px 5px var(--primary-accent-color); }
+                        100% { box-shadow: 0 0 1px 1px var(--primary-accent-color); }
+                  }
+
+                  dialog textbox.scrollfield:active, dialog textbox.scrollfield[focused=true],
+                  dialog textbox#certDumpVal:active, dialog textbox#certDumpVal[focused=true] {
+                        border: 1px solid var(--grey-50) !important;
+                        animation: border_glow .3s normal !important;
+                        transition: box-shadow .3s ease-in !important;
+                        box-shadow: 0 0 1px 1px var(--primary-accent-color);
+                  }
       }
 
       /* Cookies dialog */
@@ -557,7 +569,8 @@
             url("chrome://pippki/content/changepassword.xul"),
             url("chrome://pippki/content/load_device.xul"),
             url("chrome://mozapps/content/extensions/about.xul"),
-            url("chrome://pippki/content/editcacert.xul") {
+            url("chrome://pippki/content/editcacert.xul"),
+            url("chrome://global/content/resetProfile.xul") {
 
                   dialog {
                         -moz-appearance: none !important;
@@ -645,7 +658,7 @@
             filter: invert(90%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
       }
 
-      menulist#openHandler, #editBMPanel_folderMenuList {
+      menulist#openHandler, #editBMPanel_folderMenuList, menulist#sanitizeDurationChoice {
             -moz-appearance: menulist !important;
             filter: invert(95%) brightness(95%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
       }
@@ -656,7 +669,7 @@
                         @media not screen and (-moz-os-version: windows-win7) {
                               @media not screen and (-moz-os-version: windows-win8) {
                                     @media not screen and (-moz-os-version: windows-win10) {
-                                          menulist#openHandler, #editBMPanel_folderMenuList {
+                                          menulist#openHandler, #editBMPanel_folderMenuList, menulist#sanitizeDurationChoice {
                                                 -moz-appearance: menulist !important;
                                                 filter: invert(95%) brightness(165%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
                                           }
@@ -667,7 +680,7 @@
             }
       }
 
-      menulist#openHandler:hover, #editBMPanel_folderMenuList:hover {
+      menulist#openHandler:hover, #editBMPanel_folderMenuList:hover, menulist#sanitizeDurationChoice:hover {
             -moz-appearance: menulist !important;
             filter: invert(88%) brightness(100%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
       }
@@ -678,7 +691,7 @@
                         @media not screen and (-moz-os-version: windows-win7) {
                               @media not screen and (-moz-os-version: windows-win8) {
                                     @media not screen and (-moz-os-version: windows-win10) {
-                                          menulist#openHandler:hover, #editBMPanel_folderMenuList:hover {
+                                          menulist#openHandler:hover, #editBMPanel_folderMenuList:hover, menulist#sanitizeDurationChoice:hover {
                                                 -moz-appearance: menulist !important;
                                                 filter: invert(90%) brightness(165%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
                                           }
@@ -692,13 +705,13 @@
       @media screen and (-moz-os-version: windows-win7),
             screen and (-moz-os-version: windows-win8),
             screen and (-moz-os-version: windows-win10) {
-                  menulist#openHandler, #editBMPanel_folderMenuList {
+                  menulist#openHandler, #editBMPanel_folderMenuList, menulist#sanitizeDurationChoice {
                         -moz-appearance: menulist !important;
                         color: var(--grey-60) !important;
                         filter: invert(95%) grayscale(90%) brightness(115%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
                   }
 
-                  menulist#openHandler:hover, #editBMPanel_folderMenuList:hover {
+                  menulist#openHandler:hover, #editBMPanel_folderMenuList:hover, menulist#sanitizeDurationChoice:hover {
                         -moz-appearance: menulist !important;
                         filter: invert(85%) grayscale(90%) brightness(115%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
                   }

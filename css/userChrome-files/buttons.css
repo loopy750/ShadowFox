@@ -52,7 +52,10 @@
             url("chrome://mozapps/content/downloads/unknownContentType.xul"),
             url("chrome://browser/content/preferences/cookies.xul"),
             url("chrome://passwordmgr/content/passwordManager.xul"),
-            url("chrome://browser/content/migration/migration.xul") {
+            url("chrome://browser/content/migration/migration.xul"),
+            url("chrome://browser/content/sanitize.xul"),
+            url("chrome://global/content/resetProfile.xul"),
+            url("chrome://mozapps/content/update/history.xul") {
                   button {
                         -moz-appearance: none !important;
                         color: var(--button-primary-color) !important;

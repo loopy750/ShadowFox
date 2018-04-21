@@ -39,7 +39,7 @@ popup > menu > menupopup {
 /* Top Row of Navigation Options */
 #context-navigation menuitem {
 	color: var(--grey-10) !important;
-	background: var(--grey-70) !important;
+	background: var(--grey-60) !important;
 }
 
 #context-navigation menuitem:hover {
@@ -54,10 +54,23 @@ menupopup menu, menuitem {
 
 /* Menu Separators - removed */
 menupopup menuseparator {
+  -moz-appearance: none !important;
+  padding: 1px !important;
+  margin: 4px 0 !important;
+  background: var(--grey-70) !important;
+  border-top: none !important
+}
+menugroup#context-navigation {
+  margin: 0 0 0 0 !important;
+}
+/* Menu Separators - previous style */ 
+/*
+menupopup menuseparator {
 	padding: 0 !important;
 	border-top: none !important;
 	margin: 2px 6px 2px 6px !important;
 }
+*/
 
 /* Context menu, display disabled items in a different colour */
 
@@ -78,7 +91,7 @@ menu[disabled="true"]:hover, menuitem:hover[disabled="true"] {
 
 #context-navigation menuitem:hover[disabled="true"] {
 	color: var(--grey-50) !important;
-	background-color: var(--grey-80) !important;
+	background-color: var(--grey-70) !important;
 }
 
 menupopup menu[_moz-menuactive="true"],
@@ -113,10 +126,17 @@ vbox#sidebar-box.chromeclass-extrachrome {
 
 		/* Remove white separators between menu items */
 		menupopup menuseparator {
+			padding: 0 !important;
+			border-color: var(--grey-70)!important
+		}
+		/* Remove white separators between menu items - previous style */ 
+		/*
+		menupopup menuseparator {
 			-moz-appearance:none !important;
 			background: rgba(0, 0, 0, 0) !important;
 			border: 0px !important;
 		}
+		*/
 
 		/* Removes white bar between icons and menu items */
 		#context-navigation, #context-sep-navigation {
@@ -373,4 +393,9 @@ panelview#PanelUI-mainView image {
 /* Fixes for Firefox 60 */
 hbox.menu-right {
 	color: var(--primary-dark-color) !important;
+}
+
+/* Scroll buttons, submenu fix */
+#BMB_bookmarksPopup .popup-internal-box {
+	background-color: var(--grey-60) !important;
 }

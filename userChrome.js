@@ -58,7 +58,7 @@
     :not(select):not(hbox) > scrollbar:active,\
     :not(select):not(hbox) > scrollbar:hover {\
         // -moz-margin-start: -14px;\
-        box-shadow: -1px 0px 2px 1px rgba(159, 159, 159, 0.1);\
+        box-shadow: -1px 0px 2px 1px rgba(159, 159, 159, 0.33);\
     }\
     :not(select):not(hbox) > scrollbar thumb:active {\
         background-color: rgba(159, 159, 159, 1) !important;\

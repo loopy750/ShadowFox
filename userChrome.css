@@ -754,7 +754,7 @@ menupopup > menu > menupopup,
 menupopup scrollbox,
 popup,
 popup > menu > menupopup {
-  -moz-appearance: none!important;
+  -moz-appearance: none !important;
   background: var(--grey-60) !important;
   border-color: rgba(56, 56, 61, 0.5) !important;
   border: 0 !important;
@@ -2020,7 +2020,7 @@ hbox.menu-right {
   background: var(--toolbarbutton-hover-background) !important;
 }
 @-moz-document url(chrome://browser/content/places/places.xul),
-url(chrome://browser/content/places/bookmarkProperties.xul)  {
+	url(chrome://browser/content/places/bookmarkProperties.xul)  {
   /* Details Dock and Bookmark Properties*/
 
   #detailsDeck,
@@ -2066,8 +2066,8 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
     border-right: 1px solid rgb(0,0,0) !important;
     -moz-border-bottom-colors: rgb(0,0,0) !important;
     background: linear-gradient(to bottom,
-		           rgba(56,70,82,1) 0%,
-		           rgba(35,39,48,1) 100%) !important;
+				rgba(56,70,82,1) 0%,
+				rgba(35,39,48,1) 100%) !important;
     color: white !important;
   }
 
@@ -2103,8 +2103,8 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
   }
 
   /*								*
-	 *	  Tree Items	*
-	 *								*/
+		*	  Tree Items	*
+		*								*/
 
   #places treechildren::-moz-tree-row {
     background-color: transparent !important;
@@ -2156,6 +2156,12 @@ url(chrome://browser/content/places/bookmarkProperties.xul)  {
   #placesMenu > menu {
     color: var(--primary-light-color) !important;
   }
+
+@media screen and (-moz-os-version: windows-win7) {
+    treechildren {
+      --treechildren-outline: none !important;
+    }
+}
 }
 /* Color of tab throbber animation */
 

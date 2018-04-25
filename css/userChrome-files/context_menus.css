@@ -4,7 +4,7 @@ menupopup > menu > menupopup,
 menupopup scrollbox,
 popup,
 popup > menu > menupopup {
-	-moz-appearance: none!important;
+	-moz-appearance: none !important;
 	background: var(--grey-60) !important;
 	border-color: rgba(56, 56, 61, 0.5) !important;
 	border: 0 !important;

@@ -756,8 +756,8 @@ popup,
 popup > menu > menupopup {
   -moz-appearance: none !important;
   background: var(--grey-60) !important;
-  border-color: rgba(56, 56, 61, 0.5) !important;
-  border: 0 !important;
+  border-color: rgba(56, 56, 61, 0.67) !important;
+  /* border: 0 !important; */
   padding: 0 !important;
 }
 
@@ -803,6 +803,7 @@ popup > menu > menupopup {
 menupopup menu,
 menuitem {
   -moz-appearance: none !important;
+  background: var(--grey-60) !important;
   color: var(--grey-10) !important;
 }
 

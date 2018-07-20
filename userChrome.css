@@ -45,9 +45,12 @@
   --orange-90: #3e1300;
   --grey-10: #f9f9fa;
   --grey-20: #ededf0;
-  --grey-30: #d7d7db;
-  --grey-40: #b1b1b3;
-  --grey-50: #737373;
+  --grey-30: #d0d0d3;
+  /*  --grey-30: #d7d7db;*/
+  --grey-40: #646469;
+  --grey-50: #5C5C61;
+  /*  --grey-40: #b1b1b3;*/
+  /*  --grey-50: #737373;*/
   --grey-60: #4a4a4f;
   --grey-70: #38383d;
   --grey-80: #2a2a2e;
@@ -60,9 +63,9 @@
 :root {
   --primary-dark-color: var(--grey-70);
   /* Color of FF dark theme nav-bar */
-  --primary-light-color: var(--grey-40);
+  --primary-light-color: var(--grey-30);
   /* Off white */
-  --light-accent-color: var(--grey-50);
+  --light-accent-color: var(--grey-40);
   /* Slightly darker off white */
   --dark-accent: var(--grey-80);
   /* darker shade of main color */
@@ -83,7 +86,7 @@
   }
 }
 :root {
-  --panel-separator-color: var(--grey-60) !important;
+  --panel-separator-color: var(--grey-50) !important;
 }
 
 /* Looks like macOS */
@@ -284,9 +287,9 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
     --button-primary-background-color: var(--grey-80);
     --button-primary-border-color: var(--grey-60);
     --button-primary-focus-background-color: var(--grey-80);
-    --button-primary-focus-border-color: var(--grey-50);
+    --button-primary-focus-border-color: var(--grey-30);
     --button-primary-hover-background-color: var(--grey-80);
-    --button-primary-hover-border-color: var(--grey-40);
+    --button-primary-hover-border-color: var(--grey-10);
     --button-primary-active-color: var(--grey-20);
     --button-primary-active-background-color: var(--blue-50);
     --button-primary-active-border-color: var(--blue-50);
@@ -330,7 +333,8 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
             url("chrome://browser/content/migration/migration.xul"),
             url("chrome://browser/content/sanitize.xul"),
             url("chrome://global/content/resetProfile.xul"),
-            url("chrome://mozapps/content/update/history.xul")  {
+            url("chrome://mozapps/content/update/history.xul"),
+            url("chrome://browser/content/preferences/siteDataRemoveSelected.xul")  {
     button {
       -moz-appearance: none !important;
       color: var(--button-primary-color) !important;
@@ -461,7 +465,7 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
     button[dlgtype="cancel"]:focus,
     button:focus {
       background: var(--button-primary-focus-background-color) !important;
-      border: 1px solid var(--grey-40) !important;
+      border: 1px solid var(--grey-30) !important;
       padding: 0px 6px 0px 6px !important;
     }
 
@@ -476,7 +480,7 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
     button[dlgtype="cancel"]:hover,
     button:hover {
       background: var(--button-primary-hover-background-color) !important;
-      border: 1px solid var(--grey-30) !important;
+      border: 1px solid var(--grey-10) !important;
       padding: 0px 6px 0px 6px !important;
     }
 
@@ -637,7 +641,7 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
 
   button#editBookmarkPanelDoneButton:hover {
     background: var(--blue-50) !important;
-    border: 1px solid var(--blue-30) !important;
+    border: 1px solid var(--blue-40) !important;
     padding: 0px 6px 0px 6px !important;
   }
 
@@ -758,7 +762,7 @@ popup > menu > menupopup {
   background: var(--grey-60) !important;
   border-color: rgba(56, 56, 61, 0.67) !important;
   /* border: 0 !important; */
-  padding: 0 !important;
+  /* padding: 0 !important; */
 }
 
 @media not screen and (-moz-windows-theme) {
@@ -803,7 +807,8 @@ popup > menu > menupopup {
 menupopup menu,
 menuitem {
   -moz-appearance: none !important;
-  background: var(--grey-60) !important;
+  /* CSS NO LONGER REQUIRED FOR DARK THEME */
+  /*	background: var(--grey-60) !important; */
   color: var(--grey-10) !important;
 }
 
@@ -813,7 +818,7 @@ menupopup menuseparator {
   -moz-appearance: none !important;
   padding: 1px !important;
   margin: 4px 0 !important;
-  background: var(--grey-70) !important;
+  background: var(--grey-50) !important;
   border-top: none !important;
 }
 
@@ -858,7 +863,12 @@ menuitem:hover[disabled="true"] {
 menupopup menu[_moz-menuactive="true"],
 menuitem[_moz-menuactive="true"] {
   color: var(--grey-10) !important;
-  background-color: var(--grey-80) !important;
+  background-color: var(--grey-50) !important;
+}
+
+menupopup menu[_moz-menuactive="true"]:active:not([disabled]),
+menuitem[_moz-menuactive="true"]:active:not([disabled]) {
+  background-color: var(--grey-40) !important;
 }
 
 /* Sidebar Header Context Menu */
@@ -889,7 +899,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 
   menupopup menuseparator {
     padding: 0 !important;
-    border-color: var(--grey-70)!important;
+    border-color: var(--grey-50)!important;
   }
 
   /* Remove white separators between menu items - previous style */
@@ -1186,7 +1196,27 @@ hbox.menu-right {
 /* Scroll buttons, submenu fix */
 
 #BMB_bookmarksPopup .popup-internal-box {
-  background-color: var(--grey-60) !important;
+  /* CSS NO LONGER REQUIRED FOR DARK THEME */
+  /*	background-color: var(--grey-60) !important; */
+}
+
+/* Fixes for Firefox 62 */
+
+#identity-popup-permission-empty-hint {
+  -moz-appearance: none !important;
+  color: var(--primary-dark-color) !important;
+}
+
+#editBMPanel_namePicker,
+#editBMPanel_tagsField {
+  -moz-appearance: none !important;
+  background-color: var(--grey-70) !important;
+  color: var(--primary-light-color) !important;
+}
+
+#editBMPanel_tagsSelectorRow listitem {
+  -moz-appearance: none !important;
+  filter: invert(90%) brightness(110%) saturate(110%) hue-rotate(-178deg) !important;
 }
 #customization-done-button {
   color: var(--primary-light-color);
@@ -1815,11 +1845,18 @@ hbox.menu-right {
             url("chrome://pippki/content/load_device.xul"),
             url("chrome://mozapps/content/extensions/about.xul"),
             url("chrome://pippki/content/editcacert.xul"),
-            url("chrome://global/content/resetProfile.xul")  {
+            url("chrome://global/content/resetProfile.xul"),
+            url("chrome://browser/content/preferences/siteDataRemoveSelected.xul")  {
     dialog {
       -moz-appearance: none !important;
       background: var(--primary-dark-color) !important;
       color: var(--primary-light-color) !important;
+    }
+
+    #removalList {
+      background: var(--grey-80) !important;
+      color: var(--primary-light-color) !important;
+      filter: invert(95%) brightness(95%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
     }
 
     .box-padded,
@@ -2230,11 +2267,14 @@ photonpanelmultiview panelview {
   background: var(--primary-dark-color) !important;
 }
 
-#appMenu-mainView toolbarbutton:hover,
-#customizationui-widget-multiview toolbarbutton:hover,
+/* Using context_menus.css colours */
+
+/*
+#appMenu-mainView toolbarbutton:hover,  #customizationui-widget-multiview toolbarbutton:hover,
 #widget-overflow-list toolbarbutton:hover {
   background: var(--grey-80) !important;
 }
+*/
 
 #BMB_bookmarksPopup {
   background: none !important;
@@ -2594,7 +2634,7 @@ browser[type=content] > html {
   }
 }
 statuspanel .statuspanel-label,
-#statuspanel-label {
+#statuspanel #statuspanel-label {
   background-color: var(--grey-80) !important;
   color: var(--primary-light-color) !important;
   border: none !important;
@@ -2676,7 +2716,7 @@ statuspanel .statuspanel-label,
 }
 
 .tabbrowser-tab[busy] {
-  color: var(--grey-40) !important;
+  color: var(--grey-30) !important;
   animation: effect_color 1s infinite alternate !important;
 }
 

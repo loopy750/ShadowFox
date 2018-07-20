@@ -1,4 +1,4 @@
-statuspanel .statuspanel-label, #statuspanel-label {
+statuspanel .statuspanel-label, #statuspanel #statuspanel-label {
   background-color: var(--grey-80) !important;
   color: var(--primary-light-color) !important;
   border: none !important;

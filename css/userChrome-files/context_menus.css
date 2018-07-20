@@ -8,7 +8,7 @@ popup > menu > menupopup {
 	background: var(--grey-60) !important;
 	border-color: rgba(56, 56, 61, 0.67) !important;
 	/* border: 0 !important; */
-	padding: 0 !important
+	/* padding: 0 !important; */
 }
 
 @media not screen and (-moz-windows-theme) {
@@ -49,7 +49,8 @@ popup > menu > menupopup {
 /* Menu items */
 menupopup menu, menuitem {
 	-moz-appearance: none !important;
-	background: var(--grey-60) !important;
+/* CSS NO LONGER REQUIRED FOR DARK THEME */
+/*	background: var(--grey-60) !important; */
 	color: var(--grey-10) !important;
 }
 
@@ -58,7 +59,7 @@ menupopup menuseparator {
   -moz-appearance: none !important;
   padding: 1px !important;
   margin: 4px 0 !important;
-  background: var(--grey-70) !important;
+  background: var(--grey-50) !important;
   border-top: none !important
 }
 menugroup#context-navigation {
@@ -98,7 +99,12 @@ menu[disabled="true"]:hover, menuitem:hover[disabled="true"] {
 menupopup menu[_moz-menuactive="true"],
 menuitem[_moz-menuactive="true"] {
 	color: var(--grey-10) !important;
-	background-color: var(--grey-80) !important;
+	background-color: var(--grey-50) !important;
+}
+
+menupopup menu[_moz-menuactive="true"]:active:not([disabled]),
+menuitem[_moz-menuactive="true"]:active:not([disabled]) {
+	background-color: var(--grey-40) !important;
 }
 
 /* Sidebar Header Context Menu */
@@ -128,7 +134,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 		/* Remove white separators between menu items */
 		menupopup menuseparator {
 			padding: 0 !important;
-			border-color: var(--grey-70)!important
+			border-color: var(--grey-50)!important
 		}
 		/* Remove white separators between menu items - previous style */ 
 		/*
@@ -398,5 +404,23 @@ hbox.menu-right {
 
 /* Scroll buttons, submenu fix */
 #BMB_bookmarksPopup .popup-internal-box {
-	background-color: var(--grey-60) !important;
+/* CSS NO LONGER REQUIRED FOR DARK THEME */
+/*	background-color: var(--grey-60) !important; */
+}
+
+/* Fixes for Firefox 62 */
+#identity-popup-permission-empty-hint {
+	-moz-appearance: none !important;
+	color: var(--primary-dark-color) !important;
+}
+
+#editBMPanel_namePicker, #editBMPanel_tagsField {
+	-moz-appearance: none !important;
+	background-color: var(--grey-70) !important;
+	color: var(--primary-light-color) !important;
+}
+
+#editBMPanel_tagsSelectorRow listitem {
+	-moz-appearance: none !important;
+	filter: invert(90%) brightness(110%) saturate(110%) hue-rotate(-178deg) !important;
 }

@@ -44,7 +44,7 @@
   font-style: italic;
 }
 .tabbrowser-tab[busy] {
-  color: var(--grey-40) !important;
+  color: var(--grey-30) !important;
   animation: effect_color 1s infinite alternate !important;
 }
 .tabbrowser-tab[pending] {

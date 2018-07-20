@@ -570,12 +570,19 @@
             url("chrome://pippki/content/load_device.xul"),
             url("chrome://mozapps/content/extensions/about.xul"),
             url("chrome://pippki/content/editcacert.xul"),
-            url("chrome://global/content/resetProfile.xul") {
+            url("chrome://global/content/resetProfile.xul"),
+            url("chrome://browser/content/preferences/siteDataRemoveSelected.xul") {
 
                   dialog {
                         -moz-appearance: none !important;
                         background: var(--primary-dark-color) !important;
                         color: var(--primary-light-color) !important;
+                  }
+
+                  #removalList {
+                        background: var(--grey-80) !important;
+                        color: var(--primary-light-color) !important;
+                        filter: invert(95%) brightness(95%) contrast(85%) saturate(165%) hue-rotate(-178deg) !important;
                   }
 
                   .box-padded, .groupbox-body, #clientBox {

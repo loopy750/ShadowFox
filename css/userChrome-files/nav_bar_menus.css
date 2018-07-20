@@ -55,11 +55,14 @@ photonpanelmultiview panelview {
     background: var(--primary-dark-color) !important;
 }
 
+/* Using context_menus.css colours */
 
+/*
 #appMenu-mainView toolbarbutton:hover,  #customizationui-widget-multiview toolbarbutton:hover,
 #widget-overflow-list toolbarbutton:hover {
   background: var(--grey-80) !important;
 }
+*/
 
 #BMB_bookmarksPopup {
   background: none !important;

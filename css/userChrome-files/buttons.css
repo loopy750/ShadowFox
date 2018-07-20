@@ -8,10 +8,10 @@
             --button-primary-border-color: var(--grey-60);
 
             --button-primary-focus-background-color: var(--grey-80);
-            --button-primary-focus-border-color: var(--grey-50);
+            --button-primary-focus-border-color: var(--grey-30);
 
             --button-primary-hover-background-color: var(--grey-80);
-            --button-primary-hover-border-color: var(--grey-40);
+            --button-primary-hover-border-color: var(--grey-10);
 
             --button-primary-active-color: var(--grey-20);
             --button-primary-active-background-color: var(--blue-50);
@@ -55,7 +55,9 @@
             url("chrome://browser/content/migration/migration.xul"),
             url("chrome://browser/content/sanitize.xul"),
             url("chrome://global/content/resetProfile.xul"),
-            url("chrome://mozapps/content/update/history.xul") {
+            url("chrome://mozapps/content/update/history.xul"),
+            url("chrome://browser/content/preferences/siteDataRemoveSelected.xul") {
+
                   button {
                         -moz-appearance: none !important;
                         color: var(--button-primary-color) !important;
@@ -181,7 +183,7 @@
 
                   button[dlgtype="cancel"]:focus, button:focus {
                         background: var(--button-primary-focus-background-color) !important;
-                        border: 1px solid var(--grey-40) !important;
+                        border: 1px solid var(--grey-30) !important;
                         padding: 0px 6px 0px 6px !important;
                   }
 
@@ -195,7 +197,7 @@
 
                   button[dlgtype="cancel"]:hover, button:hover {
                         background: var(--button-primary-hover-background-color) !important;
-                        border: 1px solid var(--grey-30) !important;
+                        border: 1px solid var(--grey-10) !important;
                         padding: 0px 6px 0px 6px !important;
                   }
 
@@ -355,7 +357,7 @@
 
       button#editBookmarkPanelDoneButton:hover {
             background: var(--blue-50) !important;
-            border: 1px solid var(--blue-30) !important;
+            border: 1px solid var(--blue-40) !important;
             padding: 0px 6px 0px 6px !important;
       }
 

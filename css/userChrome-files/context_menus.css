@@ -408,7 +408,7 @@ hbox.menu-right {
 /*	background-color: var(--grey-60) !important; */
 }
 
-/* Fixes for Firefox 62 */
+/* Fixes for Firefox 62/63 */
 #identity-popup-permission-empty-hint {
 	-moz-appearance: none !important;
 	color: var(--primary-dark-color) !important;
@@ -423,4 +423,19 @@ hbox.menu-right {
 #editBMPanel_tagsSelectorRow listitem {
 	-moz-appearance: none !important;
 	filter: invert(90%) brightness(110%) saturate(110%) hue-rotate(-178deg) !important;
+}
+
+toolbarseparator {
+	-moz-appearance: none !important;
+	filter: invert(25%) !important;
+}
+
+.button-menu-dropmarker {
+	-moz-appearance: none !important;
+	color: var(--primary-dark-color) !important;
+}
+
+#identity-popup-permission-state-label-autoplay-media, #identity-popup-permission-reload-hint {
+	-moz-appearance: none !important;
+	color: var(--primary-dark-color) !important;
 }

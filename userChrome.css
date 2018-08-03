@@ -317,6 +317,38 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
 }
 }
 
+  #tracking-action-block,
+  #tracking-action-unblock {
+    -moz-appearance: none !important;
+    color: var(--button-primary-color) !important;
+    background: var(--button-primary-background-color) !important;
+    border: 1px solid var(--button-primary-border-color) !important;
+    padding: 0px 6px 0px 6px !important;
+    box-shadow: none !important;
+  }
+
+  #tracking-action-block:hover,
+  #tracking-action-unblock:hover {
+    -moz-appearance: none !important;
+    color: var(--button-primary-color) !important;
+    background: var(--button-primary-background-color) !important;
+    border: 1px solid var(--grey-30) !important;
+    padding: 0px 6px 0px 6px !important;
+    box-shadow: none !important;
+  }
+
+  #tracking-action-block:active,
+  #tracking-action-unblock:active {
+    -moz-appearance: none !important;
+    color: var(--button-primary-color) !important;
+    background: linear-gradient(to bottom,
+                  rgba(49, 125, 228, 1) 0%,
+                  rgba(0, 78, 203, 1) 100%) !important;
+    border: 1px solid var(--blue-50) !important;
+    padding: 0px 6px 0px 6px !important;
+    box-shadow: none !important;
+  }
+
 @-moz-document url("chrome://browser/content/pageinfo/pageInfo.xul"),
             url("chrome://browser/content/aboutDialog.xul"),
             url("chrome://mozapps/content/handling/dialog.xul"),
@@ -629,26 +661,26 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
     color: var(--grey-20) !important;
     background: var(--blue-50) !important;
     border: 1px solid var(--blue-50) !important;
-    padding: 0px 6px 0px 6px !important;
+    /* padding: 0px 6px 0px 6px !important; */
     box-shadow: none !important;
   }
 
   button#editBookmarkPanelDoneButton:focus {
     background: var(--blue-50) !important;
     border: 1px solid var(--blue-40) !important;
-    padding: 0px 6px 0px 6px !important;
+    /* padding: 0px 6px 0px 6px !important; */
   }
 
   button#editBookmarkPanelDoneButton:hover {
     background: var(--blue-50) !important;
     border: 1px solid var(--blue-40) !important;
-    padding: 0px 6px 0px 6px !important;
+    /* padding: 0px 6px 0px 6px !important; */
   }
 
   button#editBookmarkPanelDoneButton:active {
     background: var(--blue-40) !important;
     border: 1px solid var(--blue-40) !important;
-    padding: 0px 6px 0px 6px !important;
+    /* padding: 0px 6px 0px 6px !important; */
   }
 
   /* Customization page */
@@ -1200,7 +1232,7 @@ hbox.menu-right {
   /*	background-color: var(--grey-60) !important; */
 }
 
-/* Fixes for Firefox 62 */
+/* Fixes for Firefox 62/63 */
 
 #identity-popup-permission-empty-hint {
   -moz-appearance: none !important;
@@ -1217,6 +1249,22 @@ hbox.menu-right {
 #editBMPanel_tagsSelectorRow listitem {
   -moz-appearance: none !important;
   filter: invert(90%) brightness(110%) saturate(110%) hue-rotate(-178deg) !important;
+}
+
+toolbarseparator {
+  -moz-appearance: none !important;
+  filter: invert(25%) !important;
+}
+
+.button-menu-dropmarker {
+  -moz-appearance: none !important;
+  color: var(--primary-dark-color) !important;
+}
+
+#identity-popup-permission-state-label-autoplay-media,
+#identity-popup-permission-reload-hint {
+  -moz-appearance: none !important;
+  color: var(--primary-dark-color) !important;
 }
 #customization-done-button {
   color: var(--primary-light-color);

@@ -1,6 +1,14 @@
-@-moz-document url(about:studies) {
+@-moz-document url-prefix(about:studies) {
 	
 	.info-box-content {
+	    background-color: var(--dark-accent) !important;
+	}
+	
+}
+
+@-moz-document url-prefix(about:robots) {
+	
+	#errorPageContainer {
 	    background-color: var(--dark-accent) !important;
 	}
 	

@@ -1,5 +1,5 @@
-@-moz-document url(about:config) {
-	
+@-moz-document url-prefix(about:config) {
+
 	/* Warning Message */
 	#warningScreen,
 	#warningTitle {
@@ -35,10 +35,6 @@
 		color: var(--primary-light-color) !important;
 		background: var(--primary-dark-color) !important;
 	}
-	
-	
-	
-	
 }
 
 	

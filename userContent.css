@@ -484,7 +484,7 @@ menupopup {
     box-shadow: none !important;
   }
 }
-@-moz-document url(about:config)  {
+@-moz-document url-prefix(about:config)  {
   /* Warning Message */
 
   #warningScreen,
@@ -1307,12 +1307,18 @@ vbox#sidebar-box.chromeclass-extrachrome {
     color: var(--primary-light-color) !important;
   }
 }
-@-moz-document url(about:studies)  {
+@-moz-document url-prefix(about:studies)  {
   .info-box-content {
     background-color: var(--dark-accent) !important;
   }
 }
-@-moz-document url(about:support)  {
+
+@-moz-document url-prefix(about:robots)  {
+  #errorPageContainer {
+    background-color: var(--dark-accent) !important;
+  }
+}
+@-moz-document url-prefix(about:support)  {
   :root {
     --primary-accent-color-dark: var(--primary-accent-color-darkest);
   }

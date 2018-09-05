@@ -1,4 +1,4 @@
-@-moz-document url(about:support) {
+@-moz-document url-prefix(about:support) {
 
 	:root {
     --primary-accent-color-dark: var(--primary-accent-color-darkest);

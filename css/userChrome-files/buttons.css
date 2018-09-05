@@ -39,7 +39,7 @@
             }
       }
 
-      #tracking-action-block, #tracking-action-unblock {
+      #tracking-action-block, #tracking-action-unblock, #identity-popup-securityView-body .subviewkeynav {
             -moz-appearance: none !important;
             color: var(--button-primary-color) !important;
             background: var(--button-primary-background-color) !important;
@@ -48,7 +48,7 @@
             box-shadow: none !important;
       }
 
-      #tracking-action-block:hover, #tracking-action-unblock:hover {
+      #tracking-action-block:hover, #tracking-action-unblock:hover, #identity-popup-securityView-body .subviewkeynav:hover {
             -moz-appearance: none !important;
             color: var(--button-primary-color) !important;
             background: var(--button-primary-background-color) !important;
@@ -57,7 +57,7 @@
             box-shadow: none !important;
       }
 
-      #tracking-action-block:active, #tracking-action-unblock:active {
+      #tracking-action-block:active, #tracking-action-unblock:active, #identity-popup-securityView-body .subviewkeynav:active {
             -moz-appearance: none !important;
             color: var(--button-primary-color) !important;
             background: linear-gradient(to bottom,

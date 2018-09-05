@@ -9,9 +9,11 @@
 }
 
 /*Pop Down Arrow */
+/*
 .panel-arrow {
   filter: invert(70%) !important;
 }
+*/
 
 /* main menu */
 .panel-subview-body, #appMenu-zoomReset-button {

@@ -318,7 +318,8 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
 }
 
   #tracking-action-block,
-  #tracking-action-unblock {
+  #tracking-action-unblock,
+  #identity-popup-securityView-body .subviewkeynav {
     -moz-appearance: none !important;
     color: var(--button-primary-color) !important;
     background: var(--button-primary-background-color) !important;
@@ -328,7 +329,8 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
   }
 
   #tracking-action-block:hover,
-  #tracking-action-unblock:hover {
+  #tracking-action-unblock:hover,
+  #identity-popup-securityView-body .subviewkeynav:hover {
     -moz-appearance: none !important;
     color: var(--button-primary-color) !important;
     background: var(--button-primary-background-color) !important;
@@ -338,7 +340,8 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
   }
 
   #tracking-action-block:active,
-  #tracking-action-unblock:active {
+  #tracking-action-unblock:active,
+  #identity-popup-securityView-body .subviewkeynav:active {
     -moz-appearance: none !important;
     color: var(--button-primary-color) !important;
     background: linear-gradient(to bottom,
@@ -1037,6 +1040,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
   menupopup#contentAreaContextMenu > menu,
   #PlacesToolbar menupopup > menuitem,
   #PlacesToolbar menupopup > menu,
+  #PlacesToolbar menupopup > .bookmark-item,
+  #PlacesToolbar menupopup > .openintabs-menuitem,
   menupopup#tabContextMenu > menuitem,
   menupopup#tabContextMenu > menu,
   menupopup#tabContextMenu menupopup > menuitem,
@@ -1230,6 +1235,17 @@ hbox.menu-right {
 #BMB_bookmarksPopup .popup-internal-box {
   /* CSS NO LONGER REQUIRED FOR DARK THEME */
   /*	background-color: var(--grey-60) !important; */
+}
+
+/* Download Button, better colour */
+
+#downloads-button:not(:-moz-lwtheme-brighttext),
+#downloads-button:-moz-lwtheme-darktext {
+  filter: brightness(50%) saturate(50%) !important;
+}
+
+#downloads-button:-moz-lwtheme-brighttext {
+  filter: brightness(130%) saturate(130%) !important;
 }
 
 /* Fixes for Firefox 62/63 */
@@ -2262,9 +2278,11 @@ toolbarseparator {
 
 /*Pop Down Arrow */
 
+/*
 .panel-arrow {
   filter: invert(70%) !important;
 }
+*/
 
 /* main menu */
 

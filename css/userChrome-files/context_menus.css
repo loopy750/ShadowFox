@@ -228,11 +228,13 @@ vbox#sidebar-box.chromeclass-extrachrome {
 		menupopup#contentAreaContextMenu > menu,
 		#PlacesToolbar menupopup > menuitem,
 		#PlacesToolbar menupopup > menu,
+		#PlacesToolbar menupopup > .bookmark-item, /* Firefox 63 */
+		#PlacesToolbar menupopup > .openintabs-menuitem, /* Firefox 63 */
 		menupopup#tabContextMenu > menuitem,
 		menupopup#tabContextMenu > menu,
 		menupopup#tabContextMenu menupopup > menuitem,
 		menupopup#tabContextMenu menupopup > menu,
-		menupopup#toolbar-context-menu > menuitem ,
+		menupopup#toolbar-context-menu > menuitem,
 		menupopup#placesContext menuitem {
 			font-size: 1.167em !important;
 			padding-top: 1px !important;
@@ -406,6 +408,18 @@ hbox.menu-right {
 #BMB_bookmarksPopup .popup-internal-box {
 /* CSS NO LONGER REQUIRED FOR DARK THEME */
 /*	background-color: var(--grey-60) !important; */
+}
+
+
+/* Download Button, better colour */
+
+#downloads-button:not(:-moz-lwtheme-brighttext),
+#downloads-button:-moz-lwtheme-darktext {
+	filter: brightness(50%) saturate(50%) !important;
+}
+
+#downloads-button:-moz-lwtheme-brighttext {
+	filter: brightness(130%) saturate(130%) !important;
 }
 
 /* Fixes for Firefox 62/63 */

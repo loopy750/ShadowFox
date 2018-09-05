@@ -33,6 +33,10 @@
 		background: var(--primary-dark-color) !important;
 	}
 
+	.extension-controlled {
+		background: var(--grey-60) !important; /* Firefox 63 */
+	}
+
 	.category[selected], .category.selected {
 		-moz-border-start: 4px solid var(--primary-accent-color) !important;
 	}

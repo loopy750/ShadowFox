@@ -236,7 +236,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 		menupopup#tabContextMenu menupopup > menu,
 		menupopup#toolbar-context-menu > menuitem,
 		menupopup#placesContext menuitem {
-			font-size: 1.167em !important;
+			font-size: 1.0em !important; /* 1.167em */
 			padding-top: 1px !important;
 			padding-bottom: 1px !important;
 		}
@@ -254,7 +254,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 		/* Menu Bar menus, text size to match macOS */
 		toolbaritem#menubar-items menupopup > menuitem,
 		toolbaritem#menubar-items menupopup > menu {
-			font-size: 1.167em !important;
+			font-size: 1.0em !important; /* 1.167em */
 		}
 
 		toolbaritem#menubar-items menupopup menupopup > menuitem,

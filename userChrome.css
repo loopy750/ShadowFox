@@ -1280,7 +1280,8 @@ toolbarseparator {
 }
 
 #identity-popup-permission-state-label-autoplay-media,
-#identity-popup-permission-reload-hint {
+#identity-popup-permission-reload-hint,
+#identity-popup-permission-state-label-desktop-notification {
   -moz-appearance: none !important;
   color: var(--primary-dark-color) !important;
 }

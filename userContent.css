@@ -289,7 +289,7 @@ menupopup {
   #nav-header,
   #categories,
   #header-utils-btn {
-    background: var(--primary-dark-color) !important;
+    background: var(--grey-80) !important;
     color: var(--primary-light-color) important;
   }
 
@@ -311,7 +311,8 @@ menupopup {
     -moz-border-start: 4px solid var(--primary-accent-color) !important;
   }
 
-  .category {
+  .category,
+  .message-bar {
     background: var(--primary-dark-color) !important;
     border: none !important;
   }
@@ -855,7 +856,8 @@ menupopup {
   }
 
   .checkbox-check,
-  .radio-check {
+  .radio-check,
+  #policies-container {
     box-shadow: none !important;
     background: var(--grey-60) !important;
     border: 1px solid var(--grey-50) !important;

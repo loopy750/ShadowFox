@@ -18,7 +18,7 @@
   	}
 
 	page#addons-page, page.greasemonkey #greasemonkey-sort-bar, #list-view[type="userstyle"] #addon-list-empty[hidden] ~ #userstyle-sorting, #addons-page .global-info-container, .alert, #nav-header, #categories, #header-utils-btn {
-		background: var(--primary-dark-color) !important;
+		background: var(--grey-80) !important;
 		color: var(--primary-light-color) important;
 	}
 
@@ -36,7 +36,8 @@
 		-moz-border-start: 4px solid var(--primary-accent-color) !important;
 	}
 
-	.category {
+	.category,
+	.message-bar {
 		background: var(--primary-dark-color) !important;
 		border: none !important;
 

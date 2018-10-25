@@ -2229,6 +2229,10 @@ toolbarseparator {
     background: rgba(12, 12, 13, .1) !important;
   }
 
+  #placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected) {
+    background: rgba(0, 138, 248, .5) !important;
+  }
+
   #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected, current) {
     background: var(--blue-50) !important;
   }

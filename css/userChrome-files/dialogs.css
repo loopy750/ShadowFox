@@ -112,6 +112,10 @@
                   transition: box-shadow .3s ease-in !important;
                   box-shadow: 0 0 1px 1px var(--primary-accent-color);
             }
+
+            #infoIcon {
+                  filter: invert(80%) brightness(115%) saturate(110%) hue-rotate(-178deg) !important;
+            }
       }
 
       /* "Save file" */

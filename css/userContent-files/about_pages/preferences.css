@@ -39,7 +39,7 @@
 	}
 
 	.category[selected], .category.selected {
-		-moz-border-start: 4px solid var(--primary-accent-color) !important;
+		-moz-border-start: 0px solid var(--primary-accent-color) !important;
 	}
 
 	#searchInput {

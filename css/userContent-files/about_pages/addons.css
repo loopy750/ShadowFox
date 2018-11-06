@@ -33,7 +33,7 @@
 
 	.addon[selected], .category[selected], .category.selected {
 		background: var(--grey-70) !important;
-		-moz-border-start: 4px solid var(--primary-accent-color) !important;
+		-moz-border-start: 0px solid var(--primary-accent-color) !important;
 	}
 
 	.category,

@@ -94,7 +94,7 @@
 #urlbar,
 .searchbar-textbox,
 .panel-arrowcontent {
-  border-radius: 4px !important;
+  border-radius: 14px !important;
 }
 
 #urlbar[focused=true],
@@ -1113,9 +1113,16 @@ vbox#sidebar-box.chromeclass-extrachrome {
     color: var(--primary-light-color) !important;
   }
 
+  #back-button[disabled],
+  #forward-button[disabled] {
+    color: var(--primary-light-color) !important;
+    opacity: 0.2 !important;
+  }
+
   #back-button:not([disabled]),
   #forward-button:not([disabled]) {
     color: var(--primary-light-color) !important;
+    opacity: 1 !important;
   }
 
   /* --- OPTIONAL TWEAKS --- */
@@ -1230,13 +1237,6 @@ panelview#PanelUI-mainView image {
 
 hbox.menu-right {
   color: var(--primary-dark-color) !important;
-}
-
-/* Scroll buttons, submenu fix */
-
-#BMB_bookmarksPopup .popup-internal-box {
-  /* CSS NO LONGER REQUIRED FOR DARK THEME */
-  /*	background-color: var(--grey-60) !important; */
 }
 
 /* Download Button, better colour */
@@ -2725,11 +2725,11 @@ statuspanel .statuspanel-label,
 /* WINDOWS ONLY */
 
 @media screen and (-moz-windows-theme),
-       screen and (-moz-windows-classic),
-       screen and (-moz-windows-default-theme),
-       screen and (-moz-os-version: windows-win7),
-       screen and (-moz-os-version: windows-win8),
-       screen and (-moz-os-version: windows-win10) {
+  screen and (-moz-windows-classic),
+  screen and (-moz-windows-default-theme),
+  screen and (-moz-os-version: windows-win7),
+  screen and (-moz-os-version: windows-win8),
+  screen and (-moz-os-version: windows-win10) {
   /* Remove tab placeholder */
 
   .titlebar-placeholder[type="pre-tabs"] {
@@ -2773,6 +2773,22 @@ statuspanel .statuspanel-label,
   toolbarbutton#titlebar-close:active {
     background-color: rgba(255, 95, 87, 1) !important;
   }
+
+  /* Title bar & Tab background revert for Firefox 65+ */
+
+  .tab-background:not([selected]):-moz-lwtheme-brighttext,
+  .browser-toolbar.titlebar-color:-moz-lwtheme-brighttext {
+    background-color: #080C08 !important;
+    color: #FFFBFF !important;
+  }
+
+  /*
+    .tab-background:not([selected]):-moz-lwtheme-darktext,
+    .browser-toolbar.titlebar-color:-moz-lwtheme-darktext {
+      background-color: #E2E3E5 !important;
+      color: #181818 !important;
+    }
+    */
 }
 
 /* Tabs, different colour if unread */

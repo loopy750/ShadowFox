@@ -7,7 +7,7 @@
 #urlbar,
 .searchbar-textbox,
 .panel-arrowcontent {
-	border-radius: 4px !important;
+	border-radius: 14px !important;
 }
 
 #urlbar[focused=true],

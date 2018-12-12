@@ -92,8 +92,7 @@
 /* Looks like macOS */
 
 #urlbar,
-.searchbar-textbox,
-.panel-arrowcontent {
+.searchbar-textbox {
   border-radius: 14px !important;
 }
 

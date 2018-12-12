@@ -2731,7 +2731,8 @@ statuspanel .statuspanel-label,
   screen and (-moz-os-version: windows-win10) {
   /* Remove tab placeholder */
 
-  .titlebar-placeholder[type="pre-tabs"] {
+  .titlebar-placeholder[type="pre-tabs"],
+  .titlebar-spacer[type="pre-tabs"] {
     display: none !important;
   }
 

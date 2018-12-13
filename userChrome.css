@@ -555,17 +555,20 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
 
   /* Leave page confirm dialog */
 
-  vbox.mainContainer {
+  vbox.mainContainer,
+  .tabmodalprompt-buttonContainer {
     color: var(--primary-light-color) !important;
     background: var(--primary-dark-color) !important;
   }
 
-  vbox.mainContainer grid.topContainer {
+  vbox.mainContainer grid.topContainer,
+  .tabmodalprompt-topContainer {
     color: var(--primary-light-color) !important;
     background: var(--grey-80) !important;
   }
 
-  vbox.mainContainer button {
+  vbox.mainContainer button,
+  .tabmodalprompt-mainContainer button {
     -moz-appearance: none !important;
     color: var(--button-primary-color) !important;
     background: var(--button-primary-background-color) !important;
@@ -574,19 +577,22 @@ treechildren.searchbar-treebody::-moz-tree-row(hover) {
     box-shadow: none !important;
   }
 
-  vbox.mainContainer button:focus {
+  vbox.mainContainer button:focus,
+  .tabmodalprompt-mainContainer button:focus {
     background: var(--button-primary-focus-background-color) !important;
     border: 1px solid var(--button-primary-focus-border-color) !important;
     padding: 0px 6px 0px 6px !important;
   }
 
-  vbox.mainContainer button:hover {
+  vbox.mainContainer button:hover,
+  .tabmodalprompt-mainContainer button:hover {
     background: var(--button-primary-hover-background-color) !important;
     border: 1px solid var(--button-primary-hover-border-color) !important;
     padding: 0px 6px 0px 6px !important;
   }
 
-  vbox.mainContainer button:active {
+  vbox.mainContainer button:active,
+  .tabmodalprompt-mainContainer button:active {
     color: var(--button-primary-active-color) !important;
     background: var(--button-primary-active-background-color) !important;
     border: 1px solid var(--button-primary-active-border-color) !important;
@@ -2778,15 +2784,15 @@ statuspanel .statuspanel-label,
 
   .tab-background:not([selected]):-moz-lwtheme-brighttext,
   .browser-toolbar.titlebar-color:-moz-lwtheme-brighttext {
-    background-color: #080C08 !important;
-    color: #FFFBFF !important;
+    background-color: #0C0C0D !important;
+    color: #F9F9FA !important;
   }
 
   /*
     .tab-background:not([selected]):-moz-lwtheme-darktext,
     .browser-toolbar.titlebar-color:-moz-lwtheme-darktext {
-      background-color: #E2E3E5 !important;
-      color: #181818 !important;
+      background-color: #E3E4E6 !important;
+      color: #18191A !important;
     }
     */
 }

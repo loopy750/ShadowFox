@@ -31,19 +31,19 @@
     toolbarbutton#titlebar-close:hover  { background-color: rgba(255, 95, 87, .9) !important; }
     toolbarbutton#titlebar-close:active { background-color: rgba(255, 95, 87, 1) !important; }
 
-    /* Title bar & Tab background revert for Firefox 65+ */
+  /* Title bar & Tab background revert for Firefox 65+ */
 
-    .tab-background:not([selected]):-moz-lwtheme-brighttext,
-    .browser-toolbar.titlebar-color:-moz-lwtheme-brighttext {
-      background-color: #080C08 !important;
-      color: #FFFBFF !important;
-    }
+  .tab-background:not([selected]):-moz-lwtheme-brighttext,
+  .browser-toolbar.titlebar-color:-moz-lwtheme-brighttext {
+    background-color: #0C0C0D !important;
+    color: #F9F9FA !important;
+  }
 
-    /*
+  /*
     .tab-background:not([selected]):-moz-lwtheme-darktext,
     .browser-toolbar.titlebar-color:-moz-lwtheme-darktext {
-      background-color: #E2E3E5 !important;
-      color: #181818 !important;
+      background-color: #E3E4E6 !important;
+      color: #18191A !important;
     }
     */
 }

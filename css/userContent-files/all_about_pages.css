@@ -115,6 +115,21 @@ vbox.navigation, vbox.navigation richlistbox#categories {
   background: var(--grey-80) !important;
 }
 
+@-moz-document url-prefix(about:memory) {
+  html, .opsRow, .section {
+    background: var(--grey-80)!important
+  }
+  #mainDiv,
+  .legend,
+  .opsRow,
+  .opsRowLabel,
+  .section,
+  .treeline {
+    color: var(--grey-20)!important
+  }
+}
+
+
 @media screen and (-moz-os-version: windows-win8),
        screen and (-moz-os-version: windows-win10) {
 		hbox.menu-iconic-left[checked] {

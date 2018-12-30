@@ -1,5 +1,13 @@
-@-moz-document url(about:memory) {
-	div.opsRow {
-	    background-color: var(--dark-accent) !important;
-	}
+@-moz-document url-prefix(about:memory) {
+  html, .opsRow, .section {
+    background: var(--grey-80)!important
+  }
+  #mainDiv,
+  .legend,
+  .opsRow,
+  .opsRowLabel,
+  .section,
+  .treeline {
+    color: var(--grey-20)!important
+  }
 }

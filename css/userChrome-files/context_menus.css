@@ -237,8 +237,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
 		menupopup#toolbar-context-menu > menuitem,
 		menupopup#placesContext menuitem {
 			font-size: 1.0em !important; /* 1.167em */
-			padding-top: 1px !important;
-			padding-bottom: 1px !important;
+			padding-top: 0.5px !important;
+			padding-bottom: 0.5px !important;
 		}
 
 		menupopup#contentAreaContextMenu menupopup > menuitem,
@@ -427,7 +427,7 @@ hbox.menu-right {
 	color: var(--primary-dark-color) !important;
 }
 
-#editBMPanel_namePicker, #editBMPanel_tagsField {
+#editBMPanel_namePicker, #editBMPanel_tagsField, #editBMPanel_locationField, #editBMPanel_keywordField {
 	-moz-appearance: none !important;
 	background-color: var(--grey-70) !important;
 	color: var(--primary-light-color) !important;
@@ -451,4 +451,12 @@ toolbarseparator {
 #identity-popup-permission-state-label-autoplay-media, #identity-popup-permission-reload-hint, #identity-popup-permission-state-label-desktop-notification {
 	-moz-appearance: none !important;
 	color: var(--primary-dark-color) !important;
+}
+
+/* Dark theme tooltips */
+tooltip {
+  -moz-appearance: none !important;
+  background-color: var(--grey-80) !important;
+  color: var(--grey-20) !important;
+  border-color: var(--grey-40) !important
 }

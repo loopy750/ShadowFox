@@ -4,18 +4,18 @@
 	}
 
 	.detail-view-container {
-    	color: var(--primary-light-color) !important;
-  	}
+		color: var(--primary-light-color) !important;
+	}
 
 	.detail-row, .detail-row-complex, setting {
-    	line-height: 20px;
-    	text-shadow: none !important;
-  	}
+		line-height: 20px;
+		text-shadow: none !important;
+	}
 
 	.detail-view-container {
-    	font-size: 1.25rem;
-    	color: var(--primary-light-color) !important;
-  	}
+		font-size: 1.25rem;
+		color: var(--primary-light-color) !important;
+	}
 
 	page#addons-page, page.greasemonkey #greasemonkey-sort-bar, #list-view[type="userstyle"] #addon-list-empty[hidden] ~ #userstyle-sorting, #addons-page .global-info-container, .alert, #nav-header, #categories, #header-utils-btn {
 		background: var(--grey-80) !important;
@@ -23,7 +23,7 @@
 	}
 
 	richlistitem.category:not([selected]), #detail-contrib-description, page.greasemonkey #greasemonkey-sort-bar .text-link {
-		color: var(--grey-40) !important;
+		color: var(--grey-30) !important;
 	}
 
 	.name-container {
@@ -77,22 +77,22 @@
 
 	/* Remove dotted border around addons section when selected */
 	.list > scrollbox > .scrollbox-innerbox {
-    	border: 1px dotted transparent !important;
-  	}
+		border: 1px dotted transparent !important;
+	}
 
 	/* Cog wheel */
 	#header-utils-btn {
-    	fill: var(--primary-light-color) !important;;
-  	}
+		fill: var(--primary-light-color) !important;;
+	}
 
 	#header-utils-btn:hover {
 		background: var(--dark-accent) !important;
 	}
 
 	description {
-   		margin-bottom: 4px;
-    	color: var(--primary-light-color) !important;
-  	}
+		margin-bottom: 4px;
+		color: var(--primary-light-color) !important;
+	}
 
 	*|button, menulist {
 		-moz-appearance: none !important;
@@ -104,54 +104,50 @@
 	}
 
 	*|button:hover {
-	  color: var(--primary-light-color) !important;
-	  background: var(--grey-80) !important;
+		color: var(--primary-light-color) !important;
+		background: var(--grey-80) !important;
 	}
 
 	*|button:active {
-    color: var(--grey-30) !important;
-    background: var(--grey-50) !important;
-  }
-
-	#category-discover {
-	  display: none !important;
+		color: var(--grey-30) !important;
+		background: var(--grey-50) !important;
 	}
 
 	.addon-view[notification="warning"] {
-	  --view-highlight-color: transparent !important;
+		--view-highlight-color: transparent !important;
 	}
 
 
 	.text-link {
-	  color: var(--primary-accent-color) !important;
-  	}
+		color: var(--primary-accent-color) !important;
+	}
 
 	textbox[type="search"] {
-	  color: var(--primary-light-color) !important;
-	  background: var(--grey-60) !important;
-	  border: 1px solid var(--grey-50) !important;
-  	}
+		color: var(--primary-light-color) !important;
+		background: var(--grey-60) !important;
+		border: 1px solid var(--grey-50) !important;
+	}
 
 	textbox[focused] {
-	  border-color: var(--primary-accent-color) !important;
-  	}
+		border-color: var(--primary-accent-color) !important;
+	}
 
 	/* about:debugging#addons */
 	.addon-target-container {
-	  background: var(--grey-80) !important;;
+		background: var(--grey-80) !important;;
 	}
 
 	/* icon */
 	.addon-target-container .target-icon[src="chrome://mozapps/skin/extensions/extensionGeneric.svg"] {
-	  filter: invert(65%) !important;
+		filter: invert(65%) !important;
 	}
 
 	.addon-target-name {
-	  color: var(--primary-light-color) !important;
+		color: var(--primary-light-color) !important;
 	}
 
 	.addon-target-actions {
-	  border-top: 1px solid var(--primary-light-color) !important;
+		border-top: 1px solid var(--primary-light-color) !important;
 	}
 
 	input[type="checkbox"] {
@@ -161,7 +157,7 @@
 	}
 
 	.service-worker-multi-process {
-	  background-color: var(--grey-60) !important;
+		background-color: var(--grey-60) !important;
 	}
 
 	/* about:addons reorder and white background */
@@ -169,17 +165,17 @@
 	@-moz-document url-prefix(chrome://mozapps/content/extensions/extensions.xul), url-prefix(about:addons) {
 
 		#detail-contributions {
-		  -moz-box-ordinal-group: 9 !important;
+			-moz-box-ordinal-group: 9 !important;
 		}
 		#detail-controls {
-		  -moz-box-ordinal-group: 10 !important;
+			-moz-box-ordinal-group: 10 !important;
 		}
 		#detail-desc-container {
-		  -moz-box-ordinal-group: 11 !important;
+			-moz-box-ordinal-group: 11 !important;
 		}
 		.inline-options-browser#addon-options {
-		  padding-left: 5px !important;
-		  background-color: var(--grey-20) !important;
+			padding-left: 5px !important;
+			background-color: var(--grey-20) !important;
 		}
 	}
 
@@ -211,8 +207,41 @@
 		color: var(--grey-20) !important;
 	}
 
-	.shortcut-input{
+	.shortcut-input {
 		background: var(--grey-60) !important;
 		color: var(--grey-20) !important;
+	}
+}
+
+@-moz-document url-prefix(https://discovery.addons.mozilla.org) {
+	html[dir=ltr][lang] body,
+	html[dir=rtl][lang] body {
+		background: var(--grey-80)!important;
+	}
+
+	.addon .ThemeImage,
+	header {
+		border-color: var(--grey-60)!important
+	}
+
+	.addon,
+	blocksquote {
+		background: var(--grey-70)!important;
+	}
+
+	.Icon.Icon-delete {
+		filter: invert(80%)!important;
+	}
+
+	h1, .heading, .Button {
+		color: var(--grey-20)!important
+	}
+
+	p, span, blockquote {
+		color: var(--grey-30)!important
+	}
+
+	a {
+		color: var(--grey-30)!important
 	}
 }

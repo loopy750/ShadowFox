@@ -296,7 +296,7 @@ menupopup {
   richlistitem.category:not([selected]),
   #detail-contrib-description,
   page.greasemonkey #greasemonkey-sort-bar .text-link {
-    color: var(--grey-40) !important;
+    color: var(--grey-30) !important;
   }
 
   .name-container {
@@ -399,10 +399,6 @@ menupopup {
     background: var(--grey-50) !important;
   }
 
-  #category-discover {
-    display: none !important;
-  }
-
   .addon-view[notification="warning"] {
     --view-highlight-color: transparent !important;
   }
@@ -503,6 +499,43 @@ menupopup {
   .shortcut-input {
     background: var(--grey-60) !important;
     color: var(--grey-20) !important;
+  }
+}
+
+@-moz-document url-prefix(https://discovery.addons.mozilla.org)  {
+  html[dir=ltr][lang] body,
+  html[dir=rtl][lang] body {
+    background: var(--grey-80)!important;
+  }
+
+  .addon .ThemeImage,
+  header {
+    border-color: var(--grey-60)!important;
+  }
+
+  .addon,
+  blocksquote {
+    background: var(--grey-70)!important;
+  }
+
+  .Icon.Icon-delete {
+    filter: invert(80%)!important;
+  }
+
+  h1,
+  .heading,
+  .Button {
+    color: var(--grey-20)!important;
+  }
+
+  p,
+  span,
+  blockquote {
+    color: var(--grey-30)!important;
+  }
+
+  a {
+    color: var(--grey-30)!important;
   }
 }
 @-moz-document url-prefix(about:config)  {

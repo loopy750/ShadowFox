@@ -34,7 +34,9 @@
 		background: var(--primary-dark-color) !important;
 	}
 
-	.extension-controlled {
+	.extension-controlled,
+	.uri-element,
+	#updateSettingsContainer {
 		background: var(--grey-60) !important; /* Firefox 63 */
 	}
 

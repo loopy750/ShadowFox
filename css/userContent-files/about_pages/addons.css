@@ -196,3 +196,23 @@
 		box-shadow: none !important;
 	}
 }
+
+/* Firefox 66 */
+
+@-moz-document url-prefix(chrome://mozapps/content/extensions/shortcuts.html) {
+	#headered-views-content,
+	#addon-shortcuts,
+	html {
+		background: var(--grey-80) !important;
+	}
+
+	.card.shortcut {
+		background: var(--grey-70) !important;
+		color: var(--grey-20) !important;
+	}
+
+	.shortcut-input{
+		background: var(--grey-60) !important;
+		color: var(--grey-20) !important;
+	}
+}

@@ -93,7 +93,7 @@
 
 #urlbar,
 .searchbar-textbox {
-  border-radius: 14px !important;
+  border-radius: 3px !important;
 }
 
 #urlbar[focused=true],
@@ -1495,7 +1495,7 @@ tooltip {
       color: var(--primary-light-color) !important;
     }
 
-    listbox#app-picker-listbox {
+    #app-picker-listbox {
       -moz-appearance: none !important;
       background: var(--primary-dark-color) !important;
       color: var(--primary-light-color) !important;

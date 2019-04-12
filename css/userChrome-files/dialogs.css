@@ -173,7 +173,7 @@
                         color: var(--primary-light-color) !important;
                   }
 
-                  listbox#app-picker-listbox {
+                  #app-picker-listbox {
                         -moz-appearance: none !important;
                         background: var(--primary-dark-color) !important;
                         color: var(--primary-light-color) !important;

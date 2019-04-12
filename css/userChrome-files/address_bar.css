@@ -6,7 +6,7 @@
 
 #urlbar,
 .searchbar-textbox {
-	border-radius: 14px !important;
+	border-radius: 3px !important;
 }
 
 #urlbar[focused=true],

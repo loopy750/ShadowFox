@@ -403,6 +403,10 @@ menupopup {
     --view-highlight-color: transparent !important;
   }
 
+  .addon-view {
+    background: var(--grey-70) !important;
+  }
+
   .text-link {
     color: var(--primary-accent-color) !important;
   }
@@ -921,12 +925,16 @@ menupopup {
   .radio-check,
   #policies-container {
     box-shadow: none !important;
-    background: var(--grey-60) !important;
+    background: var(--grey-70) !important;
     border: 1px solid var(--grey-50) !important;
   }
 
   menulist:not([editable="true"]) > *.menulist-dropmarker {
     filter: invert(65%) !important;
+  }
+
+  menulist {
+    background: var(--grey-70) !important;
   }
 
   *.checkbox-check[checked],
@@ -940,7 +948,7 @@ menupopup {
   #categories,
   .main-content,
   .search-container {
-    background: var(--primary-dark-color) !important;
+    background: var(--grey-80) !important;
   }
 
   .extension-controlled,
@@ -979,8 +987,19 @@ menupopup {
     color: var(--primary-light-color) !important;
   }
 
-  .dialogBox {
-    filter: invert(80%) grayscale(20%) saturate(200%) hue-rotate(-178deg) !important;
+  /*
+	.dialogBox {
+		filter: invert(80%) grayscale(20%) saturate(200%) hue-rotate(-178deg) !important;
+	}
+	*/
+
+  .dialogTitleBar {
+    background: var(--grey-70) !important;
+    border-bottom: 1px solid var(--grey-90) !important;
+  }
+
+  .dialogFrame {
+    filter: invert(83.5%) grayscale(20%) saturate(200%) hue-rotate(-178deg) !important;
   }
 
   /* Search Engines */
@@ -991,7 +1010,7 @@ menupopup {
 
   .navigation,
   hbox.sticky-container {
-    background: var(--primary-dark-color) !important;
+    background: var(--grey-80) !important;
   }
 
   image.fxaSyncIllustration,
@@ -999,9 +1018,18 @@ menupopup {
     filter: contrast(90%) saturate(150%) !important;
   }
 
-  image.searchBarImage.searchBarHiddenImage,
-  image.searchBarImage.searchBarShownImage {
-    filter: invert(80%) grayscale(20%) saturate(200%) hue-rotate(-178deg) !important;
+  /* Firefox 68+, no longer needed */
+
+  /*
+	image.searchBarImage.searchBarHiddenImage, image.searchBarImage.searchBarShownImage {
+	  filter: invert(80%) grayscale(20%) saturate(200%) hue-rotate(-178deg) !important;
+	}
+	*/
+
+  button:not([disabled]) {
+    -moz-appearance: none !important;
+    color: var(--grey-30) !important;
+    background: var(--grey-70) !important;
   }
 
   button:hover:not([disabled]) {

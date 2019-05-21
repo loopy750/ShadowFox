@@ -1520,7 +1520,8 @@ tooltip {
       background: var(--grey-60) !important;
     }
 
-    textbox {
+    textbox,
+    richlistbox#items {
       -moz-appearance: none !important;
       color: var(--grey-20) !important;
       background: var(--grey-80) !important;
@@ -2606,7 +2607,7 @@ toolbar[brighttext] {
 #tabbrowser-tabpanels,
 browser[type=content-primary],
 browser[type=content] > html {
-  background: var(--primary-dark-color) !important;
+  background: var(--grey-80) !important;
 }
 #identity-box.verifiedIdentity {
   --urlbar-separator-color: var(--grey-50) !important;

@@ -46,7 +46,7 @@
         -moz-appearance: none !important;\
         border-width: 0px !important;\
         border-radius: 3px !important;\
-        background-color: rgba(159, 159, 159, 0.3) !important;\
+        background-color: rgba(159, 159, 159, 0.33) !important;\
 		background-image: linear-gradient(to right,transparent,rgba(255, 255, 255, 0.05),transparent) !important;\
         transition: background-color 0.5s ease-in-out;\
     }\

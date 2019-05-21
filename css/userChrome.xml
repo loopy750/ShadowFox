@@ -5,7 +5,7 @@
    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
    xmlns:xbl="http://www.mozilla.org/xbl">
 
-  <binding id="js" extends="chrome://global/content/bindings/toolbarbutton.xml#menu">
+  <binding id="js" extends="chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton">
     <implementation>
         <constructor><![CDATA[
             function makeRelativePathURI(name) {

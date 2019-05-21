@@ -197,7 +197,7 @@
                         background: var(--grey-60) !important;
                   }
 
-                  textbox {
+                  textbox, richlistbox#items {
                         -moz-appearance: none !important;
                         color: var(--grey-20) !important;
                         background: var(--grey-80) !important;

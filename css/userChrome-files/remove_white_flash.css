@@ -1,4 +1,4 @@
 /* Minimize white flash when loading some sites */
 #browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels, browser[type=content-primary], browser[type=content] > html {
-    background: var(--primary-dark-color) !important;
+    background: var(--grey-80) !important;
 }

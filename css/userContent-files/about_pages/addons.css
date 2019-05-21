@@ -117,6 +117,9 @@
 		--view-highlight-color: transparent !important;
 	}
 
+	.addon-view {
+		background: var(--grey-70) !important;
+	}
 
 	.text-link {
 		color: var(--primary-accent-color) !important;
